@@ -1,13 +1,68 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import SingleProject from './SingleProject';
+import {projects} from '../projects';
 
 
 export default function AllProjects() {
+    const [slideValue, setSlideValue] = useState(0);
+
+    const slide = (direction) => {
+        let projectsArray = document.querySelectorAll('.myProject');
+
+        
+
+        if (direction === 'right') {
+            
+            projectsArray.forEach(project => {
+                project.style.cssText = `
+                    transform: translateX(${slideValue-100}%);
+                    transition: 0.5s linear
+                `;
+            })
+
+            if (slideValue === -200) {
+                document.getElementById('right-btn').style.visibility = 'hidden';
+            } else {
+                // document.getElementById('right-btn').style.border = 'solid black 10px';
+            }
+            setSlideValue(slideValue - 100);
+        } else {
+            document.getElementById('right-btn').style.visibility = 'visible';
+            projectsArray.forEach(project => {
+                project.style.cssText = `
+                    transform: translateX(${slideValue + 100}%);
+                    transition: 0.5s linear; 
+                `;
+            })
+            if (slideValue === -100) {
+                document.getElementById('left-btn').style.visibility = 'hidden';
+            } 
+
+            
+            setSlideValue(slideValue + 100);
+        }
+        
+    
+    }
+    
+
+
     return (
         <ProjectsWrapper>
             <h2>Projects</h2>
-            <SingleProject title='EXP|CON' className='myProject'></SingleProject>
+
+            <ProjectFlexContainer id='contain'>
+                {projects.map(project => <SingleProject  title={project.name} about={project.description} newTools={project.newSkills} improvements={project.howToImprove}></SingleProject>)}
+
+            </ProjectFlexContainer>
+
+            
+            <div className='btnsContainer'>
+                <button id='left-btn' onClick={() => slide('left')}>Left</button>
+                <button id='right-btn' onClick={() => slide('right')}>Right</button>
+            </div>
+            
         </ProjectsWrapper>
     )
 }
@@ -15,21 +70,39 @@ export default function AllProjects() {
 
 const ProjectsWrapper = styled.section`
     /* width: 100vw; */
-    height: 100vh;;
-    display: grid;
-    padding-left: 4em;
-    padding-right: 3em;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    border: solid green 10px;
-    /* position: absolute; */
+    height: fit-content;;
+   
     background-image: url('projectsBackground.svg');
-    padding-top: 10em;
+    padding-top: 15em;
+    padding-left: 4.5em;
 
     h2 {
         height: fit-content;
         grid-row: 1;
-        grid-column: 1/3;
+    }
+
+    .btnsContainer {
+        display: grid;
+        justify-items: center;
+        padding: 5em;
+
+        button {
+            grid-row: 1;
+        }
+    }
+`;
+
+const ProjectFlexContainer = styled.article`
+    width: 100%;
+    display: flex;
+    height: 60vh;
+    overflow: hidden;
+    border: solid pink 3px;
+    padding-left: 3em;
+    .myProject {
+        grid-row: 1;
+        width: 100%;
+        border: solid black 1px;
     }
 
 `;
