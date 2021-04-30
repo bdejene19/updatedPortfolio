@@ -9,23 +9,21 @@ export default function AllProjects() {
 
     const slide = (direction) => {
         let projectsArray = document.querySelectorAll('.myProject');
-
-        
-
         if (direction === 'right') {
-            
+            if (slideValue === 0) {
+                document.getElementById('left-btn').style.visibility = 'visible';
+
+            }
             projectsArray.forEach(project => {
                 project.style.cssText = `
                     transform: translateX(${slideValue-100}%);
                     transition: 0.5s linear
                 `;
             })
-
             if (slideValue === -200) {
                 document.getElementById('right-btn').style.visibility = 'hidden';
-            } else {
-                // document.getElementById('right-btn').style.border = 'solid black 10px';
             }
+            
             setSlideValue(slideValue - 100);
         } else {
             document.getElementById('right-btn').style.visibility = 'visible';
@@ -37,9 +35,7 @@ export default function AllProjects() {
             })
             if (slideValue === -100) {
                 document.getElementById('left-btn').style.visibility = 'hidden';
-            } 
-
-            
+            }
             setSlideValue(slideValue + 100);
         }
         
@@ -78,7 +74,6 @@ const ProjectsWrapper = styled.section`
 
     h2 {
         height: fit-content;
-        grid-row: 1;
     }
 
     .btnsContainer {
@@ -97,12 +92,9 @@ const ProjectFlexContainer = styled.article`
     display: flex;
     height: 60vh;
     overflow: hidden;
-    border: solid pink 3px;
     padding-left: 3em;
     .myProject {
-        grid-row: 1;
         width: 100%;
-        border: solid black 1px;
     }
 
 `;
