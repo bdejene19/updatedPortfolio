@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import SingleProject from './SingleProject';
 import {projects} from '../projects';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 
 
 export default function AllProjects() {
@@ -42,21 +44,22 @@ export default function AllProjects() {
     
     }
     
+    
 
 
     return (
         <ProjectsWrapper>
-            <h2>Projects</h2>
+            <h2 id='currentProjects'>Projects</h2>
 
-            <ProjectFlexContainer id='contain'>
-                {projects.map(project => <SingleProject  title={project.name} about={project.description} newTools={project.newSkills} improvements={project.howToImprove}></SingleProject>)}
+            <ProjectFlexContainer id='projects-container'>
+                {projects.map(project => <SingleProject  title={project.name} projectImg={project.projectDisplay} about={project.description} newTools={project.newSkills} improvements={project.howToImprove} sourceCode={project.sourceCode} webpage={project.liveVersion}></SingleProject>)}
 
             </ProjectFlexContainer>
 
             
             <div className='btnsContainer'>
-                <button id='left-btn' onClick={() => slide('left')}>Left</button>
-                <button id='right-btn' onClick={() => slide('right')}>Right</button>
+                <ArrowLeftIcon id='left-btn' className='slideChanger' onClick={() => slide('left')}/>
+                <ArrowRightIcon id='right-btn' className='slideChanger' onClick={() => slide('right')}/>
             </div>
             
         </ProjectsWrapper>
@@ -65,10 +68,11 @@ export default function AllProjects() {
 
 
 const ProjectsWrapper = styled.section`
-    /* width: 100vw; */
-    height: fit-content;;
+    width: 100vw;
+    /* height: fit-content;; */
    
     background-image: url('projectsBackground.svg');
+    background-size: cover;
     padding-top: 15em;
     padding-left: 4.5em;
 
@@ -79,20 +83,25 @@ const ProjectsWrapper = styled.section`
     .btnsContainer {
         display: grid;
         justify-items: center;
-        padding: 5em;
 
-        button {
-            grid-row: 1;
+        grid-template-columns: auto auto;
+        .slideChanger {
+            font-size: 100px;
+            cursor: pointer;
+            color: #00fff1;
         }
     }
+
+    
 `;
 
 const ProjectFlexContainer = styled.article`
     width: 100%;
     display: flex;
-    height: 60vh;
+    height: fit-content;
     overflow: hidden;
     padding-left: 3em;
+    padding-top: 1em;
     .myProject {
         width: 100%;
     }

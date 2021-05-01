@@ -5,9 +5,16 @@ export default function NavBar() {
     return (
         <NavWrapper>
             <NavButton navBtnColor='#00FFF1' className='name'>Bemnet Dejene</NavButton>
-            <NavButton className='sub-nav'>Projects</NavButton>
-            <NavButton className='sub-nav'>Skills</NavButton>
-            <NavButton className='sub-nav'>Resume</NavButton>
+            <a href='#currentProjects'>
+                <NavButton className='sub-nav'>Projects</NavButton>
+            </a>
+
+
+            <a href='#skills'>
+                <NavButton className='sub-nav'>Skills</NavButton>
+            </a>
+
+            <NavButton className='sub-nav' onClick={() => window.location.href = process.env.PUBLIC_URL + "/BemnetDejeneDevResume_wordType.docx"}>Resume</NavButton>
             <NavButton className='sub-nav'>Contact Info</NavButton>
         </NavWrapper>
     )
@@ -21,11 +28,12 @@ const NavWrapper = styled.nav`
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     align-items: center;
-
     .name {
         grid-column: 1/3;
         padding-left: 3em;
     }
+
+  
     .sub-nav {
         justify-self: center;
     }
@@ -41,4 +49,6 @@ const NavButton = styled.button`
     color: ${props => props.navBtnColor || 'white'};
     background-color: transparent;
 
+
+  
 `;

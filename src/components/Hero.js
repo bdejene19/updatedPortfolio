@@ -9,7 +9,7 @@ export default function Hero() {
                 <h1>Who am I</h1>
                 <p>A self driven Software Engineer focusing on the JavaScript stacks like React for Front End Development. Also experienced in Python OOP data analytics. </p>
             </div>
-            <img src='HeroBackground.svg' alt='hero background' className='bg-photo'></img>
+            <img src='/herobackground.svg' alt='hero background' className='bg-photo'></img>
             <div className='quick-contact'>
                 <a href='https://www.linkedin.com/in/bemnet-dejene-8663521b1/'>
                     <img src='https://cdn2.iconfinder.com/data/icons/on-point-social-media/141/LinkedIn-512.png' alt='LinkedIN'/>
@@ -25,16 +25,20 @@ export default function Hero() {
 
 
 const HeroWrapper = styled.section`
-    width: 100%;
     height: fit-content;
     display: grid;
     grid-template-columns: 3fr 1fr;
 
     .bg-photo {
+        width: 100vw;
+
         z-index: 0;
     }
 
     .quick-contact {
+        position: absolute;
+        left: 75%;
+        top: 35%;
         align-self: center;
         display: flex;
         column-gap: 3em;
