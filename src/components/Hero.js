@@ -16,7 +16,7 @@ export default function Hero() {
                 </a>
 
                 <a href='https://github.com/bdejene19'>
-                    <img src='https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1619632502~hmac=efc7aa9eefd3f518ceaa6c36d0ea56e1' alt='github'></img>
+                    <img src='https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1620068739~hmac=28d4e67bd5da4d0b2d4f21e3812f2031' alt='github'></img>
                 </a>
             </div>            
         </HeroWrapper>
@@ -32,7 +32,7 @@ const HeroWrapper = styled.section`
     .bg-photo {
         width: 100vw;
 
-        z-index: 0;
+        z-index: -1;
     }
 
     .quick-contact {
@@ -44,7 +44,7 @@ const HeroWrapper = styled.section`
         column-gap: 3em;
         a {
             cursor: pointer;
-            z-index: 1;
+            z-index: 0;
 
         }
         img {
@@ -53,7 +53,7 @@ const HeroWrapper = styled.section`
     }
 
     .intro-text {
-        z-index: 1;
+        z-index: 0;
         position: absolute;
         padding-top: 5em;
         padding-left: 4.5em; 
