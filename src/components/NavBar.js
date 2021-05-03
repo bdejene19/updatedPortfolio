@@ -1,7 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 export default function NavBar() {
+    const [skillsExpanded, setSkillsExpanded] = useState(false);
+
+    const handleSkillsExpansion = () => {
+        if (skillsExpanded === true) {
+            document.getElementById('skillsContentSection').style.cssText = `
+                visibility: hidden;
+                transform: translateY(-20%);
+                transition: 0.3s ease-in-out;
+                opacity: 0;
+            `;
+        } else {
+            document.getElementById('skillsContentSection').style.cssText = `
+                visibility: visible;
+                transform: translateY(20%);
+                transition: 0.3s ease-in-out;
+                opacity: 1;
+
+            `;
+        }
+
+        setSkillsExpanded(!skillsExpanded);
+    }
     return (
         <NavWrapper>
             <NavButton navBtnColor='#00FFF1' className='name'>Bemnet Dejene</NavButton>
@@ -10,9 +32,7 @@ export default function NavBar() {
             </a>
 
 
-            <a href='#skills'>
-                <NavButton className='sub-nav'>Skills</NavButton>
-            </a>
+            <NavButton className='sub-nav' onClick={() => handleSkillsExpansion()}>Skills</NavButton>
 
             <NavButton className='sub-nav' onClick={() => window.location.href = process.env.PUBLIC_URL + "/BemnetDejeneDevResume_wordType.docx"}>Resume</NavButton>
             <NavButton className='sub-nav'>Contact Info</NavButton>
