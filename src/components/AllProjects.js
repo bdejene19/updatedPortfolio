@@ -40,13 +40,8 @@ export default function AllProjects() {
             }
             setSlideValue(slideValue + 100);
         }
-        
-    
     }
     
-    
-
-
     return (
         <ProjectsWrapper>
             <h2 id='currentProjects'>Projects</h2>
@@ -58,7 +53,7 @@ export default function AllProjects() {
 
             
             <div className='btnsContainer'>
-                <ArrowLeftIcon id='left-btn' className='slideChanger' onClick={() => slide('left')}/>
+                <ArrowLeftIcon id='left-btn' className='slideChanger' style={{visibility: 'hidden'}} onClick={() => slide('left')}/>
                 <ArrowRightIcon id='right-btn' className='slideChanger' onClick={() => slide('right')}/>
             </div>
             
@@ -83,13 +78,14 @@ const ProjectsWrapper = styled.section`
     .btnsContainer {
         display: grid;
         justify-items: center;
-
         grid-template-columns: auto auto;
         .slideChanger {
             font-size: 100px;
             cursor: pointer;
             color: #00fff1;
         }
+
+       
     }
 
     
