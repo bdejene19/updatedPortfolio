@@ -29,20 +29,19 @@ export default function ContactForm() {
 
 const ContactWrapper = styled.section`
     width: 100%;
-    height: 85vh;
+    height: fit-content;
     padding: 1em;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     background: linear-gradient(45deg, #00fff1, slateblue 60%);
-    padding-bottom: 20em;
-    
+    padding-bottom: 3em;
     h2 {
         font-size: 32px;
         justify-self: left;
         padding-left: 2em;
         padding-bottom: 1em;
-        padding-top: 1.5em;
+        padding-top: 1em;
     }
 
 `;
@@ -72,6 +71,7 @@ const ContactSubmission = styled.form`
             resize: vertical;
             max-height: 25vh;
             padding: 0.5em;
+            font-size: 16px;
         }
     }
 

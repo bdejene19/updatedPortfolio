@@ -28,7 +28,7 @@ export default function NavBar() {
     }
 
 
-    const contactCard = () => {
+    const handleContactExpansion = () => {
         if (contactExpanded) {
             document.getElementById('immediateContact').style.cssText = `
                 visibility: hidden;
@@ -50,7 +50,8 @@ export default function NavBar() {
     }
 
     const handleAboutMeExpansion = () => {
-          if (aboutMeExpanded) {
+
+        if (aboutMeExpanded) {
             document.getElementById('aboutMe-article').style.cssText = `
                 visibility: hidden;
                 width: 0;
@@ -72,8 +73,9 @@ export default function NavBar() {
 
             `;
             document.getElementById('hero-section').style.filter = 'blur(10px)';
-
         }
+    
+        
 
         setAboutExpanded(!aboutMeExpanded); 
     }
@@ -88,9 +90,9 @@ export default function NavBar() {
             <NavButton className='sub-nav' onClick={() => handleSkillsExpansion()}>Skills</NavButton>
             
             <a target='_blank' href="/BemnetDejeneDevResume_pdfType.pdf">
-                <NavButton className='sub-nav'>Resume</NavButton>
+                <NavButton className='sub-nav' style={{marginLeft: '3em'}}>Resume</NavButton>
             </a>
-            <NavButton className='sub-nav' onClick={() => contactCard()}>Contact Info</NavButton>
+            <NavButton className='sub-nav' style={{marginLeft: '3em'}} onClick={() => handleContactExpansion()}>Contact Info</NavButton>
         </NavWrapper>
     )
 }
@@ -110,7 +112,7 @@ const NavWrapper = styled.nav`
 
   
     .sub-nav {
-        justify-self: center;
+        width: fit-content;
     }
 
 `;

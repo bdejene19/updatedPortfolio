@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import CancelIcon from '@material-ui/icons/Cancel';
 
 export default function ImmediateContact() {
     return (
        <ImmediateContactWrapper id='immediateContact'>
+           <CancelIcon></CancelIcon>
            <PersonalContact>
                 <h4>Phone:</h4>
                 <p>519-619-3930</p>

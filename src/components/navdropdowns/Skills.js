@@ -87,7 +87,7 @@ export const Skills = () => {
 
 
 const SkillTabsWrapper = styled.section`
-    height: 55vh;
+    height: 60vh;
     width: 60vw;
     z-index: 1;
     position: absolute;
