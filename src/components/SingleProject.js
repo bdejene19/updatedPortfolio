@@ -33,8 +33,8 @@ export default function SingleProject(props) {
 
             </div>
             <div className='btns-container'>
-                <Button variant='contained' color='primary' className='btn' href={props.sourceCode}>SOURCE</Button>
-                <Button variant='contained' className='btn webpage' href={props.webpage}>WEBPAGE</Button>
+                <Button variant='contained' color='primary' className='btn' target='_blank' href={props.sourceCode}>SOURCE</Button>
+                <Button variant='contained' className='btn webpage' target='_blank' href={props.webpage}>WEBPAGE</Button>
             </div>
         </SingleProjectContainer>
     )
@@ -106,9 +106,5 @@ const ProjectContent = styled.div`
     }
 
 
-
-`;
-
-const ViewsBtn = styled.button`
 
 `;

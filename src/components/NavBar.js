@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 export default function NavBar() {
     const [skillsExpanded, setSkillsExpanded] = useState(false);
+    const [contactExpanded, setContactExpanded] = useState(false);
+    const [aboutMeExpanded, setAboutExpanded] = useState(false);
 
     const handleSkillsExpansion = () => {
-        if (skillsExpanded === true) {
+        if (skillsExpanded) {
             document.getElementById('skillsContentSection').style.cssText = `
                 visibility: hidden;
                 transform: translateY(-20%);
@@ -17,25 +19,78 @@ export default function NavBar() {
                 visibility: visible;
                 transform: translateY(20%);
                 transition: 0.3s ease-in-out;
-                opacity: 1;
+                opacity: 0.95;
 
             `;
         }
 
         setSkillsExpanded(!skillsExpanded);
     }
+
+
+    const contactCard = () => {
+        if (contactExpanded) {
+            document.getElementById('immediateContact').style.cssText = `
+                visibility: hidden;
+                transform: translateY(-70%);
+                transition: 0.3s ease-in-out;
+                opacity: 0;
+            `;
+        } else {
+            document.getElementById('immediateContact').style.cssText = `
+                visibility: visible;
+                transform: translateY(70%);
+                transition: 0.3s ease-in-out;
+                opacity: 0.95;
+
+            `;
+        }
+
+        setContactExpanded(!contactExpanded);
+    }
+
+    const handleAboutMeExpansion = () => {
+          if (aboutMeExpanded) {
+            document.getElementById('aboutMe-article').style.cssText = `
+                visibility: hidden;
+                width: 0;
+                height: 0;
+                margin-left: 0;
+                transition: 0.5s ease-in-out;
+                opacity: 0;
+            `;
+
+            document.getElementById('hero-section').style.filter = 'none';
+        } else {
+            document.getElementById('aboutMe-article').style.cssText = `
+                visibility: visible;
+                width: 50vw;
+                height: fit-content;
+                margin-left: -25vw;
+                transition: 0.5s ease-in-out;
+                opacity: 0.8;
+
+            `;
+            document.getElementById('hero-section').style.filter = 'blur(10px)';
+
+        }
+
+        setAboutExpanded(!aboutMeExpanded); 
+    }
     return (
         <NavWrapper>
-            <NavButton navBtnColor='#00FFF1' className='name'>Bemnet Dejene</NavButton>
+            <NavButton navBtnColor='#00FFF1' className='name' onClick={() => handleAboutMeExpansion()}>Bemnet Dejene</NavButton>
             <a href='#currentProjects'>
                 <NavButton className='sub-nav'>Projects</NavButton>
             </a>
 
 
             <NavButton className='sub-nav' onClick={() => handleSkillsExpansion()}>Skills</NavButton>
-
-            <NavButton className='sub-nav' onClick={() => window.location.href = process.env.PUBLIC_URL + "/BemnetDejeneDevResume_wordType.docx"}>Resume</NavButton>
-            <NavButton className='sub-nav'>Contact Info</NavButton>
+            
+            <a target='_blank' href="/BemnetDejeneDevResume_pdfType.pdf">
+                <NavButton className='sub-nav'>Resume</NavButton>
+            </a>
+            <NavButton className='sub-nav' onClick={() => contactCard()}>Contact Info</NavButton>
         </NavWrapper>
     )
 }
@@ -68,7 +123,5 @@ const NavButton = styled.button`
     font-size: 24px;
     color: ${props => props.navBtnColor || 'white'};
     background-color: transparent;
-
-
   
 `;

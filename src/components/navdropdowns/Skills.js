@@ -7,22 +7,18 @@ export const Skills = () => {
 
     const handleTabSelection = (tab) => {
         /** Want to make previous tab section invisible, and display current section */
-        
         document.getElementById(`${oldTab}-content`).style.visibility = 'hidden'
         document.getElementById(oldTab).style.borderBottom = 'none'
 
         document.getElementById(`${tab}-content`).style.visibility = 'visible';
 
         if (tab === 'frontend') {
-            document.getElementById(tab).style.borderBottom = 'solid 3px orange';
-        } else {
             document.getElementById(tab).style.borderBottom = 'solid 3px #00fff1';
+        } else {
+            document.getElementById(tab).style.borderBottom = 'solid 3px orange';
         }
 
-        // document.getElementById(tab).style.transition = '0.1s linear';
-
         setOldTab(tab);
-        console.log(oldTab);
     }
 
     return (
@@ -95,20 +91,22 @@ const SkillTabsWrapper = styled.section`
     width: 60vw;
     z-index: 1;
     position: absolute;
-    /* top: 20%; */
+    transform: translateY(-20%);
     left: 50%;
     margin-left: -30vw;
-    background: linear-gradient(45deg, #00fff1, slateblue 60%);
+    background: linear-gradient(45deg, orange, slateblue 60%);
     border-radius: 1rem 1rem 1rem 1rem;
-    box-shadow: 0 5px 20px 10px #1B69DE;
+    box-shadow: 0 5px 15px 10px #1B69DE;
     visibility: hidden;
+    opacity: 0;
+    
     #frontend {
-        border-bottom: solid 3px orange;
+        border-bottom: solid 3px #00fff1;
     }
+
     #backend-content {
         visibility: hidden;
     }
-
 `;
 
 const SkillArticle = styled.article`

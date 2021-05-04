@@ -1,8 +1,11 @@
 import './App.css';
 import AllProjects from './components/AllProjects';
+import ContactForm from './components/ContactForm';
 import Hero from './components/Hero';
+import ImmediateContact from './components/navdropdowns/ImmediateContact';
 import NavBar from './components/NavBar';
-import {Skills} from './components/Skills';
+import {Skills} from './components/navdropdowns/Skills';
+import AboutMe from './components/navdropdowns/AboutMe';
 
 function App() {
   return (
@@ -10,9 +13,18 @@ function App() {
       <header>
         <NavBar></NavBar>
         <Skills></Skills>
-        <Hero></Hero>
+        <AboutMe></AboutMe>
+        <ImmediateContact></ImmediateContact>
       </header>
-      <AllProjects></AllProjects>
+
+      <main>
+        <Hero></Hero>
+        <AllProjects></AllProjects>
+      </main>
+
+      <footer>
+        <ContactForm></ContactForm>
+      </footer>
     </div>
   );
 }

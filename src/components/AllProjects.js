@@ -79,6 +79,8 @@ const ProjectsWrapper = styled.section`
         display: grid;
         justify-items: center;
         grid-template-columns: auto auto;
+        align-items: flex-start;
+        margin-top: -3em;
         .slideChanger {
             font-size: 100px;
             cursor: pointer;
@@ -97,7 +99,7 @@ const ProjectFlexContainer = styled.article`
     height: fit-content;
     overflow: hidden;
     padding-left: 3em;
-    padding-top: 1em;
+        /* padding-top: 1em; */
     .myProject {
         width: 100%;
     }
