@@ -16,7 +16,7 @@ export default function ContactToolTip() {
             <div className="tooltip">
                 <span className="tooltiptext">GitHub</span>
                 <a href="https://github.com/bdejene19">
-                    <img src={process.env.PUBLIC_URL + 'https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1620068739~hmac=28d4e67bd5da4d0b2d4f21e3812f2031'} alt='github' className='contact-icon'></img>
+                    <img src='https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1620068739~hmac=28d4e67bd5da4d0b2d4f21e3812f2031' alt='github' className='contact-icon'></img>
                 </a>
             </div> 
         </ImmediateContactWrapper>

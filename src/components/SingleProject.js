@@ -11,7 +11,7 @@ export default function SingleProject(props) {
         <SingleProjectContainer className='myProject'>
             <div className='flex-content'>
                 <div className='project-display'>
-                    <img src={props.projectImg} alt={props.projectImg}></img>
+                    <img src={process.env.PUBLIC_URL + '/'+ props.projectImg} alt={props.projectImg}></img>
 
                 </div>
                 <ProjectContent>
