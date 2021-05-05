@@ -10,7 +10,7 @@ export default function Hero() {
                 <h1>Who am I</h1>
                 <p>A self driven Software Engineer focusing on the JavaScript stacks like React for Front End Development. Also experienced in Python OOP data analytics. </p>
             </div>
-            <img src='/herobackground.svg' alt='hero background' className='bg-photo'></img>
+            <img src={process.env.PUBLIC_URL + '/herobackground.svg'} alt='hero background' className='bg-photo'></img>
             <div className='quick-contact'>
                 <HeroToolTips></HeroToolTips>
             </div>            
