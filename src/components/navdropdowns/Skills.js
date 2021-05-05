@@ -87,7 +87,7 @@ export const Skills = () => {
 
 
 const SkillTabsWrapper = styled.section`
-    height: 60vh;
+    height: 70vh;
     width: 60vw;
     z-index: 1;
     position: absolute;
@@ -118,10 +118,12 @@ const SkillArticle = styled.article`
 
     ul {
         padding: 0.5em;
+        font-size: 20px;
         font-weight: 700;
 
         li {
             font-weight: 300;
+            font-size: 18px;
         }
     }
 `;

@@ -46,7 +46,7 @@ export default function AllProjects() {
         <ProjectsWrapper>
             <h2 id='currentProjects'>Projects</h2>
 
-            <ProjectFlexContainer id='projects-container'>
+            <ProjectFlexContainer>
                 {projects.map(project => <SingleProject  title={project.name} projectImg={project.projectDisplay} about={project.description} newTools={project.newSkills} improvements={project.howToImprove} sourceCode={project.sourceCode} webpage={project.liveVersion}></SingleProject>)}
 
             </ProjectFlexContainer>
@@ -64,11 +64,12 @@ export default function AllProjects() {
 
 const ProjectsWrapper = styled.section`
     width: 100vw;
-    /* height: fit-content;; */
-   
     background-image: url('projectsBackground.svg');
     background-size: cover;
     padding-top: 15em;
+    overflow: hidden;
+    padding-bottom: 2em;
+
     padding-left: 4.5em;
 
     h2 {
@@ -86,10 +87,14 @@ const ProjectsWrapper = styled.section`
             cursor: pointer;
             color: #00fff1;
         }
-
-       
     }
 
+
+    @media screen and (max-width: 1200px) {
+        padding-top: 12em;
+    }
+
+    /* @media screen and (max-width:) */
     
 `;
 
@@ -97,8 +102,7 @@ const ProjectFlexContainer = styled.article`
     width: 100%;
     display: flex;
     height: fit-content;
-    overflow: hidden;
-    padding-left: 3em;
+    /* padding-left: 3em; */
         /* padding-top: 1em; */
     .myProject {
         width: 100%;

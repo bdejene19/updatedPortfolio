@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import CancelIcon from '@material-ui/icons/Cancel';
 
 export default function ImmediateContact() {
     return (
        <ImmediateContactWrapper id='immediateContact'>
-           <CancelIcon></CancelIcon>
            <PersonalContact>
                 <h4>Phone:</h4>
-                <p>519-619-3930</p>
+                <p style={{width: 'max-content'}}>519-619-3930</p>
            </PersonalContact>
 
            <PersonalContact>
@@ -34,17 +32,15 @@ export default function ImmediateContact() {
 
 
 const ImmediateContactWrapper = styled.article`
-    width: 20vw;
+    width: fit-content;
     height: 40vh;
     padding: 0.5em;
-    /* padding-right: 1em; */
     right: 0;
     top: -20%;
-    /* border: solid black 3px; */
     border-radius: 2px 2px 2px 2px;
     position: absolute;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,);;
     z-index: 2;
     background: linear-gradient(45deg, orange, slateblue 60%);
     box-shadow: 0 5px 25px 10px #1B69DE;
@@ -57,6 +53,16 @@ const ImmediateContactWrapper = styled.article`
 
     p, a {
         padding-top: 0.5em;
+        width: min-content;
+        height: fit-content;
+
+        @media screen and (max-width: 1024px) {
+            width: 28vw;
+            /* p, a {
+                width: 70%;
+                border: solid green 3px;
+            } */
+        }
     }
 `;
 

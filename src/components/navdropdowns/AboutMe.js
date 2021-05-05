@@ -7,8 +7,8 @@ export default function AboutMe() {
     return (
        <AboutMeWrapper id='aboutMe-article'>
            <h3>Life Outside of Work</h3>
-           <p>In order to give your all into a project, your mind and body need to be 100% focused, making a work-life balance extremely important to me. By nature, I am an easy going person who's always smiling and love to express my creative thinking through code, piano, guitar and even freestyling rapping 🎶 (no sound cloud, haha).</p>
-           <p>The reason I fell in love with code was that it enabled my creative and logistic halves of myself to work in tandem to create something truly amazing.</p>
+           <p>On paper, I am currently located in London, Ontario and have a Double Major in Medical Sciences and Biology from the University of Western Ontario. Between the lines, I am an easy going person who's always smiling and love to express my creative thinking through code, piano, guitar and even freestyling rapping 🎶 (no sound cloud, haha).</p>
+           <p>The reason I fell in love with code was that it enabled my creative and logistic STEM halves of myself to work in tandem to create something that meaningful and has an impact on other peoples lives.</p>
        </AboutMeWrapper>
     )
 }

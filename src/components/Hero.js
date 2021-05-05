@@ -26,14 +26,13 @@ const HeroWrapper = styled.section`
 
     .bg-photo {
         width: 100vw;
-
         z-index: -1;
     }
 
     .quick-contact {
         position: absolute;
-        left: 75%;
-        top: 35%;
+        right: 3em;
+        top: 40%;
         align-self: center;
         display: flex;
         column-gap: 3em;
@@ -53,6 +52,57 @@ const HeroWrapper = styled.section`
         }
     }
 
+    @media screen and (max-width: 1200px) {
+        .intro-text {
+            padding-top: 3em;
+            padding-left: 2.25em;
 
+            p {
+                font-size: 28px;
+                padding-top: 1em;
+            }
+        }
+        .quick-contact {
+
+            .contact-icon {
+                width: 7vw
+            }
+
+            #linkedin-icon {
+                height: 9vh;
+                margin-top: 1.3em;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .quick-contact {
+            top: 18%;
+
+            #linkedin-icon {
+                height: 5em;
+                margin-top: 4em;
+                /* border: solid black 3px; */
+            }
+        }
+
+        
+    }
+
+
+    @media screen and (max-width: 900px) {
+        .intro-text {
+            padding-top: 2em;
+
+            #linkedin-icon {
+                height: 4em;
+                width: 3vw;
+                margin-top: 1.5em;
+            }
+        }
+        
+    }
+
+   
       
 `;

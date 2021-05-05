@@ -10,26 +10,26 @@ export default function SingleProject(props) {
     return (
         <SingleProjectContainer className='myProject'>
             <div className='flex-content'>
-            <div className='project-display'>
-                <img src={props.projectImg} alt={props.projectImg}></img>
+                <div className='project-display'>
+                    <img src={props.projectImg} alt={props.projectImg}></img>
 
-            </div>
-            <ProjectContent>
-                <h3>{props.title}</h3>
+                </div>
+                <ProjectContent>
+                    <h3>{props.title}</h3>
 
-                <p>
-                    {props.about}
-                </p>
-                <ul className='list'>
-                    <i>What I learned:</i>
-                    {newTools.map(tool =>  <li>{tool}</li>)}
-                </ul>
+                    <p>
+                        {props.about}
+                    </p>
+                    <ul className='list'>
+                        <i>What I learned:</i>
+                        {newTools.map(tool =>  <li>{tool}</li>)}
+                    </ul>
 
-                <ul className='list'>
-                    <i>What/How I would improve:</i>
-                    {improvements.map(change => <li>{change}</li>)}
-                </ul>
-            </ProjectContent>
+                    <ul className='list'>
+                        <i>What/How I would improve:</i>
+                        {improvements.map(change => <li>{change}</li>)}
+                    </ul>
+                </ProjectContent>
 
             </div>
             <div className='btns-container'>
@@ -49,7 +49,6 @@ const SingleProjectContainer = styled.article`
     .flex-content {
         display: flex;
         height: 85%;
-
         .project-display {
             height: 100%;
             width: 100%;
@@ -65,7 +64,6 @@ const SingleProjectContainer = styled.article`
         justify-items: center;
         column-gap: 3rem;
         padding-left: 5rem;
-
         .webpage {
             background-color: orange;
             color: white;
@@ -77,14 +75,17 @@ const SingleProjectContainer = styled.article`
         }
     }
 
+    @media screen and (max-width: 1024px) {
+        height: fit-content;
+    }
+
 `;
 
 const ProjectContent = styled.div`
     width: max-content;
-    padding-right: 5em;
+    margin-right: 3em;
     justify-content: center;
     height: fit-content;
-    /* justify-self: center; */
 
     p {
         padding: 1em;
@@ -97,7 +98,6 @@ const ProjectContent = styled.div`
         padding: 1em;
         font-weight: 600;
         padding-bottom: 0;
-
 
         li {
             font-weight: 300;
