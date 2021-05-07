@@ -99,6 +99,7 @@ const SkillTabsWrapper = styled.section`
     box-shadow: 0 5px 15px 10px #1B69DE;
     visibility: hidden;
     opacity: 0;
+    z-index: -1;
     
     #frontend {
         border-bottom: solid 3px #00fff1;

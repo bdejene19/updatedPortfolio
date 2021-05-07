@@ -29,8 +29,9 @@ const AboutMeWrapper = styled.article`
     row-gap: 1em;
     top: 20%;
     visibility: hidden;
-    opacity: 0;
     overflow: hidden;
+    opacity: 0;
+    z-index: 4;
 
     p {
         font-size: 18px;

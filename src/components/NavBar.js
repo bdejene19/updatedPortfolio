@@ -13,6 +13,7 @@ export default function NavBar() {
                 transform: translateY(-20%);
                 transition: 0.3s ease-in-out;
                 opacity: 0;
+                z-index: -1;
             `;
         } else {
             if (aboutMeExpanded) {
@@ -23,6 +24,7 @@ export default function NavBar() {
                 transform: translateY(15%);
                 transition: 0.3s ease-in-out;
                 opacity: 0.95;
+                z-index: 4;
 
             `;
         }
@@ -38,6 +40,7 @@ export default function NavBar() {
                 transform: translateY(-70%);
                 transition: 0.3s ease-in-out;
                 opacity: 0;
+                z-index: -1;
             `;
         } else {
             document.getElementById('immediateContact').style.cssText = `
@@ -45,6 +48,7 @@ export default function NavBar() {
                 transform: translateY(70%);
                 transition: 0.3s ease-in-out;
                 opacity: 0.95;
+                z-index: 4;
 
             `;
         }
@@ -61,6 +65,7 @@ export default function NavBar() {
                 margin-left: 0;
                 transition: 0.5s ease-in-out;
                 opacity: 0;
+                z-index: -1;
             `;
 
             document.getElementById('hero-section').style.filter = 'none';
@@ -80,6 +85,7 @@ export default function NavBar() {
                 margin-left: -25vw;
                 transition: 0.3s ease-in-out;
                 opacity: 0.8;
+                z-index: 4;
 
             `;
             document.getElementById('hero-section').style.cssText = `

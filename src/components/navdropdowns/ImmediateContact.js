@@ -45,7 +45,8 @@ const ImmediateContactWrapper = styled.article`
     background: linear-gradient(45deg, orange, slateblue 60%);
     box-shadow: 0 5px 25px 10px #1B69DE;
     opacity: 0;
-    visibility: hidden;    
+    visibility: hidden;  
+    z-index: -1;  
     h4 {
         opacity: 1;
         border-bottom: solid skyblue 1px;
