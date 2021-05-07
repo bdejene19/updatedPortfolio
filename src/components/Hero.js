@@ -10,7 +10,9 @@ export default function Hero() {
                 <h1>Who am I</h1>
                 <p>A self driven Software Engineer focusing on the JavaScript stacks like React for Front End Development. Also experienced in Python OOP data analytics. </p>
             </div>
-            <img src={process.env.PUBLIC_URL + '/herobackground.svg'} alt='hero background' className='bg-photo'></img>
+            <img src={process.env.PUBLIC_URL + '/herobackground.svg'} alt='hero background' className='bg-photo' id='desktop-bg'></img>
+            <img src={process.env.PUBLIC_URL + '/resized-ipadMini-bg.svg'} alt='hero background' className='bg-photo' id='ipadmini-bg'></img>
+
             <div className='quick-contact'>
                 <HeroToolTips></HeroToolTips>
             </div>            
@@ -52,9 +54,13 @@ const HeroWrapper = styled.section`
         }
     }
 
+    #ipadmini-bg {
+        display: none;
+    }
+
     @media screen and (max-width: 1200px) {
         .intro-text {
-            padding-top: 3em;
+            /* padding-top: 3em; */
             padding-left: 2.25em;
 
             p {
@@ -63,7 +69,7 @@ const HeroWrapper = styled.section`
             }
         }
         .quick-contact {
-
+            top: 20%;
             .contact-icon {
                 width: 7vw
             }
@@ -91,18 +97,61 @@ const HeroWrapper = styled.section`
 
 
     @media screen and (max-width: 900px) {
-        .intro-text {
-            padding-top: 2em;
+        #desktop-bg {
+            display: none;
+        }
 
+        #ipadmini-bg {
+            border: solid pink 3px;
+            display: block;
+            /* height: 60vh; */
+        }
+        .intro-text {
+            top: 37%;
+            p {
+                padding-top: 2em;
+                width: 60%;
+            }
+
+           
+        }
+
+        .quick-contact {
+            top: 10%;
+            left: 57%;
             #linkedin-icon {
-                height: 4em;
-                width: 3vw;
-                margin-top: 1.5em;
+                height: 5em;
+                /* width: 3vw; */
+                margin-top: 3.3em;
             }
         }
-        
+   
     }
 
+    @media screen and (max-width: 768px) {
+        .intro-text {
+            top: 42%;
+            border: solid black 3px;
+            p {
+                width: 55%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .intro-text {
+            top: 30%;
+            padding-left: 1em;
+
+            h1 {
+                font-size: 44px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
    
       
 `;

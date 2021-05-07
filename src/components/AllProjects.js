@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import SingleProject from './SingleProject';
 import {projects} from '../projects';
@@ -11,12 +11,37 @@ export default function AllProjects() {
 
     const slide = (direction) => {
         let projectsArray = document.querySelectorAll('.myProject');
+
+        // if (direction === 'right') {
+        //     projectsArray.forEach(project => {
+        //         project.style.cssText = `
+        //             transform: translateX(${slideValue - 100}%);
+        //             transition: 0.5s linear
+
+        //         `;
+        //     })
+        //     setSlideValue(slideValue - 100);
+
+        //     console.log('right btn clicked')
+        // } 
+        
+        // if (direction === 'left') {
+        //     projectsArray.forEach(project => {
+        //         project.style.cssText = `
+        //             transform: translateX(${slideValue + 100}%);
+        //             transition: 0.5s linear
+
+        //         `;
+        //     })
+        //     setSlideValue(slideValue + 100);
+        //     console.log('left button clicked')
+        // }
         if (direction === 'right') {
             if (slideValue === 0) {
                 document.getElementById('left-btn').style.visibility = 'visible';
 
             }
-            projectsArray.forEach(project => {
+            projectsArray.forEach((project) => {
                 project.style.cssText = `
                     transform: translateX(${slideValue-100}%);
                     transition: 0.5s linear
@@ -29,19 +54,23 @@ export default function AllProjects() {
             setSlideValue(slideValue - 100);
         } else {
             document.getElementById('right-btn').style.visibility = 'visible';
-            projectsArray.forEach(project => {
+            projectsArray.forEach((project) => {
                 project.style.cssText = `
                     transform: translateX(${slideValue + 100}%);
                     transition: 0.5s linear; 
                 `;
             })
+           
             if (slideValue === -100) {
                 document.getElementById('left-btn').style.visibility = 'hidden';
             }
+      
+
             setSlideValue(slideValue + 100);
         }
     }
     
+    useEffect(() => {})
     return (
         <ProjectsWrapper>
             <h2 id='currentProjects'>Projects</h2>
@@ -51,9 +80,9 @@ export default function AllProjects() {
 
             </ProjectFlexContainer>
 
-            
+            <br></br>
             <div className='btnsContainer'>
-                <ArrowLeftIcon id='left-btn' className='slideChanger' style={{visibility: 'hidden'}} onClick={() => slide('left')}/>
+                <ArrowLeftIcon id='left-btn' className='slideChanger'  onClick={() => slide('left')}/>
                 <ArrowRightIcon id='right-btn' className='slideChanger' onClick={() => slide('right')}/>
             </div>
             
@@ -81,20 +110,33 @@ const ProjectsWrapper = styled.section`
         justify-items: center;
         grid-template-columns: auto auto;
         align-items: flex-start;
-        margin-top: -3em;
+        margin-top: -1em;
+        z-index: 4;
+        border: solid black 3px;
         .slideChanger {
             font-size: 100px;
             cursor: pointer;
             color: #00fff1;
+            z-index: 4;
+        }
+
+        #left-btn {
+            visibility: hidden;
         }
     }
 
 
     @media screen and (max-width: 1200px) {
         padding-top: 12em;
+        padding-left: 2.5em;
     }
 
-    /* @media screen and (max-width:) */
+    @media screen and (max-width: 900px) {
+        background-image: url('${process.env.PUBLIC_URL}/ipadmini-projectsBG.svg');
+        background-position: center;
+        padding-top: 6em;
+
+    }
     
 `;
 

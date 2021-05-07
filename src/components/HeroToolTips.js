@@ -7,17 +7,19 @@ export default function ContactToolTip() {
     return (
         <ImmediateContactWrapper>
             <div className="tooltip">
+                <span className="tooltiptext">Github</span>
+                    <a href="https://github.com/bdejene19">
+                        <img src='https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1620068739~hmac=28d4e67bd5da4d0b2d4f21e3812f2031' alt='github' className='contact-icon'></img>
+                    </a>
+              
+            </div>
+
+            <div className="tooltip">
                 <span className="tooltiptext">LinkedIn</span>
                 <a href="https://www.linkedin.com/in/bemnet-dejene-8663521b1/">
                     <img src="https://cdn2.iconfinder.com/data/icons/on-point-social-media/141/LinkedIn-512.png" alt="LinkedIn" className="contact-icon" id='linkedin-icon'></img>
                 </a>
-            </div>
-
-            <div className="tooltip">
-                <span className="tooltiptext">GitHub</span>
-                <a href="https://github.com/bdejene19">
-                    <img src='https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1620068739~hmac=28d4e67bd5da4d0b2d4f21e3812f2031' alt='github' className='contact-icon'></img>
-                </a>
+     
             </div> 
         </ImmediateContactWrapper>
             
