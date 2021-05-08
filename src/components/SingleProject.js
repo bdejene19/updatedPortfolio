@@ -25,12 +25,12 @@ export default function SingleProject(props) {
                     </p>
                     <ul className='list'>
                         <i>What I learned:</i>
-                        {newTools.map(tool =>  <li>{tool}</li>)}
+                        {newTools.map((tool, index) =>  <li key={index}>{tool}</li>)}
                     </ul>
 
                     <ul className='list'>
                         <i>What/How I would improve:</i>
-                        {improvements.map(change => <li>{change}</li>)}
+                        {improvements.map((change, index) => <li key={index}>{change}</li>)}
                     </ul>
                 </ProjectContent>
 
@@ -48,7 +48,6 @@ const SingleProjectContainer = styled.article`
     padding-top: 2em;
     width: 100%;
     height: 70vh;
-    border: solid green 2px;
     padding-left: 5em;
 
     
@@ -82,7 +81,7 @@ const SingleProjectContainer = styled.article`
     }
 
     @media screen and (max-width: 1024px) {
-        height: 120vh;
+        height: fit-content;
     }
 
     @media screen and (max-width: 900px) {
@@ -101,6 +100,22 @@ const SingleProjectContainer = styled.article`
             .btn {
                 justify-items: center;
             }
+        }
+
+    }
+
+    @media screen and (max-width: 375px) {
+        height: 105vh;
+        padding-left: 0;
+
+        .btns-container {
+            padding-top: 0;
+            padding-left: 3em;
+        }
+
+        .flex-content {
+            padding-left: 0;
+
         }
     }
 
@@ -162,7 +177,21 @@ const ProjectContent = styled.div`
                 font-size: 16px;
             }
         }
+
+        p {
+            font-size: 20px;
+        }
     }
+
+    @media screen and (max-width: 375px){
+        padding-left: 0;
+        .list {
+            font-size: 18px;
+        }
+
+       
+    }
+
 
 
 

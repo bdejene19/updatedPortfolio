@@ -80,9 +80,9 @@ export default function NavBar() {
             
             document.getElementById('aboutMe-article').style.cssText = `
                 visibility: visible;
-                width: 50vw;
+                width: 80vw;
                 height: fit-content;
-                margin-left: -25vw;
+                margin-left: -40vw;
                 transition: 0.3s ease-in-out;
                 opacity: 0.8;
                 z-index: 4;
@@ -109,9 +109,9 @@ export default function NavBar() {
 
             <NavButton className='sub-nav' id='nav-skills' onClick={() => handleSkillsExpansion()}>Skills</NavButton>
             
-            <a target='_blank' href="/BemnetDejeneDevResume_pdfType.pdf">
-                <NavButton className='sub-nav' id='nav-resume' >Resume</NavButton>
-            </a>
+            {/* <a target='_blank' href="/BemnetDejeneDevResume_pdfType.pdf"> */}
+                <NavButton className='sub-nav' onClick={() => window.location.href = process.env.PUBLIC_URL + '/BemnetDejeneDevResume_wordType.pdf'} id='nav-resume' >Resume</NavButton>
+            {/* </a> */}
             <NavButton className='sub-nav' id='nav-contactNow' onClick={() => handleContactExpansion()}>Contact Info</NavButton>
         </NavWrapper>
     )
@@ -130,7 +130,10 @@ const NavWrapper = styled.nav`
         padding-left: 3em;
     }
 
-    #nav-resume, #nav-contactNow {
+    #nav-resume {
+        transform: translateX(-5vw);
+    }
+    #nav-contactNow {
         justify-self: center;
     }
 

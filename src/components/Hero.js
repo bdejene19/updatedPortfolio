@@ -12,8 +12,10 @@ export default function Hero() {
             </div>
             <img src={process.env.PUBLIC_URL + '/herobackground.svg'} alt='hero background' className='bg-photo' id='desktop-bg'></img>
             <img src={process.env.PUBLIC_URL + '/resized-ipadMini-bg.svg'} alt='hero background' className='bg-photo' id='ipadmini-bg'></img>
+            <img src={process.env.PUBLIC_URL + '/iphoneX-bg.svg'} alt='iphone BG background' className='bg-photo' id='iphoneX-bg'></img>
 
             <div className='quick-contact'>
+
                 <HeroToolTips></HeroToolTips>
             </div>            
         </HeroWrapper>
@@ -37,7 +39,6 @@ const HeroWrapper = styled.section`
         top: 40%;
         align-self: center;
         display: flex;
-        column-gap: 3em;
     }
 
     .intro-text {
@@ -54,7 +55,7 @@ const HeroWrapper = styled.section`
         }
     }
 
-    #ipadmini-bg {
+    #ipadmini-bg, #iphoneX-bg {
         display: none;
     }
 
@@ -71,7 +72,7 @@ const HeroWrapper = styled.section`
         .quick-contact {
             top: 20%;
             .contact-icon {
-                width: 7vw
+                width: minmax(4vw, 7vw);
             }
 
             #linkedin-icon {
@@ -85,11 +86,15 @@ const HeroWrapper = styled.section`
         .quick-contact {
             top: 18%;
 
+            .contact-icon {
+                height: 6em;
+                margin-top: 0.6em;
+            }
             #linkedin-icon {
                 height: 5em;
-                margin-top: 4em;
-                /* border: solid black 3px; */
             }
+
+            
         }
 
         
@@ -102,7 +107,6 @@ const HeroWrapper = styled.section`
         }
 
         #ipadmini-bg {
-            border: solid pink 3px;
             display: block;
             /* height: 60vh; */
         }
@@ -118,20 +122,15 @@ const HeroWrapper = styled.section`
 
         .quick-contact {
             top: 10%;
-            left: 57%;
-            #linkedin-icon {
-                height: 5em;
-                /* width: 3vw; */
-                margin-top: 3.3em;
-            }
+            left: 55%;
+           
         }
    
     }
 
     @media screen and (max-width: 768px) {
         .intro-text {
-            top: 42%;
-            border: solid black 3px;
+            top: minmax(30%, 42%);
             p {
                 width: 55%;
             }
@@ -142,13 +141,39 @@ const HeroWrapper = styled.section`
         .intro-text {
             top: 30%;
             padding-left: 1em;
-
-            h1 {
-                font-size: 44px;
-            }
+            padding-top: 1em;
 
             p {
                 font-size: 20px;
+                padding-top: 3.5em;
+            }
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        #ipadmini-bg {
+            display: none;
+        }
+
+        #iphoneX-bg {
+            display: block;
+        }
+        
+        .intro-text {
+            top: 15%;
+
+            p {
+                padding-top: 1.5em;
+            }
+        }
+
+        .quick-contact {
+            left: 10%;
+            top: 75%;
+            column-gap: 0;
+
+            .contact-icon, #linkedin-icon {
+                width: 15vw;
             }
         }
     }

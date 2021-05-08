@@ -88,12 +88,12 @@ export const Skills = () => {
 
 const SkillTabsWrapper = styled.section`
     height: 70vh;
-    width: 60vw;
+    width: 80vw;
     z-index: 1;
     position: absolute;
     transform: translateY(-20%);
     left: 50%;
-    margin-left: -30vw;
+    margin-left: -40vw;
     background: linear-gradient(45deg, orange, slateblue 60%);
     border-radius: 1rem 1rem 1rem 1rem;
     box-shadow: 0 5px 15px 10px #1B69DE;

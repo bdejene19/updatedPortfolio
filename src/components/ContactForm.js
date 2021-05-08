@@ -44,6 +44,12 @@ const ContactWrapper = styled.section`
         padding-top: 1em;
     }
 
+    @media screen and (max-width: 375px) {
+        h2 {
+            padding-left: 1em;
+        }
+    }
+
 `;
 
 const ContactSubmission = styled.form`
@@ -73,6 +79,12 @@ const ContactSubmission = styled.form`
             padding: 0.5em;
             font-size: 16px;
         }
+    }
+
+    @media screen and (max-width: 375px) {
+        width: 80vw;
+
+       
     }
 
 `;

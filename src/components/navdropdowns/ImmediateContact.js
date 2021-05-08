@@ -46,6 +46,7 @@ const ImmediateContactWrapper = styled.article`
     box-shadow: 0 5px 25px 10px #1B69DE;
     opacity: 0;
     visibility: hidden;  
+    overflow: hidden;
     z-index: -1;  
     h4 {
         opacity: 1;
@@ -64,6 +65,11 @@ const ImmediateContactWrapper = styled.article`
                 border: solid green 3px;
             } */
         }
+    }
+
+    @media screen and (max-width: 900px) {
+        width: 40%;
+
     }
 `;
 

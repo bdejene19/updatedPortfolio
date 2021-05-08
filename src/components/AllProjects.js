@@ -11,31 +11,6 @@ export default function AllProjects() {
 
     const slide = (direction) => {
         let projectsArray = document.querySelectorAll('.myProject');
-
-        // if (direction === 'right') {
-        //     projectsArray.forEach(project => {
-        //         project.style.cssText = `
-        //             transform: translateX(${slideValue - 100}%);
-        //             transition: 0.5s linear
-
-        //         `;
-        //     })
-        //     setSlideValue(slideValue - 100);
-
-        //     console.log('right btn clicked')
-        // } 
-        
-        // if (direction === 'left') {
-        //     projectsArray.forEach(project => {
-        //         project.style.cssText = `
-        //             transform: translateX(${slideValue + 100}%);
-        //             transition: 0.5s linear
-
-        //         `;
-        //     })
-        //     setSlideValue(slideValue + 100);
-        //     console.log('left button clicked')
-        // }
         if (direction === 'right') {
             if (slideValue === 0) {
                 document.getElementById('left-btn').style.visibility = 'visible';
@@ -76,7 +51,7 @@ export default function AllProjects() {
             <h2 id='currentProjects'>Projects</h2>
 
             <ProjectFlexContainer>
-                {projects.map(project => <SingleProject  title={project.name} projectImg={project.projectDisplay} about={project.description} newTools={project.newSkills} improvements={project.howToImprove} sourceCode={project.sourceCode} webpage={project.liveVersion}></SingleProject>)}
+                {projects.map(project => <SingleProject key={project.name} title={project.name} projectImg={project.projectDisplay} about={project.description} newTools={project.newSkills} improvements={project.howToImprove} sourceCode={project.sourceCode} webpage={project.liveVersion}></SingleProject>)}
 
             </ProjectFlexContainer>
 
@@ -112,7 +87,6 @@ const ProjectsWrapper = styled.section`
         align-items: flex-start;
         margin-top: -1em;
         z-index: 4;
-        border: solid black 3px;
         .slideChanger {
             font-size: 100px;
             cursor: pointer;
@@ -135,8 +109,18 @@ const ProjectsWrapper = styled.section`
         background-image: url('${process.env.PUBLIC_URL}/ipadmini-projectsBG.svg');
         background-position: center;
         padding-top: 6em;
-
     }
+
+    @media screen and (max-width: 375px) {
+        padding-top: 8em;
+        padding-left: 1em;
+        .btnsContainer {
+            padding-top: 0;
+            margin-top: -2em;
+        }
+        
+    }
+
     
 `;
 
@@ -144,8 +128,7 @@ const ProjectFlexContainer = styled.article`
     width: 100%;
     display: flex;
     height: fit-content;
-    /* padding-left: 3em; */
-        /* padding-top: 1em; */
+  
     .myProject {
         width: 100%;
     }

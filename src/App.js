@@ -14,12 +14,13 @@ function App() {
         <NavBar></NavBar>
         <Skills></Skills>
         <AboutMe></AboutMe>
+        {/* Immediate Contact is what is causing overflow on smaller screen sizes */}
         <ImmediateContact></ImmediateContact>
       </header>
 
       <main>
         <Hero></Hero>
-        <AllProjects></AllProjects>
+        <AllProjects key='1'></AllProjects>
       </main>
 
       <footer>

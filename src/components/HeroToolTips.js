@@ -9,7 +9,7 @@ export default function ContactToolTip() {
             <div className="tooltip">
                 <span className="tooltiptext">Github</span>
                     <a href="https://github.com/bdejene19">
-                        <img src='https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1620068739~hmac=28d4e67bd5da4d0b2d4f21e3812f2031' alt='github' className='contact-icon'></img>
+                        <img src='https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-square-512.png' alt='github' className='contact-icon'></img>
                     </a>
               
             </div>
@@ -72,8 +72,13 @@ const ImmediateContactWrapper = styled.div`
     
     #linkedin-icon {
         width: 8vw;
-        height: 14vh;
+        height: 12vh;
+        margin-top: 1em;
     }
 
+
+    @media screen and (max-width: 375px) {
+        column-gap: 1.5em;
+    }
 
 `;
