@@ -6,6 +6,7 @@ import ImmediateContact from './components/navdropdowns/ImmediateContact';
 import NavBar from './components/NavBar';
 import {Skills} from './components/navdropdowns/Skills';
 import AboutMe from './components/navdropdowns/AboutMe';
+import PhoneNavBar from './components/PhoneNavBar';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Skills></Skills>
         <AboutMe></AboutMe>
         {/* Immediate Contact is what is causing overflow on smaller screen sizes */}
+        <PhoneNavBar></PhoneNavBar>
         <ImmediateContact></ImmediateContact>
       </header>
 

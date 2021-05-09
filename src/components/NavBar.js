@@ -158,6 +158,10 @@ const NavWrapper = styled.nav`
             padding-left: 1.5em;
         }
     }
+
+    @media screen and (max-width: 600px) {
+       display: none;
+    }
 `;
 
 const NavButton = styled.button`
@@ -173,6 +177,12 @@ const NavButton = styled.button`
         height: 5vh;
         width: fit-content;
         font-size: 18px;
+    }
+
+    @media screen and (max-width: 600px) {
+        display: none;
+
+        
     }
   
 `;
