@@ -16,6 +16,8 @@ const PhoneNavWrapper = styled.nav`
     padding: 0.5em;
     display: none;
     color: white;
+    align-items: center;
+    height: 5vh;
 
     @media screen and (max-width: 600px) {
         display: block;

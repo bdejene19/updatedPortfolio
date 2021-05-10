@@ -116,7 +116,7 @@ const ProjectsWrapper = styled.section`
         padding-left: 1em;
         .btnsContainer {
             padding-top: 0;
-            margin-top: -2em;
+            margin-top: -4em;
         }
         
     }

@@ -65,9 +65,10 @@ const SingleProjectContainer = styled.article`
     }
    
     .btns-container {
-        display: flex;
+        display: grid;
         justify-items: center;
         column-gap: 3rem;
+        grid-template-columns: 10vw 10vw;
         padding-left: 5rem;
         .webpage {
             background-color: orange;
@@ -95,22 +96,25 @@ const SingleProjectContainer = styled.article`
 
         .btns-container {
             padding-top: 2em;
-            padding-left: 8em;
+            /* padding-left: 8em; */
             display: flex;
-            .btn {
-                justify-items: center;
-            }
+           
         }
 
     }
 
     @media screen and (max-width: 375px) {
-        height: 105vh;
+        
+        height:  90vh;
         padding-left: 0;
+         
+
 
         .btns-container {
             padding-top: 0;
-            padding-left: 3em;
+            padding-left: 0;
+            justify-content: center;
+            /* justify-content: center; */ 
         }
 
         .flex-content {
