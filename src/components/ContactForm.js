@@ -2,24 +2,46 @@ import React from 'react';
 import styled from 'styled-components';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
+import emailjs from 'emailjs-com';
 
 
 export default function ContactForm() {
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_a131xpb', 'template_mt5oo0i', e.target, 'user_71zio4iG3zN4oS8hSre19')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+        });
+
+        e.target.reset();
+        document.getElementById('comments-submission').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('comments-submission').style.display = 'none';
+
+
+        }, 50000)
+        
+    }
     return (
         <ContactWrapper>
             <h2>Like what you see? Get in touch!</h2>
-            <ContactSubmission method='POST' data-netlify='true'>
-                <TextField className='commentInput' label="Name"/>
-                <TextField className='commentInput' label="Contact Info"/>
+            <ContactSubmission onSubmit={sendEmail}>
+                <TextField className='commentInput' name='name' label="Name" required/>
+                <TextField className='commentInput' name='contactReason' label="Contact Reason"/>
 
                 <div className='comments-section'>
                     {/* remember, a label's for attribute is for it's input element id*/}
-                    <label for='comments'>Leave a comment or additional details:</label>
-                    <textarea name='comments' id='comments'></textarea>
+                    <label for='comments'>Leave a comment, additional details and/or contact info:</label>
+                    <textarea name='comments' id='comments' required></textarea>
                 </div>
                 
                 <Button type='submit' variant='contained' color='primary'>Submit</Button>
             </ContactSubmission>
+            <p id='comments-submission'>Thanks for reaching out, I'll get back to you as soon as I can!</p>
             
         </ContactWrapper>
         
@@ -42,6 +64,15 @@ const ContactWrapper = styled.section`
         padding-left: 2em;
         padding-bottom: 1em;
         padding-top: 1em;
+    }
+
+    p {
+        padding-top: 2em;
+        /* padding-left: 1em; */
+        text-align: center;
+        font-weight: 900;
+        display: none;
+        font-size: 24px;
     }
 
     @media screen and (max-width: 375px) {
