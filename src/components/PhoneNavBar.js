@@ -1,26 +1,38 @@
 import React from 'react';
 import {Menu} from '@material-ui/icons';
 import styled from 'styled-components';
+import InfoDrawer from './InfoDrawer';
 
 export default function PhoneNavBar() {
     return (
+        // <PhoneNavWrapper>
+        //     <MenuContentWrapper>
+        //         <Menu/>
+
+        //         hello
+        //     </MenuContentWrapper>
+        // </PhoneNavWrapper>
         <PhoneNavWrapper>
-            <Menu/>
+                    <InfoDrawer></InfoDrawer>
+
+
         </PhoneNavWrapper>
     )
 }
 
 const PhoneNavWrapper = styled.nav`
-    width: 100%;
-    background-color: #1B69DE;
-    padding: 0.5em;
-    display: none;
-    color: white;
-    align-items: center;
-    height: 5vh;
+    display: none; 
+    
 
     @media screen and (max-width: 600px) {
         display: block;
+        
     }
 
+`;
+
+const MenuContentWrapper = styled.div`
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
 `;
