@@ -111,9 +111,10 @@ const SingleProjectContainer = styled.article`
 
 
         .btns-container {
-            padding-top: 0;
+            padding-top: 3em;
             padding-left: 0;
             justify-content: center;
+            column-gap: 3em;
             /* justify-content: center; */ 
         }
 

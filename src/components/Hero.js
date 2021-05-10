@@ -169,7 +169,7 @@ const HeroWrapper = styled.section`
 
         .quick-contact {
             left: 10%;
-            top: 87.5%;
+            top: 90%;
             column-gap: 0;
 
             .contact-icon, #linkedin-icon {
