@@ -11,13 +11,16 @@ export default function SingleProject(props) {
         <SingleProjectContainer className='myProject'>
             <div className='flex-content'>
                 <div className='project-display'>
-                    <img src={process.env.PUBLIC_URL + '/'+ props.projectImg} alt={props.projectImg}></img>
+                    <img src={process.env.PUBLIC_URL + '/desktopContent/'+ props.projectImg + '.svg'} alt={props.projectImg}></img>
+
 
                 </div>
                 <ProjectContent>
-                    <h3>{props.title}</h3>
+                    <h3><u>{props.title}</u></h3>
                     <div className='project-display' id='smallScreen-display'>
-                        <img src={process.env.PUBLIC_URL + '/'+ props.projectImg} alt={props.projectImg}></img>
+                        {/* <img src={process.env.PUBLIC_URL + '/'+ props.projectImg} alt={props.projectImg}></img> */}
+                        <img src={process.env.PUBLIC_URL + '/iphoneContent/'+ props.projectImg + '-iphoneX.svg'} alt={props.projectImg}></img>
+
 
                     </div>
                     <p>
@@ -59,7 +62,7 @@ const SingleProjectContainer = styled.article`
             width: 100%;
 
             img {
-                width: 45vw;
+                width: 100%;
             }
         }
     }
@@ -98,6 +101,10 @@ const SingleProjectContainer = styled.article`
             padding-top: 2em;
             /* padding-left: 8em; */
             display: flex;
+            
+            .btn {
+                width: 30vw;
+            }
            
         }
 
@@ -120,6 +127,11 @@ const SingleProjectContainer = styled.article`
 
         .flex-content {
             padding-left: 0;
+
+            img {
+                padding-left: 1em;
+
+            }
 
         }
     }
@@ -168,8 +180,8 @@ const ProjectContent = styled.div`
 
         #smallScreen-display {
             display: block;
-            height: 25vh; 
-            
+            height: 33vh;
+            padding-top: 1em;            
         }
         #largeScreen-display {
             display: none;

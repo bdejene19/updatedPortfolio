@@ -10,9 +10,9 @@ export default function Hero() {
                 <h1>Who am I</h1>
                 <p>A self driven Software Engineer focusing on the JavaScript stacks like React for Front End Development. Also experienced in Python OOP data analytics. </p>
             </div>
-            <img src={process.env.PUBLIC_URL + '/herobackground.svg'} alt='hero background' className='bg-photo' id='desktop-bg'></img>
-            <img src={process.env.PUBLIC_URL + '/resized-ipadMini-bg.svg'} alt='hero background' className='bg-photo' id='ipadmini-bg'></img>
-            <img src={process.env.PUBLIC_URL + '/iphoneX-bg.svg'} alt='iphone BG background' className='bg-photo' id='iphoneX-bg'></img>
+            <img src={process.env.PUBLIC_URL + '/desktopContent/herobackground.svg'} alt='hero background' className='bg-photo' id='desktop-bg'></img>
+            <img src={process.env.PUBLIC_URL + '/tabletContent/resized-ipadMini-bg.svg'} alt='hero background' className='bg-photo' id='ipadmini-bg'></img>
+            <img src={process.env.PUBLIC_URL + '/iphoneContent/iphoneX-bg.svg'} alt='iphone BG background' className='bg-photo' id='iphoneX-bg'></img>
 
             <div className='quick-contact'>
 
@@ -157,6 +157,7 @@ const HeroWrapper = styled.section`
 
         #iphoneX-bg {
             display: block;
+            
         }
         
         .intro-text {

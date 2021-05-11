@@ -20,6 +20,7 @@ function App() {
         <ImmediateContact></ImmediateContact>
       </header>
 
+
       <main>
         <Hero></Hero>
         <AllProjects key='1'></AllProjects>

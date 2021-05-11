@@ -106,7 +106,7 @@ const ProjectsWrapper = styled.section`
     }
 
     @media screen and (max-width: 900px) {
-        background-image: url('${process.env.PUBLIC_URL}/ipadmini-projectsBG.svg');
+        background-image: url('${process.env.PUBLIC_URL}/tabletContent/ipadmini-projectsBG.svg');
         background-position: center;
         padding-top: 6em;
     }
@@ -114,9 +114,11 @@ const ProjectsWrapper = styled.section`
     @media screen and (max-width: 375px) {
         padding-top: 8em;
         padding-left: 1em;
+        /* background-image: url('${process.env.PUBLIC_URL}/tabletcontipadmini-projectsBG.svg'); */
+
         .btnsContainer {
             padding-top: 0;
-            margin-top: -4em;
+            margin-top: -2em;
         }
         
     }

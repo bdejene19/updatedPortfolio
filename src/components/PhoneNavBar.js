@@ -1,21 +1,11 @@
 import React from 'react';
-import {Menu} from '@material-ui/icons';
 import styled from 'styled-components';
 import InfoDrawer from './InfoDrawer';
 
 export default function PhoneNavBar() {
     return (
-        // <PhoneNavWrapper>
-        //     <MenuContentWrapper>
-        //         <Menu/>
-
-        //         hello
-        //     </MenuContentWrapper>
-        // </PhoneNavWrapper>
         <PhoneNavWrapper>
-                    <InfoDrawer></InfoDrawer>
-
-
+            <InfoDrawer></InfoDrawer>
         </PhoneNavWrapper>
     )
 }
@@ -31,8 +21,3 @@ const PhoneNavWrapper = styled.nav`
 
 `;
 
-const MenuContentWrapper = styled.div`
-    padding: 0.5em;
-    display: flex;
-    flex-direction: column;
-`;
