@@ -68,7 +68,7 @@ export default function AllProjects() {
 
 const ProjectsWrapper = styled.section`
     width: 100vw;
-    background-image: url('${process.env.PUBLIC_URL}/projectsBackground.svg');
+    background-image: url('${process.env.PUBLIC_URL}/desktopContent/projectsBackground.svg');
     background-size: cover;
     padding-top: 15em;
     overflow: hidden;
