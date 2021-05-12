@@ -35,8 +35,8 @@ const HeroWrapper = styled.section`
 
     .quick-contact {
         position: absolute;
-        right: 3em;
-        top: 40%;
+        margin-left: 75%;
+        margin-top: 20%;
         align-self: center;
         display: flex;
     }
@@ -44,7 +44,7 @@ const HeroWrapper = styled.section`
     .intro-text {
         z-index: 0;
         position: absolute;
-        padding-top: 5em;
+        margin-top: 5em;
         padding-left: 4.5em; 
 
         p {
@@ -60,7 +60,7 @@ const HeroWrapper = styled.section`
     }
 
     @media screen and (max-width: 1200px) {
-        .intro-text {
+            .intro-text {
             /* padding-top: 3em; */
             padding-left: 2.25em;
 
@@ -70,7 +70,7 @@ const HeroWrapper = styled.section`
             }
         }
         .quick-contact {
-            top: 20%;
+            margin-top: 20%;
             .contact-icon {
                 width: minmax(4vw, 7vw);
             }
@@ -84,7 +84,7 @@ const HeroWrapper = styled.section`
 
     @media screen and (max-width: 1024px) {
         .quick-contact {
-            top: 18%;
+            margin-top: 18%;
 
             .contact-icon {
                 height: 6em;
@@ -111,18 +111,19 @@ const HeroWrapper = styled.section`
             /* height: 60vh; */
         }
         .intro-text {
-            top: 37%;
+            margin-top: 55%;
             p {
                 padding-top: 2em;
-                width: 60%;
+                width: 55%;
             }
 
            
         }
 
         .quick-contact {
-            top: 10%;
-            left: 55%;
+            margin-top: 10%;
+            margin-left: 55%;
+            /* left: 0; */
            
         }
    
@@ -130,16 +131,18 @@ const HeroWrapper = styled.section`
 
     @media screen and (max-width: 768px) {
         .intro-text {
-            top: minmax(30%, 42%);
+            margin-top: 35%;
+
             p {
-                width: 55%;
+                width: 60%;
+                padding-top: 4em;
             }
         }
     }
 
     @media screen and (max-width: 600px) {
         .intro-text {
-            top: 30%;
+            /* margin-top: 0%; */
             padding-left: 1em;
             padding-top: 1em;
 
@@ -161,7 +164,7 @@ const HeroWrapper = styled.section`
         }
         
         .intro-text {
-            top: 15%;
+            margin-top: 15%;
 
             p {
                 padding-top: 1.5em;
@@ -169,8 +172,9 @@ const HeroWrapper = styled.section`
         }
 
         .quick-contact {
-            left: 10%;
-            top: 90%;
+            margin-left: 10%;
+            left:0;
+            margin-top: 190%;
             column-gap: 0;
 
             .contact-icon, #linkedin-icon {

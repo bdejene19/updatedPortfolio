@@ -101,6 +101,7 @@ const SingleProjectContainer = styled.article`
             padding-top: 2em;
             /* padding-left: 8em; */
             display: flex;
+            column-gap: 2em;
             
             .btn {
                 width: 30vw;
@@ -202,6 +203,10 @@ const ProjectContent = styled.div`
 
     @media screen and (max-width: 375px){
         padding-left: 0;
+
+        p {
+            margin-top: 1.5em;
+        }
         .list {
             font-size: 18px;
         }
