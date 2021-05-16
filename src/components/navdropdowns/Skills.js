@@ -79,7 +79,6 @@ export const Skills = () => {
                     <li>Exposure to ML libraries such as Tensorflow and Keras</li>
                 </ul>
             </SkillArticle>
-            {/* <SkillArticle>3</SkillArticle> */}
 
         </SkillTabsWrapper>
     )
@@ -92,8 +91,8 @@ const SkillTabsWrapper = styled.section`
     z-index: 1;
     position: absolute;
     transform: translateY(-20%);
-    left: 50%;
-    margin-left: -40vw;
+    /* margin-left: 50%; */
+    margin-left: 10vw;
     background: linear-gradient(45deg, orange, slateblue 60%);
     border-radius: 1rem 1rem 1rem 1rem;
     box-shadow: 0 5px 15px 10px #1B69DE;
@@ -107,6 +106,12 @@ const SkillTabsWrapper = styled.section`
 
     #backend-content {
         visibility: hidden;
+    }
+
+    @media screen and (max-width: 375px) {
+        width: 95%;
+        margin-left: 2.5%;
+        height: 85vh;
     }
 `;
 

@@ -88,7 +88,7 @@ const ContactSubmission = styled.form`
     padding: 2em;
     box-shadow: 5px 5px 0  skyblue;
     background-color: white;
-    width: 50vw;
+
     /* height: 65vh; */
     display: flex;
     flex-direction: column;
@@ -113,7 +113,7 @@ const ContactSubmission = styled.form`
     }
 
     @media screen and (max-width: 375px) {
-        width: 80vw;
+        width: 100%;
 
        
     }

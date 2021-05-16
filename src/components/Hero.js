@@ -174,7 +174,7 @@ const HeroWrapper = styled.section`
         .quick-contact {
             margin-left: 10%;
             left:0;
-            margin-top: 190%;
+            margin-top: 70vh;
             column-gap: 0;
 
             .contact-icon, #linkedin-icon {

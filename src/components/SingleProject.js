@@ -115,11 +115,12 @@ const SingleProjectContainer = styled.article`
         
         height:  90vh;
         padding-left: 0;
+        
          
 
 
         .btns-container {
-            padding-top: 3em;
+            margin-top: 5em;
             padding-left: 0;
             justify-content: center;
             column-gap: 3em;
