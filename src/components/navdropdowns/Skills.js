@@ -99,6 +99,7 @@ const SkillTabsWrapper = styled.section`
     visibility: hidden;
     opacity: 0;
     z-index: -1;
+    overflow-y: scroll;
     
     #frontend {
         border-bottom: solid 3px #00fff1;

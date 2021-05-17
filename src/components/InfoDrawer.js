@@ -27,111 +27,113 @@ const useStyles = makeStyles({
 
 export default function TemporaryDrawer() {
   const [skillsExpanded, setSkillsExpanded] = useState(false);
-    const [contactExpanded, setContactExpanded] = useState(false);
-    const [aboutMeExpanded, setAboutExpanded] = useState(false);
+  const [contactExpanded, setContactExpanded] = useState(false);
+  const [aboutMeExpanded, setAboutExpanded] = useState(false);
 
-    const handleSkillsExpansion = () => {
-        if (skillsExpanded) {
-            document.getElementById('skillsContentSection').style.cssText = `
-                visibility: hidden;
-                transform: translateY(-20%);
-                transition: 0.3s ease-in-out;
-                opacity: 0;
-                z-index: -1;
-            `;
-        } else {
-            if (aboutMeExpanded) {
-                handleAboutMeExpansion();
-            }
-            if (contactExpanded) {
-              handleContactExpansion();
-            }
-            document.getElementById('skillsContentSection').style.cssText = `
-                visibility: visible;
-                transform: translateY(15%);
-                transition: 0.3s ease-in-out;
-                opacity: 0.95;
-                z-index: 4;
+  const handleSkillsExpansion = () => {
+      if (skillsExpanded) {
+          document.getElementById('skillsContentSection').style.cssText = `
+              visibility: hidden;
+              transform: translateY(-20%);
+              transition: 0.3s ease-in-out;
+              opacity: 0;
+              z-index: -1;
+          `;
+      } else {
+          if (aboutMeExpanded) {
+              handleAboutMeExpansion();
+          }
+          if (contactExpanded) {
+            handleContactExpansion();
+          }
+          document.getElementById('skillsContentSection').style.cssText = `
+              visibility: visible;
+              transform: translateY(15%);
+              transition: 0.3s ease-in-out;
+              opacity: 0.95;
+              z-index: 4;
 
-            `;
-        }
+          `;
+      }
 
-        setSkillsExpanded(!skillsExpanded);
-    }
+      setSkillsExpanded(!skillsExpanded);
+  }
 
 
-    const handleContactExpansion = () => {
-       
-        if (contactExpanded) {
-            document.getElementById('immediateContact').style.cssText = `
-                visibility: hidden;
-                transform: translateY(-60%);
-                transition: 0.3s ease-in-out;
-                opacity: 0;
-                z-index: -1;
-            `;
-        } else {
-            if (skillsExpanded) {
+  const handleContactExpansion = () => {
+      
+      if (contactExpanded) {
+          document.getElementById('immediateContact').style.cssText = `
+              visibility: hidden;
+              transform: translateY(-60%);
+              transition: 0.3s ease-in-out;
+              opacity: 0;
+              z-index: -1;
+          `;
+      } else {
+          if (skillsExpanded) {
+            handleSkillsExpansion();
+          }
+          document.getElementById('immediateContact').style.cssText = `
+              visibility: visible;
+              transform: translateY(62.5%);
+              transition: 0.3s ease-in-out;
+              opacity: 0.95;
+              z-index: 4;
+          `;
+
+          
+      }
+
+      setContactExpanded(!contactExpanded);
+  }
+
+  const handleAboutMeExpansion = () => {
+      toggleDrawer('left', true)
+      if (aboutMeExpanded) {
+          document.getElementById('aboutMe-article').style.cssText = `
+              visibility: hidden;
+              width: 0;
+              height: 0;
+              margin-left: 0;
+              transition: 0.5s ease-in-out;
+              opacity: 0;
+              z-index: -1;
+          `;
+
+          document.getElementById('hero-section').style.filter = 'none';
+      } else {
+          if (skillsExpanded) {
               handleSkillsExpansion();
-            }
-            document.getElementById('immediateContact').style.cssText = `
-                visibility: visible;
-                transform: translateY(62.5%);
-                transition: 0.3s ease-in-out;
-                opacity: 0.95;
-                z-index: 4;
-            `;
+          }
 
-            
-        }
+          if (contactExpanded) {
+              handleContactExpansion();
+          }
+          
+          document.getElementById('aboutMe-article').style.cssText = `
+              visibility: visible;
+              width: 95%;
+              margin-left: -47.5%;
+              height: fit-content;
+              transition: 0.3s ease-in-out;
+              opacity: 0.8;
+              z-index: 4;
 
-        setContactExpanded(!contactExpanded);
-    }
+          `;
+          document.getElementById('hero-section').style.cssText = `
+              filter: blur(10px);
+              -webkit-filter: blur(10px);
+              transition: 0.3s ease-in-out;            
+          `;
+          
+      }
+      setAboutExpanded(!aboutMeExpanded);  
+  }
 
-    const handleAboutMeExpansion = () => {
-        toggleDrawer('left', true)
-        if (aboutMeExpanded) {
-            document.getElementById('aboutMe-article').style.cssText = `
-                visibility: hidden;
-                width: 0;
-                height: 0;
-                margin-left: 0;
-                transition: 0.5s ease-in-out;
-                opacity: 0;
-                z-index: -1;
-            `;
-
-            document.getElementById('hero-section').style.filter = 'none';
-        } else {
-            if (skillsExpanded) {
-                handleSkillsExpansion();
-            }
-
-            if (contactExpanded) {
-                handleContactExpansion();
-            }
-            
-            document.getElementById('aboutMe-article').style.cssText = `
-                visibility: visible;
-                width: 95%;
-                margin-left: -47.5%;
-                height: fit-content;
-                transition: 0.3s ease-in-out;
-                opacity: 0.8;
-                z-index: 4;
-
-            `;
-            document.getElementById('hero-section').style.cssText = `
-                filter: blur(10px);
-                -webkit-filter: blur(10px);
-                transition: 0.3s ease-in-out;            
-            `;
-            
-        }
-        setAboutExpanded(!aboutMeExpanded); 
-        
-        
-    }
+  const downloadResume = () => {
+    window.location.href =  process.env.PUBLIC_URL + '/BemnetDejeneDevResume_wordType.docx';
+  }
 
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -175,13 +177,13 @@ export default function TemporaryDrawer() {
                 attachedFunction = handleAboutMeExpansion;
             } else if (index === 1) {
               icon = <WorkIcon></WorkIcon>
-              attachedFunction = window.location.href ='#projects';
+              // attachedFunction = window.location.href ='#projects';
             } else if (index === 2) {
               icon =  <StarIcon></StarIcon>
               attachedFunction = handleSkillsExpansion;
             } else if (index === 3) {
               icon = <GetAppIcon></GetAppIcon>
-              attachedFunction = () =>  window.location.href = process.env.PUBLIC_URL + '/BemnetDejeneDevResume_wordType.pdf';
+              attachedFunction = downloadResume;
             }else {
               icon = <ContactSupportIcon></ContactSupportIcon>
               attachedFunction = handleContactExpansion;

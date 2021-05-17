@@ -8,6 +8,7 @@ This app is an application/evaluation of my progress, presenting my most recent 
 
 ## Technologies Used
 - React
+- Email.js
 - JS
 - Figma
 - Semantic HTML

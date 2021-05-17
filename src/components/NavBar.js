@@ -99,6 +99,10 @@ export default function NavBar() {
         
         
     }
+
+    const downloadResume = () => {
+        window.location.href =  process.env.PUBLIC_URL + '/BemnetDejeneDevResume_wordType.docx';
+    }
     return (
         <NavWrapper>
             <NavButton navBtnColor='#00FFF1' className='name' id='nav-aboutMe' onClick={() => handleAboutMeExpansion()}>Bemnet Dejene</NavButton>
@@ -110,7 +114,7 @@ export default function NavBar() {
             <NavButton className='sub-nav' id='nav-skills' onClick={() => handleSkillsExpansion()}>Skills</NavButton>
             
             {/* <a target='_blank' href="/BemnetDejeneDevResume_pdfType.pdf"> */}
-                <NavButton className='sub-nav' onClick={() => window.location.href = process.env.PUBLIC_URL + '/BemnetDejeneDevResume_wordType.pdf'} id='nav-resume' >Resume</NavButton>
+                <NavButton className='sub-nav' onClick={() => downloadResume()} id='nav-resume' >Resume</NavButton>
             {/* </a> */}
             <NavButton className='sub-nav' id='nav-contactNow' onClick={() => handleContactExpansion()}>Contact Info</NavButton>
         </NavWrapper>

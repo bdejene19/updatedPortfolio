@@ -123,8 +123,12 @@ const SingleProjectContainer = styled.article`
             margin-top: 5em;
             padding-left: 0;
             justify-content: center;
-            column-gap: 3em;
             /* justify-content: center; */ 
+        }
+
+        .btn {
+            padding-left: 1em;
+            padding-right: 1em;
         }
 
         .flex-content {
