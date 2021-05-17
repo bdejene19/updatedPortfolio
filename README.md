@@ -17,12 +17,31 @@ This app is an application/evaluation of my progress, presenting my most recent 
 
 ## What I Learned
 - Figma app prototyping/wireframing
-- exporting of figma SVGs/element ids for possible animations
+- UI Hierarchy, Color Theory and Design
+- Exporting of figma SVGs/element ids for possible animations
 - Better techniques for responsive web design of absolutely positioned elements 
 
 ## How I would Improve 
 - Create actual custom SVG animations to make a more enhanced user experience
 - Use meta tags/React Helmets for better SEO to expand my reach globally
 
-## Wire Frame Photos (in progress)
-<img src='public/desktopContent/expconDisplay.svg' alt='expcon display'>
+## Wire Frame Photos
+
+### Desktop and Tablet Skeleton Wireframe (mobile is resized tablet)
+#### Desktop Version
+<img src='public/macWireframe.jpg' alt='desktop wireframe'>
+
+#### Tablet Version
+<img src='public/tabletView.png' alt='tablet view'>
+
+### Hero Backgrounds for different screen sizes
+<img src='public/iphoneContent/iphoneX-bg.svg' alt='mobile view' height='75' width='75'>   <img src='public/tabletContent/resized-ipadMini-bg.svg' alt='ipad view' height="100" width="100">   <img src='public/desktopContent/herobackground.svg' alt='desktop display' height='150' width='150'>
+
+
+### Projects Section Arrow Background
+<img src='public/desktopContent/projectsBackground.svg' alt='projects background' height='200' width='100'>
+
+
+### Project Cards with Blue vs White Background Card
+#### Note: white background may not be able to be seen without activating darkmode on Github
+<img src='public/iphoneContent/expconDisplay-iphoneX.svg' alt='blue background' width='150' height='150'> Versus <img src='dmLandingDisplay-iphoneX.svg' alt='white background'>
