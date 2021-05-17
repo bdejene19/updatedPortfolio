@@ -25,4 +25,4 @@ This app is an application/evaluation of my progress, presenting my most recent 
 - Use meta tags/React Helmets for better SEO to expand my reach globally
 
 ## Wire Frame Photos (in progress)
-<img src='desktopContent/expconDisplay.svg' alt='expcon display'>
+<img src='/desktopContent/expconDisplay.svg' alt='expcon display'>
