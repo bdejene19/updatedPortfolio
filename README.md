@@ -35,7 +35,7 @@ This app is an application/evaluation of my progress, presenting my most recent 
 <img src='public/tabletView.png' alt='tablet view'>
 
 ### Hero Backgrounds for different screen sizes
-<img src='public/iphoneContent/iphoneX-bg.svg' alt='mobile view' height='75' width='75'>   <img src='public/tabletContent/resized-ipadMini-bg.svg' alt='ipad view' height="100" width="100">   <img src='public/desktopContent/herobackground.svg' alt='desktop display' height='150' width='150'>
+<img src='public/iphoneContent/iphoneX-bg.svg' alt='mobile view' height='200' width='200'>   <img src='public/tabletContent/resized-ipadMini-bg.svg' alt='ipad view' height="250" width="200">   <img src='public/desktopContent/herobackground.svg' alt='desktop display' height='300' width='250'>
 
 
 ### Projects Section Arrow Background
