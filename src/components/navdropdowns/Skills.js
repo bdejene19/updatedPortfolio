@@ -125,12 +125,12 @@ const SkillArticle = styled.article`
 
     ul {
         padding: 0.5em;
-        font-size: 20px;
+        font-size: 28px;
         font-weight: 700;
 
         li {
             font-weight: 300;
-            font-size: 18px;
+            font-size: 24px;
         }
     }
 `;

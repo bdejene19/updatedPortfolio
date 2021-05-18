@@ -34,8 +34,9 @@ const AboutMeWrapper = styled.article`
     z-index: 4;
 
     p {
-        font-size: 18px;
+        font-size: 24px;
         font-weight: 600;
+        opacity: 1;
     }
 
     @media screen and (max-width: 900px) {
