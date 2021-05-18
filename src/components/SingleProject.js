@@ -87,6 +87,9 @@ const SingleProjectContainer = styled.article`
     
     @media screen and (max-width: 1024px) {
         height: fit-content;
+        .btns-container {
+            padding-left: 0;
+        }
     }
 
     @media screen and (max-width: 900px) {
@@ -95,7 +98,7 @@ const SingleProjectContainer = styled.article`
 
     @media screen and (max-width: 768px) {
         .btns-container {
-            padding-left: 0;
+            padding-left: 2rem;
         }
 
 
