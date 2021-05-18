@@ -131,11 +131,12 @@ const HeroWrapper = styled.section`
 
     @media screen and (max-width: 768px) {
         .intro-text {
-            margin-top: 35%;
+            margin-top: 50%;
+            
 
             p {
                 width: 60%;
-                padding-top: 4em;
+                padding-top: 2em;
             }
         }
     }

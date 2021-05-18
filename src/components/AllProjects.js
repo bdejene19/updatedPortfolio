@@ -118,7 +118,7 @@ const ProjectsWrapper = styled.section`
 
         .btnsContainer {
             padding-top: 0;
-            margin-top: 1.5em;
+            margin-top: 4em;
         }
         
     }
@@ -129,8 +129,9 @@ const ProjectsWrapper = styled.section`
 const ProjectFlexContainer = styled.article`
     width: 100%;
     display: flex;
+    padding-left: 0;
     height: fit-content;
-  
+    
     .myProject {
         width: 100%;
     }

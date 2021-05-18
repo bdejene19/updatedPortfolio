@@ -48,10 +48,11 @@ export default function SingleProject(props) {
 
 
 const SingleProjectContainer = styled.article`
-    padding-top: 2em;
+    /* padding-top: 2em; */
     width: 100%;
     height: 70vh;
     padding-left: 5em;
+    
 
     
     .flex-content {
@@ -83,7 +84,7 @@ const SingleProjectContainer = styled.article`
             width: 8vw;
         }
     }
-
+    
     @media screen and (max-width: 1024px) {
         height: fit-content;
     }
@@ -92,7 +93,16 @@ const SingleProjectContainer = styled.article`
         padding-left: 1.5em;
     }
 
+    @media screen and (max-width: 768px) {
+        .btns-container {
+            padding-left: 0;
+        }
+
+
+    }
+
     @media screen and (max-width: 600px) {
+        padding-left: 0;
         .project-display {
             display: none;
         }
@@ -120,8 +130,9 @@ const SingleProjectContainer = styled.article`
 
 
         .btns-container {
-            margin-top: 5em;
+            margin-top: 7em;
             padding-left: 0;
+            margin-left: 0;
             justify-content: center;
             /* justify-content: center; */ 
         }
@@ -176,7 +187,12 @@ const ProjectContent = styled.div`
         }
     }
 
+    @media screen and (max-width: 768px) {
+        width: 100vw;
+    }
+
     @media screen and (max-width: 600px) {
+        padding-left: 0;
         .flex-content {
             display: grid;
             grid-template-columns: 1fr;
@@ -197,12 +213,12 @@ const ProjectContent = styled.div`
             font-size:20px;
 
             li {
-                font-size: 16px;
+                font-size: 20px;
             }
         }
 
         p {
-            font-size: 20px;
+            font-size: 28px;
         }
     }
 
@@ -210,10 +226,10 @@ const ProjectContent = styled.div`
         padding-left: 0;
 
         p {
-            margin-top: 1.5em;
+            font-size: 22px;
         }
         .list {
-            font-size: 18px;
+            font-size: 20px;
         }
 
        
