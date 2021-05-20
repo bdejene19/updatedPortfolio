@@ -8,7 +8,7 @@ export default function ContactToolTip() {
         <ImmediateContactWrapper>
             <div className="tooltip">
                 <span className="tooltiptext">Github</span>
-                    <a href="https://github.com/bdejene19">
+                    <a href="https://github.com/bdejene19" target='_blank'>
                         <img src='https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-square-512.png' alt='github' className='contact-icon'></img>
                     </a>
               
@@ -16,7 +16,7 @@ export default function ContactToolTip() {
 
             <div className="tooltip">
                 <span className="tooltiptext">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/bemnet-dejene-8663521b1/">
+                <a href="https://www.linkedin.com/in/bemnet-dejene-8663521b1/" target='_blank'>
                     <img src="https://cdn2.iconfinder.com/data/icons/on-point-social-media/141/LinkedIn-512.png" alt="LinkedIn" className="contact-icon" id='linkedin-icon'></img>
                 </a>
      
