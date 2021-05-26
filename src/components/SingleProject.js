@@ -74,6 +74,7 @@ const SingleProjectContainer = styled.article`
         column-gap: 3rem;
         grid-template-columns: 10vw 10vw;
         padding-left: 5rem;
+        margin-top: 1.5em;
         .webpage {
             background-color: orange;
             color: white;
