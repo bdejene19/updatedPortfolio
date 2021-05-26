@@ -112,10 +112,7 @@ export default function NavBar() {
 
 
             <NavButton className='sub-nav' id='nav-skills' onClick={() => handleSkillsExpansion()}>Skills</NavButton>
-            
-            {/* <a target='_blank' href="/BemnetDejeneDevResume_pdfType.pdf"> */}
-                <NavButton className='sub-nav' onClick={() => downloadResume()} id='nav-resume' >Resume</NavButton>
-            {/* </a> */}
+            <NavButton className='sub-nav' onClick={() => downloadResume()} id='nav-resume' >Resume</NavButton>
             <NavButton className='sub-nav' id='nav-contactNow' onClick={() => handleContactExpansion()}>Contact Info</NavButton>
         </NavWrapper>
     )
@@ -123,7 +120,7 @@ export default function NavBar() {
 
 
 const NavWrapper = styled.nav`
-    width: 100vw;
+    width: 100%;
     height: 8vh;
     background-color: #1B69DE;
     display: grid;
@@ -144,10 +141,6 @@ const NavWrapper = styled.nav`
     #nav-resume {
         justify-self: right;
     }
-  
-    /* .sub-nav {
-        width: max-content;
-    } */
 
     @media screen and (max-width: 1200px) {
         width: 100%;

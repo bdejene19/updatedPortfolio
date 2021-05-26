@@ -27,7 +27,7 @@ const HeroWrapper = styled.section`
     height: fit-content;
     display: grid;
     grid-template-columns: 3fr 1fr;
-
+    overflow: hidden;
     .bg-photo {
         width: 100vw;
         z-index: -1;

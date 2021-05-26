@@ -15,13 +15,13 @@ function App() {
         <NavBar></NavBar>
         <Skills></Skills>
         <AboutMe></AboutMe>
-        {/* Immediate Contact is what is causing overflow on smaller screen sizes */}
         <PhoneNavBar></PhoneNavBar>
         <ImmediateContact></ImmediateContact>
       </header>
 
 
       <main>
+        {/* hero section causing overflow for some reason */}
         <Hero></Hero>
         <AllProjects key='1'></AllProjects>
       </main>
