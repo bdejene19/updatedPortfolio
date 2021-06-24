@@ -52,7 +52,6 @@ const SingleProjectContainer = styled.article`
     width: 100%;
     height: 70vh;
     padding-left: 5em;
-    
 
     
     .flex-content {
@@ -134,7 +133,7 @@ const SingleProjectContainer = styled.article`
 
 
         .btns-container {
-            margin-top: 7em;
+            margin-top: 8.5em;
             padding-left: 0;
             margin-left: 0;
             justify-content: center;
@@ -163,12 +162,13 @@ const SingleProjectContainer = styled.article`
 
 const ProjectContent = styled.div`
     width: max-content;
-    margin-right: 2em;
+    margin-right: 3.5em;
     justify-content: center;
     height: fit-content;
     padding-left: 2em;
+    
     #smallScreen-display {
-            display: none;
+        display: none;
     }
     
 
@@ -176,6 +176,8 @@ const ProjectContent = styled.div`
         padding: 0em;
         margin: 0;
         font-size: 24px;
+        /* max-width: 85%; */
+        
     }
     
     .list {
