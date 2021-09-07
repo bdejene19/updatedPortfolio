@@ -23,9 +23,6 @@ export default function ImmediateContact() {
                <h4>Github:</h4>
                <a href='https://github.com/bdejene19'>https://github.com/bdejene19</a>
            </PersonalContact>
-
-
-
        </ImmediateContactWrapper>
     )
 }
@@ -47,7 +44,8 @@ const ImmediateContactWrapper = styled.article`
     opacity: 0;
     visibility: hidden;  
     overflow: hidden;
-    z-index: -1;  
+    z-index: -1;
+    font-size: 1rem;
     h4 {
         opacity: 1;
         border-bottom: solid skyblue 1px;
@@ -69,7 +67,6 @@ const ImmediateContactWrapper = styled.article`
 
     @media screen and (max-width: 900px) {
         width: 40%;
-
     }
 `;
 

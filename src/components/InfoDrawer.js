@@ -160,7 +160,9 @@ export default function TemporaryDrawer() {
       <List>
       <div>
         <div style={{display: 'grid', gridTemplateColumns: '1fr', justifyItems: 'center'}}>
-          <Avatar src="https://www.iconfinder.com/data/icons/diversity-avatars-volume-01-v2/64/man-beard-glasses-african-512.png" alt="avatar" ></Avatar>
+          <br></br>
+          <Avatar src="https://cdn.pixabay.com/photo/2017/12/18/03/01/black-avatar-3025348_1280.png" alt="avatar" ></Avatar>
+          <br></br>
 
           Phone: 519-619-3930<br></br>
           Email: bdejene19@gmail.com<br></br>

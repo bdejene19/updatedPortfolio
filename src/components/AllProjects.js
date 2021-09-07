@@ -70,7 +70,7 @@ const ProjectsWrapper = styled.section`
     background-image: url('${process.env.PUBLIC_URL}/desktopContent/projectsBackground.svg');
     background-size: cover;
     padding-top: 15em;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding-bottom: 2em;
 
     padding-left: 4.5em;
@@ -127,12 +127,14 @@ const ProjectsWrapper = styled.section`
 
 const ProjectFlexContainer = styled.article`
     width: 100%;
-    display: flex;
-    padding-left: 0;
     height: fit-content;
+    column-gap: 0em;
+    display: flex;
+
+
     
     .myProject {
-        width: 100%;
+        flex: 1 1 100%;
     }
 
 `;

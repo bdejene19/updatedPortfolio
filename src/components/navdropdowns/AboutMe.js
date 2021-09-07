@@ -39,8 +39,10 @@ const AboutMeWrapper = styled.article`
         opacity: 1;
     }
 
-    @media screen and (max-width: 900px) {
-        
+    @media screen and (max-width: 400px) {
+        p {
+            font-size: 1.25rem;
+        }
     }
 `;
 
