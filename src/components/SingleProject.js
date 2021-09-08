@@ -100,8 +100,21 @@ const SingleProjectContainer = styled.article`
     }
 
     @media screen and (max-width: 768px) {
+        margin-left: 0;
+        padding-left: 0;
+        
         .btns-container {
-            padding-left: 2rem;
+            justify-content: center;
+        }
+        .project-display {
+            display: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .flex-content {
+            width: 100vw;
+            
         }
 
 
@@ -109,9 +122,7 @@ const SingleProjectContainer = styled.article`
 
     @media screen and (max-width: 600px) {
         padding-left: 0;
-        .project-display {
-            display: none;
-        }
+        
 
         .btns-container {
             padding-top: 2em;
@@ -189,12 +200,15 @@ const ProjectContent = styled.div`
         }
     }
 
+    
     @media screen and (max-width: 768px) {
-        width: 100vw;
-    }
+        margin-left: 0em;
+        margin-right: 0.5em;
 
-    @media screen and (max-width: 600px) {
-        padding-left: 0;
+        .project-display {
+            display: none;
+        }
+
         .flex-content {
             display: grid;
             grid-template-columns: 1fr;
@@ -226,6 +240,7 @@ const ProjectContent = styled.div`
 
     @media screen and (max-width: 375px){
         padding-left: 0;
+        padding-right: 1.25em;
 
         p {
             font-size: 22px;

@@ -70,7 +70,7 @@ const ProjectsWrapper = styled.section`
     background-image: url('${process.env.PUBLIC_URL}/desktopContent/projectsBackground.svg');
     background-size: cover;
     padding-top: 15em;
-    /* overflow: hidden; */
+    overflow: hidden;
     padding-bottom: 2em;
 
     padding-left: 4.5em;
