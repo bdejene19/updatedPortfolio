@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import VideoModal from './VideoModal';
 
 
 
@@ -12,16 +14,11 @@ export default function SingleProject(props) {
             <div className='flex-content'>
                 <div className='project-display'>
                     <img src={process.env.PUBLIC_URL + '/desktopContent/'+ props.projectImg + '.svg'} alt={props.projectImg}></img>
-
-
                 </div>
                 <ProjectContent>
                     <h3><u>{props.title}</u></h3>
                     <div id='smallScreen-display'>
-                        {/* <img src={process.env.PUBLIC_URL + '/'+ props.projectImg} alt={props.projectImg}></img> */}
                         <img src={process.env.PUBLIC_URL + '/iphoneContent/'+ props.projectImg + '.svg'} alt={props.projectImg}></img>
-
-
                     </div>
                     <p>
                         {props.about}
@@ -38,10 +35,15 @@ export default function SingleProject(props) {
                 </ProjectContent>
 
             </div>
+            {/* <VideoModal modalName={props.title} git={props.sourceCode} web={props.webpage}></VideoModal> */}
+
             <div className='btns-container'>
+                {/* <PlayCircleOutlineIcon className='openModal' ></PlayCircleOutlineIcon> */}
+
                 <Button variant='contained' color='primary' className='btn' target='_blank' href={props.sourceCode}>SOURCE</Button>
                 <Button variant='contained' className='btn webpage' target='_blank' href={props.webpage}>WEBPAGE</Button>
             </div>
+
         </SingleProjectContainer>
     )
 }
@@ -86,6 +88,24 @@ const SingleProjectContainer = styled.article`
             font-weight: 600;
             width: 8vw;
         }
+    }
+
+    .openModal {
+        color: black;
+        background-color: white;
+        border-radius: 100%;
+        font-size: 2.5rem;
+        margin-top: -1em;
+        cursor: pointer;
+        grid-column: 1/3;
+        justify-self: center;
+
+        &:hover {
+            background-color: black;
+            transition: 0.1s linear;
+            color: white;
+        }
+
     }
     
     @media screen and (max-width: 1024px) {

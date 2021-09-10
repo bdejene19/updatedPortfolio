@@ -44,7 +44,7 @@ const HeroWrapper = styled.section`
     .intro-text {
         z-index: 0;
         position: absolute;
-        margin-top: 5em;
+        margin-top: 4em;
         padding-left: 4.5em; 
 
         p {
@@ -111,7 +111,7 @@ const HeroWrapper = styled.section`
             /* height: 60vh; */
         }
         .intro-text {
-            margin-top: 55%;
+            margin-top: 27em;
             p {
                 padding-top: 2em;
                 width: 55%;

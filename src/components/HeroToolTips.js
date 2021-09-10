@@ -72,8 +72,8 @@ const ImmediateContactWrapper = styled.div`
     
     #linkedin-icon {
         width: 8vw;
-        height: 12vh;
-        margin-top: 1em;
+        height: 12.5vh;
+        margin-top: 0.7em;
     }
 
 
