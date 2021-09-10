@@ -17,9 +17,9 @@ export default function SingleProject(props) {
                 </div>
                 <ProjectContent>
                     <h3><u>{props.title}</u></h3>
-                    <div className='project-display' id='smallScreen-display'>
+                    <div id='smallScreen-display'>
                         {/* <img src={process.env.PUBLIC_URL + '/'+ props.projectImg} alt={props.projectImg}></img> */}
-                        <img src={process.env.PUBLIC_URL + '/iphoneContent/'+ props.projectImg + '-iphoneX.svg'} alt={props.projectImg}></img>
+                        <img src={process.env.PUBLIC_URL + '/iphoneContent/'+ props.projectImg + '.svg'} alt={props.projectImg}></img>
 
 
                     </div>
@@ -110,6 +110,7 @@ const SingleProjectContainer = styled.article`
             display: none;
             padding-left: 0;
             margin-left: 0;
+
         }
 
         .flex-content {
@@ -217,14 +218,22 @@ const ProjectContent = styled.div`
         }
 
         #smallScreen-display {
-            display: block;
+            display: flex;
             height: 33vh;
-            padding-top: 1em;            
+            padding-top: 1em;   
+
+            img {
+                flex: 1 1 100%;   
+                margin-left: -1em;             
+            }
+
+             
         }
         #largeScreen-display {
             display: none;
         }
 
+      
         .list {
             font-size:20px;
 
