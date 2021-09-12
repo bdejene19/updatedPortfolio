@@ -47,7 +47,7 @@ export default function AllProjects() {
     
     useEffect(() => {})
     return (
-        <ProjectsWrapper>
+        <ProjectsWrapper id='mainProjects'>
             <h2 id='currentProjects'>Projects</h2>
 
             <ProjectFlexContainer>
@@ -72,8 +72,9 @@ const ProjectsWrapper = styled.section`
     padding-top: 15em;
     overflow: hidden;
     padding-bottom: 2em;
-
     padding-left: 4.5em;
+    z-index: 0;
+    overflow-y: hidden;
 
     h2 {
         height: fit-content;

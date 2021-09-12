@@ -9,6 +9,46 @@ import VideoModal from './VideoModal';
 export default function SingleProject(props) {
     let newTools = props.newTools;
     let improvements = props.improvements;
+
+    const openModalHL = (elementID) => {
+        document.getElementById(elementID).style.filter = 'none';
+
+        if (elementID === 'EXP|CON Concert') { 
+            document.getElementById(elementID).style.cssText = `
+                visibility: visible;
+                margin-top: -37.5%;
+                transition: 0.6s ease-in-out;
+            `
+        }
+
+        if (elementID === 'Digital Marketing Landing Page') { 
+            document.getElementById(elementID).style.cssText = `
+                visibility: visible;
+                margin-top: -37.5%;
+                transition: 0.6s ease-in-out;
+            `
+        }
+
+
+        if (elementID === 'Student Test Scores') { 
+            document.getElementById(elementID).style.cssText = `
+                visibility: visible;
+                margin-top: -37.5%;
+                transition: 0.6s ease-in-out;
+            `
+        }
+
+        if (elementID === "Arsenal Fan's Soccer Page") { 
+            document.getElementById(elementID).style.cssText = `
+                visibility: visible;
+                margin-top: -37.5%;
+                transition: 0.6s ease-in-out;
+            `
+        }
+
+
+
+    }
     return (
         <SingleProjectContainer className='myProject'>
             <div className='flex-content'>
@@ -35,10 +75,10 @@ export default function SingleProject(props) {
                 </ProjectContent>
 
             </div>
-            {/* <VideoModal modalName={props.title} git={props.sourceCode} web={props.webpage}></VideoModal> */}
+                <VideoModal modalName={props.title} vidID={props.title} git={props.sourceCode} web={props.webpage} vidName={props.projectImg} captionContent={props.about}></VideoModal>
 
             <div className='btns-container'>
-                {/* <PlayCircleOutlineIcon className='openModal' ></PlayCircleOutlineIcon> */}
+                <PlayCircleOutlineIcon className='openModal' style={{zIndex: 0}} onClick={() => openModalHL(props.title)}></PlayCircleOutlineIcon>
 
                 <Button variant='contained' color='primary' className='btn' target='_blank' href={props.sourceCode}>SOURCE</Button>
                 <Button variant='contained' className='btn webpage' target='_blank' href={props.webpage}>WEBPAGE</Button>
@@ -53,8 +93,11 @@ const SingleProjectContainer = styled.article`
     /* padding-top: 2em; */
     width: 100%;
     height: 70vh;
+    z-index:0;
     /* padding-left: 5em; */
+    overflow: none;
 
+   
     
     .flex-content {
         display: flex;
