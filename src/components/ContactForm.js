@@ -96,7 +96,7 @@ const ContactSubmission = styled.form`
     border-radius: 3px 3px 3px 3px;
 
     
-
+    
     .comments-section {
         width: 100%;
        
@@ -112,6 +112,9 @@ const ContactSubmission = styled.form`
         }
     }
 
+    @media screen and (min-width: 2100px) {
+        width: 70vw;
+    }
     @media screen and (max-width: 375px) {
         width: 100%;
 

@@ -70,11 +70,11 @@ const ProjectsWrapper = styled.section`
     background-image: url('${process.env.PUBLIC_URL}/desktopContent/projectsBackground.svg');
     background-size: cover;
     padding-top: 15em;
-    overflow: hidden;
     padding-bottom: 2em;
     padding-left: 4.5em;
     z-index: 0;
-    overflow-y: hidden;
+    overflow: hidden;
+
 
     h2 {
         height: fit-content;
@@ -85,7 +85,7 @@ const ProjectsWrapper = styled.section`
         justify-items: center;
         grid-template-columns: auto auto;
         align-items: flex-start;
-        margin-top: -1em;
+        margin-top: 2em;
         z-index: 4;
         .slideChanger {
             font-size: 100px;
@@ -99,9 +99,12 @@ const ProjectsWrapper = styled.section`
         }
     }
 
+    @media screen and (min-width: 2100px) {
+        padding-top: 25em;
+    }
 
     @media screen and (max-width: 1200px) {
-        padding-top: 12em;
+        /* padding-top: 12em; */
         padding-left: 2.5em;
     }
 

@@ -4,11 +4,12 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import WebIcon from '@material-ui/icons/Web';
 import EmailIcon from '@material-ui/icons/Email';
 
+
 export default function VideoModal(props) {
     return (
-        <VideoWrapper id={props.vidID} className='videos'>
+        <VideoWrapper id={props.vidID}>
             <div className='videoContainer'>
-                <video src={process.env.PUBLIC_URL +'/' + props.vidName + '.mp4'} alt={props.vidName} controls autoPlay></video>
+                <video src={process.env.PUBLIC_URL +'/' + props.vidName + '.mp4'} alt={props.vidName} id={props.vidName+ '.mp4'} controls loop></video>
             </div>
 
 
@@ -25,11 +26,11 @@ export default function VideoModal(props) {
                 </div>
 
                 <div class='icon'>
-                    <a href={props.web}>
+                    <a href={props.web} target='_blank' rel='noreferrer'>
                         <WebIcon></WebIcon>
                     </a>
 
-                    <a href={props.web}>
+                    <a href={props.web} target='_blank' rel='noreferrer'>
                         <p>WEBPAGE</p>
                     </a>
                 </div>
@@ -61,16 +62,17 @@ const VideoWrapper = styled.div`
     margin-left: 20vw; 
     margin-top: -20%; 
     height: fit-content;
-    /* background-color: white; */
+    opacity: 0;
     display: flex;
     flex-direction: column;
-    z-index: 2;
+    z-index: 3;
     border-radius: 3%;
     background-color: white;
-    position: absolute;
+    position: fixed;
     box-shadow: 0 7px 7px 0 black;
     visibility: hidden;
     transition: 0.6s linear;
+    /* display: none; */
 
     
     .videoContainer {
@@ -102,6 +104,7 @@ const VideoWrapper = styled.div`
 
     .quick-access {
         display: flex;
+        width: 100%;
         background-color: #1B69DE;
         padding-top: 1em;
 
@@ -113,6 +116,7 @@ const VideoWrapper = styled.div`
             flex-direction: column;
             align-items: center;
             border-right: solid black 3px;
+            border-bottom: none;
         }
         
         .icon:last-of-type {
@@ -132,6 +136,7 @@ const VideoWrapper = styled.div`
     }
 
     .content {
+        margin-top:0;
         background-color: #1B69DE;
         padding: 0.75em;
         border-radius: 0 0 10px 10px;
@@ -140,5 +145,5 @@ const VideoWrapper = styled.div`
             font-size: 1.35rem;
         }
 
-    }
+    }  
 `;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
@@ -10,45 +10,52 @@ export default function SingleProject(props) {
     let newTools = props.newTools;
     let improvements = props.improvements;
 
-    const openModalHL = (elementID) => {
-        document.getElementById(elementID).style.filter = 'none';
-
-        if (elementID === 'EXP|CON Concert') { 
-            document.getElementById(elementID).style.cssText = `
-                visibility: visible;
-                margin-top: -37.5%;
-                transition: 0.6s ease-in-out;
-            `
+    const [openModal, setModalBool] = useState(false);
+    
+    const openModalHL = (elementID, videoID) => {
+        if (openModal) {
+            if (window.screen.width >= 1200) {
+                document.getElementById(elementID).style.cssText = `
+                    margin-top: 0%;
+                    transition: 0.5s ease-in-out;
+                    opacity: 0;
+                    display; none;
+                    position: absolute;
+                `;
+            }
+            document.getElementById(videoID + '.mp4').pause();
         }
 
-        if (elementID === 'Digital Marketing Landing Page') { 
-            document.getElementById(elementID).style.cssText = `
-                visibility: visible;
-                margin-top: -37.5%;
-                transition: 0.6s ease-in-out;
-            `
+        else {
+            if (window.screen.width >= 1200) {
+                document.getElementById(elementID).style.cssText = `
+                    visibility: visible;
+                    margin-top: -37.5%;
+                    transition: 0.5s ease-in-out;
+                    opacity: 1;
+                    position: absolute;
+                    display: block;
+                `;
+            } else {
+                document.getElementById(videoID + '.mp4').style.visibility = 'visible';
+                document.getElementById(videoID + '.mp4').requestFullscreen();
+                
+            }
+
+            document.getElementById(videoID + '.mp4').play();
+
+
+
         }
-
-
-        if (elementID === 'Student Test Scores') { 
-            document.getElementById(elementID).style.cssText = `
-                visibility: visible;
-                margin-top: -37.5%;
-                transition: 0.6s ease-in-out;
-            `
-        }
-
-        if (elementID === "Arsenal Fan's Soccer Page") { 
-            document.getElementById(elementID).style.cssText = `
-                visibility: visible;
-                margin-top: -37.5%;
-                transition: 0.6s ease-in-out;
-            `
-        }
-
-
-
+        setModalBool(!openModal);
     }
+
+   
+
+    // useEffect(() => {
+        
+    //     // openModalHL(props.title);
+    // }, [openModal])
     return (
         <SingleProjectContainer className='myProject'>
             <div className='flex-content'>
@@ -75,10 +82,10 @@ export default function SingleProject(props) {
                 </ProjectContent>
 
             </div>
-                <VideoModal modalName={props.title} vidID={props.title} git={props.sourceCode} web={props.webpage} vidName={props.projectImg} captionContent={props.about}></VideoModal>
-
+                <VideoModal modalName={props.title} vidID={props.title} git={props.sourceCode} web={props.webpage} vidName={props.projectImg} captionContent={props.about} onMo></VideoModal>
+            
             <div className='btns-container'>
-                <PlayCircleOutlineIcon className='openModal' style={{zIndex: 0}} onClick={() => openModalHL(props.title)}></PlayCircleOutlineIcon>
+                <PlayCircleOutlineIcon className='openModal' style={{zIndex: 0}} onClick={() => openModalHL(props.title, props.projectImg)}></PlayCircleOutlineIcon>
 
                 <Button variant='contained' color='primary' className='btn' target='_blank' href={props.sourceCode}>SOURCE</Button>
                 <Button variant='contained' className='btn webpage' target='_blank' href={props.webpage}>WEBPAGE</Button>
@@ -92,7 +99,7 @@ export default function SingleProject(props) {
 const SingleProjectContainer = styled.article`
     /* padding-top: 2em; */
     width: 100%;
-    height: 70vh;
+    height: 75vh;
     z-index:0;
     /* padding-left: 5em; */
     overflow: none;
@@ -138,7 +145,7 @@ const SingleProjectContainer = styled.article`
         background-color: white;
         border-radius: 100%;
         font-size: 2.5rem;
-        margin-top: -1em;
+        margin-bottom: 0.5em;
         cursor: pointer;
         grid-column: 1/3;
         justify-self: center;
@@ -150,12 +157,10 @@ const SingleProjectContainer = styled.article`
         }
 
     }
+   
     
     @media screen and (max-width: 1024px) {
         height: fit-content;
-        .btns-container {
-            padding-left: 0;
-        }
     }
 
     @media screen and (max-width: 900px) {
@@ -165,8 +170,14 @@ const SingleProjectContainer = styled.article`
     @media screen and (max-width: 768px) {
         margin-left: 0;
         padding-left: 0;
+
+        .openModal {
+            margin-bottom: 1em;
+        }
         
         .btns-container {
+            padding-left: 0;
+            padding-top: 4em;
             justify-content: center;
         }
         .project-display {
@@ -264,7 +275,11 @@ const ProjectContent = styled.div`
         }
     }
 
-    
+    @media screen and (min-width: 2100px) {
+        padding-left: 10em;
+
+    }
+
     @media screen and (max-width: 768px) {
         margin-left: 0em;
         margin-right: 0.5em;
