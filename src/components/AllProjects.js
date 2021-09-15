@@ -100,7 +100,7 @@ const ProjectsWrapper = styled.section`
     }
 
     @media screen and (min-width: 2100px) {
-        padding-top: 25em;
+        padding-top: 25em
     }
 
     @media screen and (max-width: 1200px) {
@@ -116,12 +116,10 @@ const ProjectsWrapper = styled.section`
 
     @media screen and (max-width: 375px) {
         padding-top: 8em;
-        padding-left: 1em;
-        /* background-image: url('${process.env.PUBLIC_URL}/tabletcontipadmini-projectsBG.svg'); */
+        padding-left: 0.75em;
 
         .btnsContainer {
             padding-top: 0;
-            margin-top: 4em;
         }
         
     }

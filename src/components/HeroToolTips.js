@@ -79,6 +79,7 @@ const ImmediateContactWrapper = styled.div`
 
     @media screen and (max-width: 375px) {
         column-gap: 1.5em;
+        margin-top: -5em;
     }
 
 `;

@@ -159,8 +159,9 @@ const SingleProjectContainer = styled.article`
     }
    
     
-    @media screen and (max-width: 1024px) {
-        height: fit-content;
+    @media screen and (min-width: 1024px) {
+        height: 80vh;
+
     }
 
     @media screen and (max-width: 900px) {
@@ -214,11 +215,13 @@ const SingleProjectContainer = styled.article`
     }
 
     @media screen and (max-width: 375px) {
-        height:  90vh;
-        padding-left: 0;
+        height:  110vh;
+        /* padding-left: 1em; */
         
         .btns-container {
-            margin-top: 8.5em;
+            display: grid;
+            grid-template-columns: 1fr 1fr;;
+            margin-top: 0em;
             padding-left: 0;
             margin-left: 0;
             justify-content: center;
@@ -238,6 +241,7 @@ const SingleProjectContainer = styled.article`
 
             }
         }
+        
     }
 `;
 
