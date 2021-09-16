@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import WebIcon from '@material-ui/icons/Web';
 import EmailIcon from '@material-ui/icons/Email';
-import Button from '@material-ui/core'
+import {Button} from '@material-ui/core'
 
 
 export default function VideoModal(props) {
@@ -17,7 +17,7 @@ export default function VideoModal(props) {
             <div className='quick-access'>
                 <div className='icon'>
                     <a href={props.git} target='_blank' rel='noreferrer'>
-                            <GitHubIcon className='shortIcon'></GitHubIcon>
+                        <GitHubIcon className='shortIcon'></GitHubIcon>
                     </a>
 
 
@@ -49,10 +49,9 @@ export default function VideoModal(props) {
             <div className='content'>
                 <h3>{props.modalName}</h3>
                 <p >{props.captionContent}</p>
+                <Button color='primary' variant='contained' className='closeModal'>CLOSE</Button>
 
             </div>
-            
-
         </VideoWrapper>
     )
 }
@@ -145,9 +144,22 @@ const VideoWrapper = styled.div`
         background-color: #1B69DE;
         padding: 0.75em;
         border-radius: 0 0 10px 10px;
-
+        display: flex;
+        flex-direction: column;
         p {
             font-size: 1.35rem;
+            padding-bottom: 1em;
+        }
+
+        .closeModal {
+            color: black;
+        }
+
+        .closeModal:hover {
+            background-color: orange;
+            color: white;
+            font-weight: 900;
+            transition: 0.2s ease-in-out;
         }
 
     }  
