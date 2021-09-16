@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import WebIcon from '@material-ui/icons/Web';
 import EmailIcon from '@material-ui/icons/Email';
+import Button from '@material-ui/core'
 
 
 export default function VideoModal(props) {
     return (
         <VideoWrapper id={props.vidID}>
             <div className='videoContainer'>
-                <video src={process.env.PUBLIC_URL +'/' + props.vidName + '.mp4'} alt={props.vidName} id={props.vidName+ '.mp4'} controls loop></video>
+                <video src={process.env.PUBLIC_URL +'/' + props.vidName + '.mp4'} alt={props.vidName} id={props.vidName+ '.mp4'} controls muted loop></video>
             </div>
 
 
@@ -84,7 +85,11 @@ const VideoWrapper = styled.div`
             border-radius: 3% 3% 0 0;
             width: 100%;
             height: 100%;
+            
         }
+
+        video::-webkit-media-controls-volume-slider {  display: none; }
+
     }
 
     a {

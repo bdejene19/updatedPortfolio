@@ -121,7 +121,7 @@ const HeroWrapper = styled.section`
         }
 
         .quick-contact {
-            margin-top: 10%;
+            margin-top: 20%;
             margin-left: 55%;
             /* left: 0; */
            
@@ -138,6 +138,11 @@ const HeroWrapper = styled.section`
                 width: 60%;
                 padding-top: 2em;
             }
+        }
+
+        .quick-contact {
+            /*  */
+            top: 0;
         }
     }
 
@@ -175,7 +180,7 @@ const HeroWrapper = styled.section`
         .quick-contact {
             margin-left: 10%;
             left:0;
-            margin-top: 70vh;
+            top: 75%;
             column-gap: 0;
 
             .contact-icon, #linkedin-icon {
