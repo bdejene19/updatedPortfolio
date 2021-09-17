@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import styled from 'styled-components';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import WebIcon from '@material-ui/icons/Web';
@@ -7,10 +7,64 @@ import {Button} from '@material-ui/core'
 
 
 export default function VideoModal(props) {
+    const [isClosed, setModalClosed] = useState(props.modalState);
+    const isMountedRef = useRef(true) // custom hook to determine if page is on initial render or not
+    
+    const isModalClosed = (elementID, videoID) => {
+        if (isClosed) {
+            if (window.screen.width >= 1200) {
+                document.getElementById(elementID).style.cssText = `
+                    margin-top: 0%;
+                    transition: 0.5s ease-in-out;
+                    opacity: 0;
+                    display; none;
+                    position: absolute;
+                `;
+            }
+            document.getElementById(videoID + '.mp4').pause();
+        }
+
+        else {
+            if (window.screen.width >= 1200) {
+                document.getElementById(elementID).style.cssText = `
+                    visibility: visible;
+                    margin-top: -37.5%;
+                    transition: 0.5s ease-in-out;
+                    opacity: 1;
+                    position: absolute;
+                    display: block;
+                `;
+            } else {
+                document.getElementById(videoID + '.mp4').style.visibility = 'visible';
+                document.getElementById(videoID + '.mp4').requestFullscreen();
+                
+            }
+
+            document.getElementById(videoID + '.mp4').play();
+
+
+
+        }
+        setModalClosed(!isClosed)
+
+    }
+
+
+    useEffect(() => {
+        if (isMountedRef.current === true) {
+            isMountedRef.current = false;
+        } else {
+            isModalClosed(props.vidID, props.vidName);
+        }
+        
+
+
+    },[props.modalState])
+
     return (
         <VideoWrapper id={props.vidID}>
             <div className='videoContainer'>
-                <video src={process.env.PUBLIC_URL +'/' + props.vidName + '.mp4'} alt={props.vidName} id={props.vidName+ '.mp4'} controls muted loop></video>
+                <video src={process.env.PUBLIC_URL +'/' + props.vidName + '.mp4'} alt={props.vidName} id={props.vidName+ '.mp4'} type='video/mp4' controls muted loop></video>
             </div>
 
 
@@ -49,8 +103,7 @@ export default function VideoModal(props) {
             <div className='content'>
                 <h3>{props.modalName}</h3>
                 <p >{props.captionContent}</p>
-                <Button color='primary' variant='contained' className='closeModal'>CLOSE</Button>
-
+                <Button color='primary' variant='contained' className='closeModal' onClick={() => isModalClosed(props.vidID, props.vidName)}>CLOSE</Button>
             </div>
         </VideoWrapper>
     )

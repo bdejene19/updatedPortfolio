@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
@@ -11,51 +11,11 @@ export default function SingleProject(props) {
     let improvements = props.improvements;
 
     const [openModal, setModalBool] = useState(false);
-    
-    const openModalHL = (elementID, videoID) => {
-        if (openModal) {
-            if (window.screen.width >= 1200) {
-                document.getElementById(elementID).style.cssText = `
-                    margin-top: 0%;
-                    transition: 0.5s ease-in-out;
-                    opacity: 0;
-                    display; none;
-                    position: absolute;
-                `;
-            }
-            document.getElementById(videoID + '.mp4').pause();
-        }
+    const [modal, setModal] = useState(<VideoModal modalName={props.title} vidID={props.title} modalState={openModal} git={props.sourceCode} web={props.webpage} vidName={props.projectImg} captionContent={props.about}></VideoModal>);
 
-        else {
-            if (window.screen.width >= 1200) {
-                document.getElementById(elementID).style.cssText = `
-                    visibility: visible;
-                    margin-top: -37.5%;
-                    transition: 0.5s ease-in-out;
-                    opacity: 1;
-                    position: absolute;
-                    display: block;
-                `;
-            } else {
-                document.getElementById(videoID + '.mp4').style.visibility = 'visible';
-                document.getElementById(videoID + '.mp4').requestFullscreen();
-                
-            }
-
-            document.getElementById(videoID + '.mp4').play();
-
-
-
-        }
-        setModalBool(!openModal);
-    }
-
-   
-
-    // useEffect(() => {
-        
-    //     // openModalHL(props.title);
-    // }, [openModal])
+    useEffect(() => {
+        setModal(<VideoModal modalName={props.title} vidID={props.title} git={props.sourceCode} modalState={openModal} web={props.webpage} vidName={props.projectImg} captionContent={props.about}></VideoModal>)
+    }, [openModal])
     return (
         <SingleProjectContainer className='myProject'>
             <div className='flex-content'>
@@ -82,10 +42,11 @@ export default function SingleProject(props) {
                 </ProjectContent>
 
             </div>
-                <VideoModal modalName={props.title} vidID={props.title} git={props.sourceCode} web={props.webpage} vidName={props.projectImg} captionContent={props.about} onMo></VideoModal>
+            {modal}
+                {/* <VideoModal modalName={props.title} vidID={props.title} git={props.sourceCode} web={props.webpage} vidName={props.projectImg} captionContent={props.about}></VideoModal> */}
             
             <div className='btns-container'>
-                <PlayCircleOutlineIcon className='openModal' style={{zIndex: 0}} onClick={() => openModalHL(props.title, props.projectImg)}></PlayCircleOutlineIcon>
+                <PlayCircleOutlineIcon className='openModal' onClick={() => setModalBool(!openModal)}></PlayCircleOutlineIcon>
 
                 <Button variant='contained' color='primary' className='btn' target='_blank' href={props.sourceCode}>SOURCE</Button>
                 <Button variant='contained' className='btn webpage' target='_blank' href={props.webpage}>WEBPAGE</Button>
@@ -142,6 +103,7 @@ const SingleProjectContainer = styled.article`
 
     .openModal {
         color: black;
+        z-index: 0;
         background-color: white;
         border-radius: 100%;
         font-size: 2.5rem;
@@ -198,13 +160,14 @@ const SingleProjectContainer = styled.article`
 
     @media screen and (max-width: 600px) {
         padding-left: 0;
-        
-
+        height: fit-content;
         .btns-container {
-            padding-top: 2em;
-            /* padding-left: 8em; */
-            display: flex;
-            column-gap: 2em;
+            display: grid;
+            grid-template-columns: 1fr 1fr;;
+            margin-top: 0em;
+            padding-left: 0;
+            margin-left: 0;
+            justify-content: center;
             
             .btn {
                 width: 30vw;
