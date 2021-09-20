@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import VideoModal from './VideoModal';
+import {logos} from '../codeLogos';
 
 
 
@@ -27,9 +28,25 @@ export default function SingleProject(props) {
                     <div id='smallScreen-display'>
                         <img src={process.env.PUBLIC_URL + '/iphoneContent/'+ props.projectImg + '.svg'} alt={props.projectImg}></img>
                     </div>
+
                     <p>
                         {props.about}
                     </p>
+
+                    <div className='tech'>
+                        <h4>Technology Used</h4>
+
+                        <div className='logos'>
+                            {props.title === 'EXP|CON Concert' ? logos.map(logo => <img src={logo} alt='logo'></img>) : logos.map((logo, index) => {
+                                if (index < 4) {
+                                    return <img src={logo} alt='logo'></img>
+                                } else {
+                                    return null;
+                                }
+                            })}
+                        </div>
+                    </div>
+
                     <ul className='list'>
                         <i>What I learned:</i>
                         {newTools.map((tool, index) =>  <li key={index}>{tool}</li>)}
@@ -60,7 +77,7 @@ export default function SingleProject(props) {
 const SingleProjectContainer = styled.article`
     /* padding-top: 2em; */
     width: 100%;
-    height: 75vh;
+    height: fit-content;
     z-index:0;
     /* padding-left: 5em; */
     overflow: none;
@@ -82,6 +99,7 @@ const SingleProjectContainer = styled.article`
             }
         }
     }
+    
    
     .btns-container {
         display: grid;
@@ -119,10 +137,44 @@ const SingleProjectContainer = styled.article`
         }
 
     }
+
+
+    .tech {
+        text-align: center;
+        padding-top: 1em;
+
+        h4 {
+            font-size: 1.5rem;
+            color: white;
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+            margin-bottom: 1em;
+            border-top: solid white 1px;
+            border-bottom: solid white 1px;
+
+        }
+
+
+        .logos {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 2em;
+            justify-content: center;
+        
+            img {
+                flex: 1 1 8vw;
+                width: 10vw;
+                height: 10vh;
+            }
+            
+        }
+
+    }
+    
    
     
     @media screen and (min-width: 1024px) {
-        height: 80vh;
+        height: fit-content;
 
     }
 
@@ -134,7 +186,18 @@ const SingleProjectContainer = styled.article`
         margin-left: 0;
         padding-left: 0;
 
-        .openModal {
+
+
+        h4 {
+            padding-top: 10em
+        }
+        .logos {
+            
+        }
+
+        .openModal:hover {
+            background-color: unset;
+            color: white;
             margin-bottom: 1em;
         }
         
@@ -178,7 +241,7 @@ const SingleProjectContainer = styled.article`
     }
 
     @media screen and (max-width: 375px) {
-        height:  110vh;
+        height:  fit-content;
         /* padding-left: 1em; */
         
         .btns-container {
