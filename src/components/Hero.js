@@ -36,7 +36,6 @@ const HeroWrapper = styled.section`
     .quick-contact {
         position: absolute;
         margin-left: 75%;
-        margin-top: 20%;
         align-self: center;
         display: flex;
     }
@@ -102,6 +101,9 @@ const HeroWrapper = styled.section`
 
 
     @media screen and (max-width: 900px) {
+        .quick-contact{
+            top: 0;
+        }
         #desktop-bg {
             display: none;
         }
