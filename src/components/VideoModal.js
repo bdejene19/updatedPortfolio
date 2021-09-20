@@ -18,6 +18,7 @@ export default function VideoModal(props) {
                     transition: 0.5s ease-in-out;
                     opacity: 0;
                     display; none;
+                    z-index: 1;
                     position: absolute;
                 `;
             }
@@ -33,10 +34,18 @@ export default function VideoModal(props) {
                     opacity: 1;
                     position: absolute;
                     display: block;
+                    z-index: 3;
                 `;
             } else {
                 document.getElementById(videoID + '.mp4').style.visibility = 'visible';
-                document.getElementById(videoID + '.mp4').requestFullscreen();
+                let fullScreenElement = document.getElementById(videoID + '.mp4').requestFullscreen;
+                if (fullScreenElement) {
+                    document.getElementById(videoID + '.mp4').requestFullscreen();  
+                } else if (fullScreenElement.mozRequestFullScreen) {
+                    document.getElementById(videoID + '.mp4').mozRequestFullScreen();
+                } else if (fullScreenElement.webkitRequestFullScreen) {
+                    document.getElementById(videoID + '.mp4').webkitRequestFullScreen();
+                }
                 
             }
 
