@@ -46,7 +46,7 @@ const ImmediateContactWrapper = styled.div`
         position: absolute;
         z-index: 1;
         top: 120%;
-        left: 50%;
+        left: 58%;
         margin-left: -60px;
     }
     .tooltip .tooltiptext::after {
