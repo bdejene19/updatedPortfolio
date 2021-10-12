@@ -107,7 +107,7 @@ const SingleProjectContainer = styled.article`
         column-gap: 3rem;
         grid-template-columns: 10vw 10vw;
         padding-left: 8em;
-        margin-top: 1.5em;
+        margin-top: -10em;
         .webpage {
             background-color: orange;
             color: white;
@@ -203,6 +203,7 @@ const SingleProjectContainer = styled.article`
         
         .btns-container {
             padding-left: 0;
+            margin-top: 0;
             padding-top: 4em;
             justify-content: center;
         }

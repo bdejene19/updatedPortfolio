@@ -29,7 +29,7 @@ export default function VideoModal(props) {
             if (window.screen.width >= 1200) {
                 document.getElementById(elementID).style.cssText = `
                     visibility: visible;
-                    margin-top: -37.5%;
+                    margin-top: -50%;
                     transition: 0.5s ease-in-out;
                     opacity: 1;
                     position: absolute;
@@ -225,4 +225,5 @@ const VideoWrapper = styled.div`
         }
 
     }  
+    
 `;

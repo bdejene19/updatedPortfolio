@@ -10,7 +10,7 @@ export default function Hero() {
                 <h1>Who am I</h1>
                 <p>A self driven Software Engineer focusing on the JavaScript stacks like React for Front End Development. Also experienced in Python OOP data analytics. </p>
             </div>
-            <img src={process.env.PUBLIC_URL + '/desktopContent/herobackground.svg'} alt='hero background' className='bg-photo' id='desktop-bg'></img>
+            {/* <img src={process.env.PUBLIC_URL + '/desktopContent/herobackground.svg'} alt='hero background' className='bg-photo' id='desktop-bg'></img> */}
             <img src={process.env.PUBLIC_URL + '/tabletContent/resized-ipadMini-bg.svg'} alt='hero background' className='bg-photo' id='ipadmini-bg'></img>
             <img src={process.env.PUBLIC_URL + '/iphoneContent/iphoneX-bg.svg'} alt='iphone BG background' className='bg-photo' id='iphoneX-bg'></img>
 
@@ -24,12 +24,18 @@ export default function Hero() {
 
 
 const HeroWrapper = styled.section`
-    height: fit-content;
+    height: 85vh;
     display: grid;
     grid-template-columns: 3fr 1fr;
     overflow: hidden;
+    background-image: url('${process.env.PUBLIC_URL}/desktopContent/herobackground.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
     .bg-photo {
         width: 100vw;
+        /* min-height: 100vh; */
         z-index: -1;
     }
 
@@ -73,11 +79,6 @@ const HeroWrapper = styled.section`
             .contact-icon {
                 width: minmax(4vw, 7vw);
             }
-
-            #linkedin-icon {
-                height: 9vh;
-                margin-top: 1.3em;
-            }
         }
     }
 
@@ -101,6 +102,8 @@ const HeroWrapper = styled.section`
 
 
     @media screen and (max-width: 900px) {
+        height: fit-content;
+        background-image: none;
         .quick-contact{
             top: 0;
         }
