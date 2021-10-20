@@ -74,7 +74,7 @@ const ProjectsWrapper = styled.section`
     padding-left: 4.5em;
     z-index: 0;
     overflow: hidden;
-    height: fit-content;
+    height: 170vh;
 
 
     h2 {
@@ -106,6 +106,7 @@ const ProjectsWrapper = styled.section`
 
     @media screen and (max-width: 1200px) {
         /* padding-top: 12em; */
+        height: 120vh;
         padding-left: 2.5em;
     }
 
@@ -113,6 +114,10 @@ const ProjectsWrapper = styled.section`
         background-image: url('${process.env.PUBLIC_URL}/tabletContent/ipadmini-projectsBG.svg');
         background-position: center;
         padding-top: 6em;
+    }
+
+    @media screen and (max-width: 768px) {
+        height: 140vh;
     }
 
     @media screen and (max-width: 375px) {

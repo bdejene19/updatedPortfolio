@@ -76,7 +76,7 @@ export default function SingleProject(props) {
 
 const SingleProjectContainer = styled.article`
     width: 100%;
-    height: fit-content;
+    height: 100vh;
     z-index: 0;
     overflow: none;
 
@@ -167,9 +167,9 @@ const SingleProjectContainer = styled.article`
         }
 
     }
-    
-    @media screen and (min-width: 1024px) {
-        height: fit-content;
+
+    @media screen and (max-width: 1024px) {
+        height: 80vh;
 
     }
 
@@ -180,6 +180,7 @@ const SingleProjectContainer = styled.article`
     @media screen and (max-width: 768px) {
         margin-left: 0;
         padding-left: 0;
+        height: 110vh;
 
 
 
@@ -219,7 +220,7 @@ const SingleProjectContainer = styled.article`
 
     @media screen and (max-width: 600px) {
         padding-left: 0;
-        height: fit-content;
+        height: 150vh;
         .btns-container {
             display: grid;
             grid-template-columns: 1fr 1fr;;
@@ -257,7 +258,6 @@ const SingleProjectContainer = styled.article`
         .flex-content {
             padding-left: 0;
             height: 120vh;
-            border: solid green 3px;
 
 
             img {
@@ -270,12 +270,11 @@ const SingleProjectContainer = styled.article`
 `;
 
 const ProjectContent = styled.div`
-    /* margin-right: 3.5em; */
     width: 100%;
     margin-left: 5em;
     padding-right: 5em;
     justify-content: center;
-    height: fit-content;
+    height: 97.5vh;
     
     #smallScreen-display {
         display: none;
