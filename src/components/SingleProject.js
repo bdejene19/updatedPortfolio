@@ -242,8 +242,8 @@ const SingleProjectContainer = styled.article`
 
     }
 
-    @media screen and (max-width: 375px) {
-        height: 130vh;
+    @media screen and (max-width: 450px) {
+        height: 110vh;
         .btns-container {
             display: grid;
             grid-template-columns: 1fr 1fr;;
@@ -261,6 +261,7 @@ const SingleProjectContainer = styled.article`
 
         .flex-content {
             padding-left: 0;
+            height: 100%;
 
             img {
                 padding-left: 1em;
