@@ -115,24 +115,14 @@ const ProjectsWrapper = styled.section`
         padding-top: 6em;
     }
 
-    @media screen and (max-width: 768px) {
-        /* padding-top: 12em; */
-        padding-left: 1em;
-        
-        .btnsContainer {
-            padding: 0;
-        }
-    }
-
-    @media screen and (max-width: 475px) {
+    @media screen and (max-width: 375px) {
         padding-top: 8em;
         padding-left: 0.75em;
-        height: 175vh;
+        height: 170vh;
+        
 
         .btnsContainer {
-            padding-top: 0;
-            margin-left: 0;
-            margin-left: -1em;
+            padding-top: 5em;
         }
         
     }
@@ -150,10 +140,6 @@ const ProjectFlexContainer = styled.article`
     
     .myProject {
         flex: 1 1 100%;
-    }
-
-    @media screen and (max-width: 475px) {
-        height: 130vh;
     }
 
 `;

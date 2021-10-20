@@ -77,7 +77,7 @@ export default function SingleProject(props) {
 const SingleProjectContainer = styled.article`
     width: 100%;
     height: fit-content;
-    z-index:0;
+    z-index: 0;
     overflow: none;
 
     .flex-content {
@@ -237,12 +237,13 @@ const SingleProjectContainer = styled.article`
     }
 
     @media screen and (max-width: 450px) {
-        height: 110vh;
+        height: 120vh;
         .btns-container {
             display: grid;
             grid-template-columns: 1fr 1fr;;
             margin-top: -1em;
             padding-left: 0;
+            padding-top: 0;
             margin-left: -1em;
             justify-content: center;
             /* justify-content: center; */ 
