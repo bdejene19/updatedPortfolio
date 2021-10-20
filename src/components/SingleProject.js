@@ -75,16 +75,11 @@ export default function SingleProject(props) {
 
 
 const SingleProjectContainer = styled.article`
-    /* padding-top: 2em; */
     width: 100%;
     height: fit-content;
     z-index:0;
-    /* padding-left: 5em; */
     overflow: none;
 
-
-   
-    
     .flex-content {
         display: flex;
         height: 85%;
@@ -155,7 +150,6 @@ const SingleProjectContainer = styled.article`
 
         }
 
-
         .logos {
             display: flex;
             flex-wrap: wrap;
@@ -173,8 +167,6 @@ const SingleProjectContainer = styled.article`
         }
 
     }
-    
-   
     
     @media screen and (min-width: 1024px) {
         height: fit-content;
