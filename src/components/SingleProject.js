@@ -256,7 +256,9 @@ const SingleProjectContainer = styled.article`
 
         .flex-content {
             padding-left: 0;
-            height: 100%;
+            height: 120vh;
+            border: solid green 3px;
+
 
             img {
                 padding-left: 1em;
@@ -362,12 +364,7 @@ const ProjectContent = styled.div`
             font-size: 20px;
         }
 
-        #smallScreen-display {
-            img {
-                min-height: 30vh;
-
-            }
-         
+        .flex-content {
         }
        
     }
