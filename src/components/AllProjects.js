@@ -142,6 +142,10 @@ const ProjectFlexContainer = styled.article`
         flex: 1 1 100%;
     }
 
+    @media screen and (max-width: 450px) {
+        height: 120vh;
+    }
+
 `;
 
 
