@@ -73,7 +73,6 @@ const ProjectsWrapper = styled.section`
     padding-left: 4.5em;
     z-index: 0;
     overflow: hidden;
-    height: 170vh;
     width: 100vw;
 
 

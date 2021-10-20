@@ -76,8 +76,8 @@ export default function SingleProject(props) {
 
 const SingleProjectContainer = styled.article`
     width: 100%;
-    height: 100vh;
-    z-index: 0;
+    height: fit-content;
+    z-index:0;
     overflow: none;
 
     .flex-content {
@@ -167,9 +167,9 @@ const SingleProjectContainer = styled.article`
         }
 
     }
-
-    @media screen and (max-width: 1024px) {
-        height: 80vh;
+    
+    @media screen and (min-width: 1024px) {
+        height: fit-content;
 
     }
 
@@ -180,7 +180,6 @@ const SingleProjectContainer = styled.article`
     @media screen and (max-width: 768px) {
         margin-left: 0;
         padding-left: 0;
-        height: 110vh;
 
 
 
@@ -220,7 +219,7 @@ const SingleProjectContainer = styled.article`
 
     @media screen and (max-width: 600px) {
         padding-left: 0;
-        height: 150vh;
+        height: fit-content;
         .btns-container {
             display: grid;
             grid-template-columns: 1fr 1fr;;
@@ -238,13 +237,12 @@ const SingleProjectContainer = styled.article`
     }
 
     @media screen and (max-width: 450px) {
-        height: 120vh;
+        height: 110vh;
         .btns-container {
             display: grid;
             grid-template-columns: 1fr 1fr;;
             margin-top: -1em;
             padding-left: 0;
-            padding-top: 0;
             margin-left: -1em;
             justify-content: center;
             /* justify-content: center; */ 
@@ -257,8 +255,7 @@ const SingleProjectContainer = styled.article`
 
         .flex-content {
             padding-left: 0;
-            height: 120vh;
-
+            height: 100%;
 
             img {
                 padding-left: 1em;
@@ -270,11 +267,12 @@ const SingleProjectContainer = styled.article`
 `;
 
 const ProjectContent = styled.div`
+    /* margin-right: 3.5em; */
     width: 100%;
     margin-left: 5em;
     padding-right: 5em;
     justify-content: center;
-    height: 97.5vh;
+    height: fit-content;
     
     #smallScreen-display {
         display: none;
@@ -324,7 +322,6 @@ const ProjectContent = styled.div`
 
         #smallScreen-display {
             display: flex;
-            flex-wrap: wrap;
             height: 33vh;
             padding-top: 1em;   
 
@@ -364,7 +361,14 @@ const ProjectContent = styled.div`
             font-size: 20px;
         }
 
-    
+        #smallScreen-display {
+            img {
+                min-height: 30vh;
+
+            }
+         
+        }
+       
     }
 
 
