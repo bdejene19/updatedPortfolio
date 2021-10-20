@@ -370,8 +370,8 @@ const ProjectContent = styled.div`
         }
 
         #smallScreen-display {
+            display: block;
             img {
-                display: block;
                 height: 30vh;
 
             }
