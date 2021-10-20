@@ -82,6 +82,7 @@ const SingleProjectContainer = styled.article`
     /* padding-left: 5em; */
     overflow: none;
 
+
    
     
     .flex-content {
@@ -243,8 +244,7 @@ const SingleProjectContainer = styled.article`
 
     @media screen and (max-width: 375px) {
         height: 130vh;
-        /* padding-left: 1em; */
-        
+        border: solid pink 1px;        
         .btns-container {
             display: grid;
             grid-template-columns: 1fr 1fr;;
@@ -327,7 +327,7 @@ const ProjectContent = styled.div`
         }
 
         #smallScreen-display {
-            display: flex;
+            display: block;
             height: 33vh;
             padding-top: 1em;   
 
