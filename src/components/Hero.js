@@ -64,6 +64,17 @@ const HeroWrapper = styled.section`
         display: none;
     }
 
+    @media screen and (min-width: 2000px) {
+        .intro-text {
+            h1 {
+                font-size: 98px;
+            }
+            p {
+                font-size: 3rem;
+            }
+        }
+    }
+
     @media screen and (max-width: 1200px) {
             .intro-text {
             /* padding-top: 3em; */
@@ -82,25 +93,7 @@ const HeroWrapper = styled.section`
         }
     }
 
-    @media screen and (max-width: 1024px) {
-        .quick-contact {
-            margin-top: 18%;
-
-            .contact-icon {
-                height: 6em;
-                margin-top: 0.6em;
-            }
-            #linkedin-icon {
-                height: 5em;
-            }
-
-            
-        }
-
-        
-    }
-
-
+   
     @media screen and (max-width: 900px) {
         height: fit-content;
         background-image: none;
@@ -116,7 +109,7 @@ const HeroWrapper = styled.section`
             /* height: 60vh; */
         }
         .intro-text {
-            margin-top: 27em;
+            margin-top: 30em;
             p {
                 padding-top: 2em;
                 width: 55%;
@@ -127,8 +120,11 @@ const HeroWrapper = styled.section`
 
         .quick-contact {
             margin-top: 20%;
-            margin-left: 55%;
-            /* left: 0; */
+            margin-left: 55.5%;
+
+            #linkedin-icon {
+                margin-top: 0.5em;
+            }
            
         }
    
@@ -137,6 +133,7 @@ const HeroWrapper = styled.section`
     @media screen and (max-width: 768px) {
         .intro-text {
             margin-top: 50%;
+            padding-left: 1em;
             
 
             p {
@@ -153,14 +150,36 @@ const HeroWrapper = styled.section`
 
     @media screen and (max-width: 600px) {
         .intro-text {
-            /* margin-top: 0%; */
+            margin-top: 35%;
             padding-left: 1em;
             padding-top: 1em;
 
+            h1 {
+                font-size: 2.5rem;
+            }
+
             p {
                 font-size: 20px;
+                min-width: 40%;
+                max-width: 55%;
                 padding-top: 3.5em;
             }
+        }
+
+        .quick-contact {
+            margin-top: 12.5%;
+            margin-left: 50%;
+
+            .contact-icon {
+                width: 15vw;
+                margin: 0;  
+            }
+
+            #linkedin-icon {
+                width: 12vw;
+                margin-top: 0.56em;
+            }
+
         }
     }
 
