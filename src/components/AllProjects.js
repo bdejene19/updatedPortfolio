@@ -114,9 +114,20 @@ const ProjectsWrapper = styled.section`
         padding-top: 6em;
     }
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
+        /* padding-top: 12em; */
+        padding-left: 1em;
+        
+        .btnsContainer {
+            padding: 0;
+        }
+    }
+
+    @media screen and (max-width: 475px) {
         padding-top: 8em;
         padding-left: 0.75em;
+        height: 185vh; 
+
 
         .btnsContainer {
             padding-top: 0;
