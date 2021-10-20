@@ -161,6 +161,8 @@ const SingleProjectContainer = styled.article`
             flex-wrap: wrap;
             row-gap: 2em;
             justify-content: center;
+            padding-left: 0;
+            margin-left: -1em;
         
             img {
                 flex: 1 1 8vw;
