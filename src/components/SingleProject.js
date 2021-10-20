@@ -364,9 +364,7 @@ const ProjectContent = styled.div`
             font-size: 20px;
         }
 
-        .flex-content {
-        }
-       
+    
     }
 
 
