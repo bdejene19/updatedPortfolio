@@ -359,7 +359,8 @@ const ProjectContent = styled.div`
     @media screen and (max-width: 375px){
         padding-left: 0;
         padding-right: 1.25em;
-
+        height: 120vh;
+        border: solid blue 3px;
         p {
             font-size: 22px;
         }
