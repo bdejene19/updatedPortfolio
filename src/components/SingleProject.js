@@ -242,15 +242,15 @@ const SingleProjectContainer = styled.article`
     }
 
     @media screen and (max-width: 375px) {
-        height:  fit-content;
+        height: 130vh;
         /* padding-left: 1em; */
         
         .btns-container {
             display: grid;
             grid-template-columns: 1fr 1fr;;
-            margin-top: 0em;
+            margin-top: -1em;
             padding-left: 0;
-            margin-left: 0;
+            margin-left: -1em;
             justify-content: center;
             /* justify-content: center; */ 
         }
