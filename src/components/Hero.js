@@ -205,6 +205,7 @@ const HeroWrapper = styled.section`
     }
 
     @media screen and (max-width: 375px) {
+        height: 95vh;
         #ipadmini-bg {
             display: none;
         }
