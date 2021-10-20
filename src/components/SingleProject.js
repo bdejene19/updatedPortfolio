@@ -75,11 +75,15 @@ export default function SingleProject(props) {
 
 
 const SingleProjectContainer = styled.article`
+    /* padding-top: 2em; */
     width: 100%;
     height: fit-content;
     z-index:0;
+    /* padding-left: 5em; */
     overflow: none;
 
+   
+    
     .flex-content {
         display: flex;
         height: 85%;
@@ -103,7 +107,7 @@ const SingleProjectContainer = styled.article`
         column-gap: 3rem;
         grid-template-columns: 10vw 10vw;
         padding-left: 8em;
-        margin-top: -10em;
+        margin-top: 1.5em;
         .webpage {
             background-color: orange;
             color: white;
@@ -150,13 +154,12 @@ const SingleProjectContainer = styled.article`
 
         }
 
+
         .logos {
             display: flex;
             flex-wrap: wrap;
             row-gap: 2em;
             justify-content: center;
-            padding-left: 0;
-            margin-left: -1em;
         
             img {
                 flex: 1 1 8vw;
@@ -167,6 +170,8 @@ const SingleProjectContainer = styled.article`
         }
 
     }
+    
+   
     
     @media screen and (min-width: 1024px) {
         height: fit-content;
@@ -198,7 +203,6 @@ const SingleProjectContainer = styled.article`
         
         .btns-container {
             padding-left: 0;
-            margin-top: 0;
             padding-top: 4em;
             justify-content: center;
         }
@@ -236,14 +240,16 @@ const SingleProjectContainer = styled.article`
 
     }
 
-    @media screen and (max-width: 450px) {
-        height: 110vh;
+    @media screen and (max-width: 375px) {
+        height:  fit-content;
+        /* padding-left: 1em; */
+        
         .btns-container {
             display: grid;
             grid-template-columns: 1fr 1fr;;
-            margin-top: -1em;
+            margin-top: 0em;
             padding-left: 0;
-            margin-left: -1em;
+            margin-left: 0;
             justify-content: center;
             /* justify-content: center; */ 
         }
@@ -255,7 +261,6 @@ const SingleProjectContainer = styled.article`
 
         .flex-content {
             padding-left: 0;
-            height: 100%;
 
             img {
                 padding-left: 1em;
@@ -353,7 +358,7 @@ const ProjectContent = styled.div`
     @media screen and (max-width: 375px){
         padding-left: 0;
         padding-right: 1.25em;
-        height: 120vh;
+
         p {
             font-size: 22px;
         }
@@ -361,13 +366,6 @@ const ProjectContent = styled.div`
             font-size: 20px;
         }
 
-        #smallScreen-display {
-            img {
-                min-height: 30vh;
-
-            }
-         
-        }
        
     }
 

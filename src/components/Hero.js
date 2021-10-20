@@ -24,24 +24,19 @@ export default function Hero() {
 
 
 const HeroWrapper = styled.section`
-    height: 87vh;
+    height: fit-content;
     display: grid;
     grid-template-columns: 3fr 1fr;
     overflow: hidden;
-    background-image: url('${process.env.PUBLIC_URL}/desktopContent/herobackground.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
     .bg-photo {
         width: 100vw;
-        /* min-height: 100vh; */
         z-index: -1;
     }
 
     .quick-contact {
         position: absolute;
         margin-left: 75%;
+        margin-top: 20%;
         align-self: center;
         display: flex;
     }
@@ -60,45 +55,12 @@ const HeroWrapper = styled.section`
         }
     }
 
-    #desktop-bg, #ipadmini-bg, #iphoneX-bg {
+    #ipadmini-bg, #iphoneX-bg {
         display: none;
     }
 
-    /* for xl screens */
-    @media screen and (min-width: 2000px) {
-        .intro-text {
-            h1 {
-                font-size: 98px;
-            }
-            p {
-                font-size: 3rem;
-            }
-        }
-    }
-
-    /* specific edge case for ipad pro tablets */
-    @media screen and (max-width: 1024px) and (min-height: 1200px) {
-        height: 40vh;   
-        #desktop-bg {
-            display: block;
-        }
-
-        .quick-contact {
-            top: 0;
-            .contact-icon {
-                height: 10vh;
-            }
-
-            #linkedin-icon {
-                height: 8.5vh;
-            }
-        }
-        
-        background-image: none;
-    }
-
     @media screen and (max-width: 1200px) {
-        .intro-text {
+            .intro-text {
             /* padding-top: 3em; */
             padding-left: 2.25em;
 
@@ -108,30 +70,48 @@ const HeroWrapper = styled.section`
             }
         }
         .quick-contact {
-            margin-top: -10em;
+            margin-top: 20%;
             .contact-icon {
                 width: minmax(4vw, 7vw);
+            }
+
+            #linkedin-icon {
+                height: 9vh;
+                margin-top: 1.3em;
             }
         }
     }
 
-   
-    @media screen and (max-width: 900px) {
-        height: fit-content;
-        background-image: none;
-        .quick-contact{
-            top: 0;
+    @media screen and (max-width: 1024px) {
+        .quick-contact {
+            margin-top: 18%;
+
+            .contact-icon {
+                height: 6em;
+                margin-top: 0.6em;
+            }
+            #linkedin-icon {
+                height: 5em;
+            }
+
+            
         }
-        /* #desktop-bg {
+
+        
+    }
+
+
+    @media screen and (max-width: 900px) {
+        #desktop-bg {
             display: none;
-        } */
+        }
 
         #ipadmini-bg {
             display: block;
             /* height: 60vh; */
         }
         .intro-text {
-            margin-top: 30em;
+            margin-top: 27em;
             p {
                 padding-top: 2em;
                 width: 55%;
@@ -142,11 +122,8 @@ const HeroWrapper = styled.section`
 
         .quick-contact {
             margin-top: 20%;
-            margin-left: 55.5%;
-
-            #linkedin-icon {
-                margin-top: 0.5em;
-            }
+            margin-left: 55%;
+            /* left: 0; */
            
         }
    
@@ -155,11 +132,10 @@ const HeroWrapper = styled.section`
     @media screen and (max-width: 768px) {
         .intro-text {
             margin-top: 50%;
-            padding-left: 1em;
             
 
             p {
-                width: 55%;
+                width: 60%;
                 padding-top: 2em;
             }
         }
@@ -172,40 +148,18 @@ const HeroWrapper = styled.section`
 
     @media screen and (max-width: 600px) {
         .intro-text {
-            margin-top: 40%;
+            /* margin-top: 0%; */
             padding-left: 1em;
-
-            h1 {
-                font-size: 2.5rem;
-            }
+            padding-top: 1em;
 
             p {
                 font-size: 20px;
-                min-width: 40%;
-                max-width: 55%;
-                padding-top: 4em;
+                padding-top: 3.5em;
             }
-        }
-
-        .quick-contact {
-            margin-top: 12.5%;
-            margin-left: 50%;
-
-            .contact-icon {
-                width: 15vw;
-                margin: 0;  
-            }
-
-            #linkedin-icon {
-                width: 12vw;
-                margin-top: 0.56em;
-            }
-
         }
     }
 
     @media screen and (max-width: 375px) {
-        height: fit-content;
         #ipadmini-bg {
             display: none;
         }
@@ -226,15 +180,11 @@ const HeroWrapper = styled.section`
         .quick-contact {
             margin-left: 10%;
             left:0;
-            top: 80%;
+            top: 75%;
             column-gap: 0;
 
-            .contact-icon {
-                height: 10vh;
-            }
-            #linkedin-icon {
-                margin-top: 0.4em;
-                height: 8.5vh;
+            .contact-icon, #linkedin-icon {
+                width: 15vw;
             }
         }
     }
