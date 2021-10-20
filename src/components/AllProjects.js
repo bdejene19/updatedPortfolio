@@ -126,7 +126,7 @@ const ProjectsWrapper = styled.section`
     @media screen and (max-width: 475px) {
         padding-top: 8em;
         padding-left: 0.75em;
-
+        height: 175vh;
 
         .btnsContainer {
             padding-top: 0;
