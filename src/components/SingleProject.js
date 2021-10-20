@@ -272,7 +272,6 @@ const SingleProjectContainer = styled.article`
 `;
 
 const ProjectContent = styled.div`
-    /* margin-right: 3.5em; */
     width: 100%;
     margin-left: 5em;
     padding-right: 5em;
@@ -328,6 +327,9 @@ const ProjectContent = styled.div`
         #smallScreen-display {
             display: flex;
             height: 33vh;
+            width: 100%;
+            min-height: 33vh;
+            max-height: 33vh;
             padding-top: 1em;   
 
             img {
