@@ -244,7 +244,6 @@ const SingleProjectContainer = styled.article`
 
     @media screen and (max-width: 375px) {
         height: 130vh;
-        border: solid pink 1px;        
         .btns-container {
             display: grid;
             grid-template-columns: 1fr 1fr;;
@@ -327,7 +326,7 @@ const ProjectContent = styled.div`
         }
 
         #smallScreen-display {
-            display: block;
+            display: flex;
             height: 33vh;
             padding-top: 1em;   
 
@@ -367,6 +366,14 @@ const ProjectContent = styled.div`
             font-size: 20px;
         }
 
+        #smallScreen-display {
+            img {
+                display: block;
+                height: 30vh;
+
+            }
+         
+        }
        
     }
 
