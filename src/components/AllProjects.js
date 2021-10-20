@@ -52,7 +52,6 @@ export default function AllProjects() {
 
             <ProjectFlexContainer>
                 {projects.map(project => <SingleProject key={project.name} title={project.name} projectImg={project.projectDisplay} about={project.description} newTools={project.newSkills} improvements={project.howToImprove} sourceCode={project.sourceCode} webpage={project.liveVersion}></SingleProject>)}
-
             </ProjectFlexContainer>
 
             <br></br>
@@ -75,6 +74,7 @@ const ProjectsWrapper = styled.section`
     z-index: 0;
     overflow: hidden;
     height: 170vh;
+    width: 100vw;
 
 
     h2 {
@@ -123,11 +123,12 @@ const ProjectsWrapper = styled.section`
     @media screen and (max-width: 375px) {
         padding-top: 8em;
         padding-left: 0.75em;
-        height: 170vh;
+        height: 180vh;
         
 
         .btnsContainer {
-            padding-top: 5em;
+            padding-top: 0em;
+            margin-top: 0;
         }
         
     }
@@ -137,18 +138,25 @@ const ProjectsWrapper = styled.section`
 
 const ProjectFlexContainer = styled.article`
     width: 100%;
-    height: fit-content;
+    height: 100vh;
     column-gap: 0em;
     display: flex;
-
 
     
     .myProject {
         flex: 1 1 100%;
     }
 
+    @media screen and (max-width: 1024px) {
+        height: 75vh;
+    }
+
+    @media screen and (max-width: 768px) {
+        height: 110vh;
+    }
+
     @media screen and (max-width: 450px) {
-        height: 120vh;
+        height: 135vh;
     }
 
 `;

@@ -324,6 +324,7 @@ const ProjectContent = styled.div`
 
         #smallScreen-display {
             display: flex;
+            flex-wrap: wrap;
             height: 33vh;
             padding-top: 1em;   
 
