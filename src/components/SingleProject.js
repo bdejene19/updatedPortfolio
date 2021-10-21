@@ -328,8 +328,8 @@ const ProjectContent = styled.div`
             display: flex;
             height: 33vh;
             width: 100%;
-            min-height: 33vh;
-            max-height: 33vh;
+            min-height: 252.12px;
+            max-height: 252.12px;
             padding-top: 1em;   
 
             img {
