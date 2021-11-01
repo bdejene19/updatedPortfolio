@@ -84,7 +84,6 @@ const HeroWrapper = styled.section`
         }
 
         .quick-contact {
-            top: 0;
             .contact-icon {
                 height: 10vh;
             }
