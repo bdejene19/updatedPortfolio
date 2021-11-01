@@ -2,9 +2,9 @@ export const projects = [
     {
         name: 'EXP|CON Concert',
         technologies: ['React', 'Material-UI', 'JS', 'CSS'],
-        description: 'Implemented UX wireframes and built multipage react desktop app, that acts as the frontline for ticket sales and digitally presents the concert experience.',
+        description: 'Implemented UX wireframes and developed fully responsive multipage React desktop app, acting as the frontline for ticket sales and digitally presents the concert experience.',
         newSkills: ['Wireframe Implementation', 'React Router', 'Page Layout Design Patterns'],
-        howToImprove: ['Responive Design', 'Backend introduction of Express/Django for Stripe payments'],
+        howToImprove: ['Backend introduction of Express/Django for Stripe payments', 'Cart Feature to hold client products'],
         projectDisplay: 'expconDisplay',
         sourceCode: 'https://github.com/bdejene19/ConcertWebpage' ,
         liveVersion: 'https://focused-heyrovsky-378c47.netlify.app/',

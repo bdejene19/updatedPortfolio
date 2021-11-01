@@ -107,7 +107,7 @@ const SingleProjectContainer = styled.article`
         column-gap: 3rem;
         grid-template-columns: 10vw 10vw;
         padding-left: 8em;
-        margin-top: -10em;
+        margin-top: 1.5em;
         .webpage {
             background-color: orange;
             color: white;
@@ -203,7 +203,6 @@ const SingleProjectContainer = styled.article`
         
         .btns-container {
             padding-left: 0;
-            margin-top: 0;
             padding-top: 4em;
             justify-content: center;
         }
@@ -273,7 +272,6 @@ const SingleProjectContainer = styled.article`
 `;
 
 const ProjectContent = styled.div`
-    /* margin-right: 3.5em; */
     width: 100%;
     margin-left: 5em;
     padding-right: 5em;
@@ -328,7 +326,9 @@ const ProjectContent = styled.div`
 
         #smallScreen-display {
             display: flex;
-            height: 33vh;
+            min-height: 33vh;
+            width: 100%;
+           
             padding-top: 1em;   
 
             img {
