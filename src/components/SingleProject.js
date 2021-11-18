@@ -16,7 +16,7 @@ export default function SingleProject(props) {
 
     useEffect(() => {
         setModal(<VideoModal modalName={props.title} vidID={props.title} git={props.sourceCode} modalState={openModal} web={props.webpage} vidName={props.projectImg} captionContent={props.about}></VideoModal>)
-    }, [openModal])
+    }, [openModal, props])
     return (
         <SingleProjectContainer className='myProject'>
             <div className='flex-content'>
@@ -326,14 +326,15 @@ const ProjectContent = styled.div`
 
         #smallScreen-display {
             display: flex;
-            min-height: 33vh;
+            min-height: 35vh;
             width: 100%;
            
             padding-top: 1em;   
 
             img {
                 flex: 1 1 100%;   
-                margin-left: -1em;             
+                margin-left: -1em; 
+                min-height: 35vh;            
             }
 
              

@@ -2,30 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
-import emailjs from 'emailjs-com';
+import { sendEmail } from './componentFunctions';
 
 
 export default function ContactForm() {
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-
-        emailjs.sendForm('service_a131xpb', 'template_mt5oo0i', e.target, 'user_71zio4iG3zN4oS8hSre19')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-        });
-
-        e.target.reset();
-        document.getElementById('comments-submission').style.display = 'block';
-        setTimeout(() => {
-            document.getElementById('comments-submission').style.display = 'none';
-
-
-        }, 50000)
-        
-    }
+    
     return (
         <ContactWrapper>
             <h2>Like what you see? Get in touch!</h2>

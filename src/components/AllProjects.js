@@ -4,48 +4,16 @@ import SingleProject from './SingleProject';
 import {projects} from '../projects';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+import { slide } from './componentFunctions';
 
 
 export default function AllProjects() {
     const [slideValue, setSlideValue] = useState(0);
+    const [direction, setDirection] = useState('');
 
-    const slide = (direction) => {
-        let projectsArray = document.querySelectorAll('.myProject');
-        if (direction === 'right') {
-            if (slideValue === 0) {
-                document.getElementById('left-btn').style.visibility = 'visible';
-
-            }
-            projectsArray.forEach((project) => {
-                project.style.cssText = `
-                    transform: translateX(${slideValue-100}%);
-                    transition: 0.5s linear
-                `;
-            })
-            if (slideValue === -200) {
-                document.getElementById('right-btn').style.visibility = 'hidden';
-            }
-            
-            setSlideValue(slideValue - 100);
-        } else {
-            document.getElementById('right-btn').style.visibility = 'visible';
-            projectsArray.forEach((project) => {
-                project.style.cssText = `
-                    transform: translateX(${slideValue + 100}%);
-                    transition: 0.5s linear; 
-                `;
-            })
-           
-            if (slideValue === -100) {
-                document.getElementById('left-btn').style.visibility = 'hidden';
-            }
-      
-
-            setSlideValue(slideValue + 100);
-        }
-    }
-    
-    useEffect(() => {})
+    useEffect(() => {
+        slide(direction, slideValue)
+    }, [slideValue, direction])
     return (
         <ProjectsWrapper id='mainProjects'>
             <h2 id='currentProjects'>Projects</h2>
@@ -57,8 +25,8 @@ export default function AllProjects() {
 
             <br></br>
             <div className='btnsContainer'>
-                <ArrowLeftIcon id='left-btn' className='slideChanger'  onClick={() => slide('left')}/>
-                <ArrowRightIcon id='right-btn' className='slideChanger' onClick={() => slide('right')}/>
+                <ArrowLeftIcon id='left-btn' className='slideChanger'  onClick={() => {setSlideValue(slideValue + 100); setDirection('left');}}/>
+                <ArrowRightIcon id='right-btn' className='slideChanger' onClick={() => {setSlideValue(slideValue - 100); setDirection('right')}}/>
             </div>
             
         </ProjectsWrapper>
