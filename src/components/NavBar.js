@@ -1,119 +1,142 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
+import { downloadResume, handleAboutMeExpansion, handleContactExpansion, handleSkillsExpansion } from './componentFunctions';
 
 export default function NavBar() {
     const [skillsExpanded, setSkillsExpanded] = useState(false);
     const [contactExpanded, setContactExpanded] = useState(false);
     const [aboutMeExpanded, setAboutExpanded] = useState(false);
 
-    const handleSkillsExpansion = () => {
-        if (skillsExpanded) {
-            document.getElementById('skillsContentSection').style.cssText = `
-                visibility: hidden;
-                transform: translateY(-20%);
-                transition: 0.3s ease-in-out;
-                opacity: 0;
-                z-index: -1;
-            `;
-        } else {
-            if (aboutMeExpanded) {
-                handleAboutMeExpansion();
-            }
-            document.getElementById('skillsContentSection').style.cssText = `
-                visibility: visible;
-                transform: translateY(15%);
-                transition: 0.3s ease-in-out;
-                opacity: 0.95;
-                z-index: 4;
+    // const handleSkillsExpansion = () => {
+    //     if (skillsExpanded) {
+    //         document.getElementById('skillsContentSection').style.cssText = `
+    //             visibility: hidden;
+    //             transform: translateY(-20%);
+    //             transition: 0.3s ease-in-out;
+    //             opacity: 0;
+    //             z-index: -1;
+    //         `;
+    //     } else {
+    //         if (aboutMeExpanded) {
+    //             handleAboutMeExpansion();
+    //         }
+    //         document.getElementById('skillsContentSection').style.cssText = `
+    //             visibility: visible;
+    //             transform: translateY(15%);
+    //             transition: 0.3s ease-in-out;
+    //             opacity: 0.95;
+    //             z-index: 4;
 
-            `;
-        }
+    //         `;
+    //     }
 
-        setSkillsExpanded(!skillsExpanded);
-    }
+    //     setSkillsExpanded(!skillsExpanded);
+    // }
 
 
-    const handleContactExpansion = () => {
-        if (contactExpanded) {
-            document.getElementById('immediateContact').style.cssText = `
-                visibility: hidden;
-                transform: translateY(-70%);
-                transition: 0.3s ease-in-out;
-                opacity: 0;
-                z-index: -1;
-            `;
-        } else {
-            document.getElementById('immediateContact').style.cssText = `
-                visibility: visible;
-                transform: translateY(70%);
-                transition: 0.3s ease-in-out;
-                opacity: 0.95;
-                z-index: 4;
+    // const handleContactExpansion = () => {
+    //     if (contactExpanded) {
+    //         document.getElementById('immediateContact').style.cssText = `
+    //             visibility: hidden;
+    //             transform: translateY(-70%);
+    //             transition: 0.3s ease-in-out;
+    //             opacity: 0;
+    //             z-index: -1;
+    //         `;
+    //     } else {
+    //         document.getElementById('immediateContact').style.cssText = `
+    //             visibility: visible;
+    //             transform: translateY(70%);
+    //             transition: 0.3s ease-in-out;
+    //             opacity: 0.95;
+    //             z-index: 4;
 
-            `;
-        }
+    //         `;
+    //     }
 
-        setContactExpanded(!contactExpanded);
-    }
+    //     setContactExpanded(!contactExpanded);
+    // }
 
-    const handleAboutMeExpansion = () => {
+    // const handleAboutMeExpansion = () => {
+    //     if (aboutMeExpanded) {
+    //         document.getElementById('aboutMe-article').style.cssText = `
+    //             visibility: hidden;
+    //             width: 0;
+    //             height: 0;
+    //             margin-left: 0;
+    //             transition: 0.5s ease-in-out;
+    //             opacity: 0;
+    //             z-index: -1;
+    //         `;
+
+    //         document.getElementById('hero-section').style.filter = 'none';
+    //     } else {
+    //         if (skillsExpanded) {
+    //             handleSkillsExpansion();
+    //         }
+
+    //         if (contactExpanded) {
+    //             handleContactExpansion();
+    //         }
+            
+    //         document.getElementById('aboutMe-article').style.cssText = `
+    //             visibility: visible;
+    //             width: 80vw;
+    //             height: fit-content;
+    //             margin-left: -40vw;
+    //             transition: 0.3s ease-in-out;
+    //             opacity: 0.8;
+    //             z-index: 4;
+
+    //         `;
+    //         document.getElementById('hero-section').style.cssText = `
+    //             filter: blur(10px);
+    //             -webkit-filter: blur(10px);
+    //             transition: 0.3s ease-in-out;            
+    //         `;
+            
+    //     }
+    //     setAboutExpanded(!aboutMeExpanded); 
+        
+        
+    // }
+
+    // const downloadResume = () => {
+    //     window.location.href =  process.env.PUBLIC_URL + '/BemnetDejeneDevResume_wordType.docx';
+    // }
+
+    useEffect(() => {
+        handleContactExpansion(contactExpanded);
+    }, [contactExpanded])
+
+    useEffect(() => {
         if (aboutMeExpanded) {
-            document.getElementById('aboutMe-article').style.cssText = `
-                visibility: hidden;
-                width: 0;
-                height: 0;
-                margin-left: 0;
-                transition: 0.5s ease-in-out;
-                opacity: 0;
-                z-index: -1;
-            `;
-
-            document.getElementById('hero-section').style.filter = 'none';
-        } else {
-            if (skillsExpanded) {
-                handleSkillsExpansion();
-            }
-
-            if (contactExpanded) {
-                handleContactExpansion();
-            }
-            
-            document.getElementById('aboutMe-article').style.cssText = `
-                visibility: visible;
-                width: 80vw;
-                height: fit-content;
-                margin-left: -40vw;
-                transition: 0.3s ease-in-out;
-                opacity: 0.8;
-                z-index: 4;
-
-            `;
-            document.getElementById('hero-section').style.cssText = `
-                filter: blur(10px);
-                -webkit-filter: blur(10px);
-                transition: 0.3s ease-in-out;            
-            `;
-            
+            setAboutExpanded(!aboutMeExpanded)
         }
-        setAboutExpanded(!aboutMeExpanded); 
-        
-        
-    }
+        handleSkillsExpansion(skillsExpanded);
+    }, [skillsExpanded])
 
-    const downloadResume = () => {
-        window.location.href =  process.env.PUBLIC_URL + '/BemnetDejeneDevResume_wordType.docx';
-    }
+    useEffect(() => {
+        if (skillsExpanded) {
+            setSkillsExpanded(!skillsExpanded);
+        }
+
+        if (contactExpanded) {
+            setContactExpanded(!contactExpanded);
+        }
+        handleAboutMeExpansion(aboutMeExpanded)
+    }, [aboutMeExpanded])
     return (
         <NavWrapper>
-            <NavButton navBtnColor='#00FFF1' className='name' id='nav-aboutMe' onClick={() => handleAboutMeExpansion()}>Bemnet Dejene</NavButton>
+            <NavButton navBtnColor='#00FFF1' className='name' id='nav-aboutMe' onClick={() => setAboutExpanded(!aboutMeExpanded)}>Bemnet Dejene</NavButton>
             <a href='#currentProjects'>
                 <NavButton className='sub-nav' id='nav-project'>Projects</NavButton>
             </a>
 
 
-            <NavButton className='sub-nav' id='nav-skills' onClick={() => handleSkillsExpansion()}>Skills</NavButton>
-            <NavButton className='sub-nav' onClick={() => downloadResume()} id='nav-resume' >Resume</NavButton>
-            <NavButton className='sub-nav' id='nav-contactNow' onClick={() => handleContactExpansion()}>Contact Info</NavButton>
+            <NavButton className='sub-nav' id='nav-skills' onClick={() => setSkillsExpanded(!skillsExpanded)}>Skills</NavButton>
+            <NavButton className='sub-nav' onClick={downloadResume} id='nav-resume' >Resume</NavButton>
+            <NavButton className='sub-nav' id='nav-contactNow' onClick={() => setContactExpanded(!contactExpanded)}>Contact Info</NavButton>
         </NavWrapper>
     )
 }
@@ -126,6 +149,9 @@ const NavWrapper = styled.nav`
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     align-items: center;
+    a {
+        width: max-content;
+    }
     .name {
         grid-column: 1/3;
         padding-left: 3em;

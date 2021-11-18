@@ -129,7 +129,7 @@ const SingleProjectContainer = styled.article`
         cursor: pointer;
         grid-column: 1/3;
         justify-self: center;
-
+    
         &:hover {
             background-color: black;
             transition: 0.1s linear;
@@ -164,7 +164,7 @@ const SingleProjectContainer = styled.article`
             img {
                 flex: 1 1 8vw;
                 width: 10vw;
-                height: 10vh;
+                min-height: 10vh;
             }
             
         }
@@ -192,6 +192,7 @@ const SingleProjectContainer = styled.article`
             padding-top: 10em
         }
         .logos {
+            min-height: 8vh;
             
         }
 
