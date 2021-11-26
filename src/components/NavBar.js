@@ -110,31 +110,28 @@ export default function NavBar() {
     }, [contactExpanded])
 
     useEffect(() => {
-        if (aboutMeExpanded) {
-            setAboutExpanded(!aboutMeExpanded)
-        }
         handleSkillsExpansion(skillsExpanded);
     }, [skillsExpanded])
 
     useEffect(() => {
-        if (skillsExpanded) {
-            setSkillsExpanded(!skillsExpanded);
-        }
-
-        if (contactExpanded) {
-            setContactExpanded(!contactExpanded);
-        }
         handleAboutMeExpansion(aboutMeExpanded)
     }, [aboutMeExpanded])
     return (
         <NavWrapper>
-            <NavButton navBtnColor='#00FFF1' className='name' id='nav-aboutMe' onClick={() => setAboutExpanded(!aboutMeExpanded)}>Bemnet Dejene</NavButton>
+            <NavButton navBtnColor='#00FFF1' className='name' id='nav-aboutMe' onClick={() => {
+                setAboutExpanded(!aboutMeExpanded);
+                setSkillsExpanded(false);
+                setContactExpanded(false);
+            }}>Bemnet Dejene</NavButton>
             <a href='#currentProjects'>
                 <NavButton className='sub-nav' id='nav-project'>Projects</NavButton>
             </a>
 
 
-            <NavButton className='sub-nav' id='nav-skills' onClick={() => setSkillsExpanded(!skillsExpanded)}>Skills</NavButton>
+            <NavButton className='sub-nav' id='nav-skills' onClick={() => {
+                setSkillsExpanded(!skillsExpanded);
+                setAboutExpanded(false);
+            }}>Skills</NavButton>
             <NavButton className='sub-nav' onClick={downloadResume} id='nav-resume' >Resume</NavButton>
             <NavButton className='sub-nav' id='nav-contactNow' onClick={() => setContactExpanded(!contactExpanded)}>Contact Info</NavButton>
         </NavWrapper>
