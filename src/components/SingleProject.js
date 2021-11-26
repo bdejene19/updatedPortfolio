@@ -164,6 +164,7 @@ const SingleProjectContainer = styled.article`
             img {
                 flex: 1 1 8vw;
                 width: 10vw;
+                height: 10vh;
                 min-height: 10vh;
             }
             
@@ -192,6 +193,7 @@ const SingleProjectContainer = styled.article`
             padding-top: 10em
         }
         .logos {
+            height: 8vh;
             min-height: 8vh;
             
         }
@@ -327,6 +329,7 @@ const ProjectContent = styled.div`
 
         #smallScreen-display {
             display: flex;
+            height: 35vh;
             min-height: 35vh;
             width: 100%;
            
@@ -335,6 +338,7 @@ const ProjectContent = styled.div`
             img {
                 flex: 1 1 100%;   
                 margin-left: -1em; 
+                height: 35vh;
                 min-height: 35vh;            
             }
 
