@@ -330,7 +330,6 @@ const ProjectContent = styled.div`
         #smallScreen-display {
             display: flex;
             height: 35vh;
-            min-height: 35vh;
             width: 100%;
            
             padding-top: 1em;   
@@ -339,7 +338,6 @@ const ProjectContent = styled.div`
                 flex: 1 1 100%;   
                 margin-left: -1em; 
                 height: 35vh;
-                min-height: 35vh;            
             }
 
              
