@@ -337,7 +337,8 @@ const ProjectContent = styled.div`
             img {
                 flex: 1 1 100%;   
                 margin-left: -1em; 
-                height: 35vh;
+                height: 33vh;
+
             }
 
              
