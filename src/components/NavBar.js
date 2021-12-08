@@ -18,6 +18,7 @@ export default function NavBar() {
     useEffect(() => {
         handleAboutMeExpansion(aboutMeExpanded)
     }, [aboutMeExpanded])
+
     
     return (
         <NavWrapper>

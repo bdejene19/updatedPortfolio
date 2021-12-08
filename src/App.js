@@ -15,8 +15,9 @@ function App() {
         <NavBar></NavBar>
         <Skills></Skills>
         <AboutMe></AboutMe>
-        <PhoneNavBar></PhoneNavBar>
         <ImmediateContact></ImmediateContact>
+        <PhoneNavBar></PhoneNavBar>
+
       </header>
 
 

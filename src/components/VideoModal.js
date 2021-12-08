@@ -56,9 +56,6 @@ export default function VideoModal(props) {
         } else {
             isModalClosed(props.vidID, props.vidName);
         }
-        
-
-
     },[props.modalState])
 
     return (
