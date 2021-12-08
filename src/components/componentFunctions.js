@@ -135,3 +135,26 @@ export const handleAboutMeExpansion = (isAboutMeExpaned) => {
 export const downloadResume = () => {
     window.location.href =  process.env.PUBLIC_URL + '/BemnetDejeneDevResume_wordType.docx';
 }
+
+// used within skills modal box 
+export  const handleTabSelection = (newTab) => {
+    /** Want to make previous newTab section invisible, and display current section */
+    
+    let backendContent = document.getElementById('backend-content');
+    let frontendContent = document.getElementById('frontend-content');
+    let underlineColor = '';
+    if (newTab === 'frontend') {
+        backendContent.style.visibility = 'hidden';
+        document.getElementById('backend').style.borderBottom = 'none';
+        underlineColor = '#00fff1';
+    } else {
+        frontendContent.style.visibility = 'hidden';
+        document.getElementById('frontend').style.borderBottom = 'none';
+        underlineColor = 'orange';
+
+    }  
+
+    document.getElementById(`${newTab}`).style.borderBottom = `solid 3px ${underlineColor}`
+    document.getElementById(`${newTab}-content`).style.visibility = 'visible';
+
+}   

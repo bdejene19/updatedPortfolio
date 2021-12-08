@@ -1,37 +1,49 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
+import { handleTabSelection } from '../componentFunctions';
+import { CloseModalIcon } from './AboutMe';
 
 export const Skills = () => {
 
     const [oldTab, setOldTab] = useState('frontend');
 
-    const handleTabSelection = (tab) => {
-        /** Want to make previous tab section invisible, and display current section */
-        document.getElementById(`${oldTab}-content`).style.visibility = 'hidden'
-        document.getElementById(oldTab).style.borderBottom = 'none'
-
-        document.getElementById(`${tab}-content`).style.visibility = 'visible';
-
-        if (tab === 'frontend') {
-            document.getElementById(tab).style.borderBottom = 'solid 3px #00fff1';
-        } else {
-            document.getElementById(tab).style.borderBottom = 'solid 3px orange';
-        }
-
-        setOldTab(tab);
-    }
+   
+    useEffect(() => {
+        handleTabSelection(oldTab);
+    }, [oldTab])
 
     return (
         <SkillTabsWrapper id='skillsContentSection'>
             <TabSelection>
-                <h3 onClick={() => handleTabSelection('frontend')} id='frontend'>Front-End</h3>
-                <h3 onClick={() => handleTabSelection('backend')} id='backend'>Back-End</h3>
+                <CloseModalIcon/>
+                <h3 onClick={() => setOldTab('frontend')} id='frontend'>Front-End</h3>
+                <h3 onClick={() => setOldTab('backend')} id='backend'>Back-End</h3>
             </TabSelection>
-            <SkillArticle id='frontend-content'>
+        <SkillArticle id='frontend-content'>
+                <ul>
+                    TypeScript
+                    <li>Type Checking React and other libraries (e.g. Redux)</li>
+                    <li>OOP and JSX implementations on web and mobile applications</li>
+                </ul>
+
                 <ul>
                     React
                     <li>Async/Await</li>
                     <li>Hooks (useState, useEffect, useMemo, etc.)</li>
+                    <li>Generating reusable components through inheritance </li>
+                    <li>React Router (multi-page application Vs. SPA)</li>
+                </ul>
+
+                <ul>
+                    React Native
+                    <li>Native Components, Gesture Handlers, and nested Navigators for screen navigation</li>
+                    <li>Reusable StyleSheets and TypeScript typing</li>
+                </ul>
+
+                <ul>
+                    Next
+                    <li>Server-Side Rendering (SSR)</li>
+                    <li>Routing</li>
                 </ul>
 
                 <ul>
@@ -42,9 +54,21 @@ export const Skills = () => {
                 </ul>
 
                 <ul>
+                    Redux/React-Redux
+                    <li>State Management</li>
+                    <li>Global state access, implement Reducers to dispatch systematic actions for state updates in necessary components (useSelector, useDispatch)</li>
+                </ul>
+
+                <ul>
                     Figma
                     <li>Pre-development wireframing of design to prevent "coding blind"</li>
                     <li>Neumorphic Design</li>
+                </ul>
+
+                <ul>
+                    Material-UI (MUI)
+                    <li>Reuse, customize and alter pre-built React components</li>
+                    <li>Components used range from form-steppers, buttons, and icons</li>
                 </ul>
 
                 <ul>
@@ -141,7 +165,11 @@ const TabSelection = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
-
+    div {
+        grid-column: 1/3;
+        justify-self: right;
+        padding-right: 1em;
+    }
     h3 {
         font-size: 1.75rem;
         cursor: pointer;
