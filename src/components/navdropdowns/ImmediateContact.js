@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 export default function ImmediateContact() {
     return (
        <ImmediateContactWrapper id='immediateContact'>
@@ -11,7 +12,7 @@ export default function ImmediateContact() {
 
            <PersonalContact>
                <h4>Email:</h4>
-               <p>bdejene19@gmail.com</p>
+               <a href='mailto:bdejen19@gmail.com'>bdejene19@gmail.com</a>
            </PersonalContact>
 
            <PersonalContact>
