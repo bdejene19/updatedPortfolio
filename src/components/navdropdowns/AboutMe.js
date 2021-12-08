@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import CloseIcon from '@mui/icons-material/Close';
-import { handleAboutMeExpansion } from '../componentFunctions';
+import { ModalContext } from '../../App';
 
 export default function AboutMe() {
-    // document.getElementById('hero-section').style.filter = 'blur(10px)'
-
+    const { setAboutExpanded } = useContext(ModalContext);
     return (
     <AboutMeWrapper id='aboutMe-article'>
-           <CloseModalIcon/>
+           <CloseModalIcon handleOpen={() => setAboutExpanded(false)}/>
            <h3>Life Outside of Work</h3>
            <p>On paper, I am currently located in London, Ontario and have a Double Major in Medical Sciences and Biology from the University of Western Ontario. Between the lines, I am an easy going person who's always smiling and love to express my creative thinking through code, piano, guitar and even freestyle rapping 🎶 (no sound cloud, haha).</p>
            <p>The reason I fell in love with code was that it enabled my creative and logistic STEM halves of myself to work in tandem to create something meaningful and has an impact on other peoples lives.</p>
@@ -16,10 +15,10 @@ export default function AboutMe() {
     )
 }
 
-export const CloseModalIcon = () => {
+export const CloseModalIcon = (props) => {    
     return (
         <CloseIconWrapper>
-            <CloseIcon className='exit' onClick={() => handleAboutMeExpansion(false)}/>
+            <CloseIcon className='exit' onClick={props.handleOpen}/>
         </CloseIconWrapper>
     )
 }

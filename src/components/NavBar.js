@@ -1,25 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useContext} from 'react';
 import styled from 'styled-components';
-import { downloadResume, handleAboutMeExpansion, handleContactExpansion, handleSkillsExpansion } from './componentFunctions';
+import { ModalContext } from '../App';
+import { downloadResume } from './componentFunctions';
 
 export default function NavBar() {
-    const [skillsExpanded, setSkillsExpanded] = useState(false);
-    const [contactExpanded, setContactExpanded] = useState(false);
-    const [aboutMeExpanded, setAboutExpanded] = useState(false);
+    const {aboutMeExpanded, setAboutExpanded, skillsExpanded, setSkillsExpanded, contactExpanded, setContactExpanded} = useContext(ModalContext);
 
-    useEffect(() => {
-        handleContactExpansion(contactExpanded);
-    }, [contactExpanded])
-
-    useEffect(() => {
-        handleSkillsExpansion(skillsExpanded);
-    }, [skillsExpanded])
-
-    useEffect(() => {
-        handleAboutMeExpansion(aboutMeExpanded)
-    }, [aboutMeExpanded])
-
-    
+    useEffect(() => {console.log(aboutMeExpanded)}, [])
     return (
         <NavWrapper>
             <NavButton navBtnColor='#00FFF1' className='name' id='nav-aboutMe' onClick={() => {
@@ -36,8 +23,9 @@ export default function NavBar() {
                 setSkillsExpanded(!skillsExpanded);
                 setAboutExpanded(false);
             }}>Skills</NavButton>
-            <NavButton className='sub-nav' onClick={downloadResume} id='nav-resume' >Resume</NavButton>
-            <NavButton className='sub-nav' id='nav-contactNow' onClick={() => setContactExpanded(!contactExpanded)}>Contact Info</NavButton>
+                <NavButton className='sub-nav' onClick={downloadResume} id='nav-resume' >Resume</NavButton>
+                <NavButton className='sub-nav' id='nav-contactNow' onClick={() => setContactExpanded(!contactExpanded)}>Contact Info</NavButton>
+             
         </NavWrapper>
     )
 }

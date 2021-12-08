@@ -68,7 +68,7 @@ export const handleSkillsExpansion = (isSkillsExpanded) => {
     } else {
         document.getElementById('skillsContentSection').style.cssText = `
             visibility: visible;
-            transform: translateY(15%);
+            transform: translateY(10%);
             transition: 0.3s ease-in-out;
             opacity: 0.95;
             z-index: 4;
@@ -133,7 +133,7 @@ export const handleAboutMeExpansion = (isAboutMeExpaned) => {
 }
 
 export const downloadResume = () => {
-    window.location.href =  process.env.PUBLIC_URL + '/BemnetDejeneDevResume_wordType.docx';
+    window.location.href =  process.env.PUBLIC_URL + '/BemnetDejene__Resume.pdf';
 }
 
 // used within skills modal box 

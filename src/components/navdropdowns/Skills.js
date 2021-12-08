@@ -1,21 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import { handleTabSelection } from '../componentFunctions';
 import { CloseModalIcon } from './AboutMe';
+import { ModalContext } from '../../App';
 
 export const Skills = () => {
 
     const [oldTab, setOldTab] = useState('frontend');
-
+    const { setSkillsExpanded } = useContext(ModalContext);
    
     useEffect(() => {
         handleTabSelection(oldTab);
     }, [oldTab])
 
+
+
     return (
         <SkillTabsWrapper id='skillsContentSection'>
             <TabSelection>
-                <CloseModalIcon/>
+                <CloseModalIcon handleOpen={() => setSkillsExpanded(false)}/>
                 <h3 onClick={() => setOldTab('frontend')} id='frontend'>Front-End</h3>
                 <h3 onClick={() => setOldTab('backend')} id='backend'>Back-End</h3>
             </TabSelection>
@@ -29,7 +32,7 @@ export const Skills = () => {
                 <ul>
                     React
                     <li>Async/Await</li>
-                    <li>Hooks (useState, useEffect, useMemo, etc.)</li>
+                    <li>Hooks (useState, useEffect, useContext, etc.)</li>
                     <li>Generating reusable components through inheritance </li>
                     <li>React Router (multi-page application Vs. SPA)</li>
                 </ul>

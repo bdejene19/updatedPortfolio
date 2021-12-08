@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import clsx from 'clsx';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,6 +13,8 @@ import {Menu} from '@material-ui/icons';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import InfoIcon from '@material-ui/icons/Info';
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
+import { ModalContext } from '../App';
+import { downloadResume } from './componentFunctions';
 
 
 const useStyles = makeStyles({
@@ -26,9 +28,8 @@ const useStyles = makeStyles({
 });
 
 export default function TemporaryDrawer() {
-  const [skillsExpanded, setSkillsExpanded] = useState(false);
-  const [contactExpanded, setContactExpanded] = useState(false);
-  const [aboutMeExpanded, setAboutExpanded] = useState(false);
+  
+  const {aboutMeExpanded, setAboutExpanded, skillsExpanded, setSkillsExpanded, contactExpanded, setContactExpanded} = useContext(ModalContext);
 
   const handleSkillsExpansion = () => {
       if (skillsExpanded) {
@@ -131,9 +132,7 @@ export default function TemporaryDrawer() {
       setAboutExpanded(!aboutMeExpanded);  
   }
 
-  const downloadResume = () => {
-    window.location.href =  process.env.PUBLIC_URL + '/BemnetDejeneDevResume_wordType.docx';
-  }
+ 
 
   const classes = useStyles();
   const [state, setState] = React.useState({
