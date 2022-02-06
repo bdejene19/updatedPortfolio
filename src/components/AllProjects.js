@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
-import SingleProject from './SingleProject';
-import {projects} from '../projects';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import { selectProjectTitle, slide } from './componentFunctions';
 import { SmallSoloProjectCard } from './SmallSoloProjectCard';
+import { SoloLarge } from './projsections/SoloLarge';
+import SoloSmall from './projsections/SoloSmall';
 
 
 export default function AllProjects() {
@@ -44,17 +44,8 @@ export default function AllProjects() {
             <ProjectDisplaysContainer id='all-project-types-display'>
                 <ProjectFlexContainer id='Collaborative-Apps-container' className='single-proj-type-container'>
                 </ProjectFlexContainer>
-                <ProjectFlexContainer id='Large-Solo-Apps-container' className='single-proj-type-container'>
-                    {projects.map(project => <SingleProject  title={project.name} projectImg={project.projectDisplay} about={project.description} newTools={project.newSkills} improvements={project.howToImprove} sourceCode={project.sourceCode} webpage={project.liveVersion}></SingleProject>)}
-                </ProjectFlexContainer> 
-                <ProjectFlexContainer id='Small-Solo-Apps-container' className='single-proj-type-container'> 
-                    {/* <h1>hello</h1> */}
-                    <SmallSoloProjectCard projBg='plannerScreenshot.png' projTitle='Work Day Scheduler' techUsed='HTML/CSS/JS/jQuery/Moment.js/Local Storage'></SmallSoloProjectCard>
-                    <SmallSoloProjectCard projBg='pswdGenerator.png' projTitle='Password Generator' techUsed='HTML/CSS/JS/MATH Lib.'></SmallSoloProjectCard>
-                    <SmallSoloProjectCard projBg='weatherDashScreenshot.png' projTitle='Weather Dash Board' techUsed='jQuery/APIs/Local Storage/'></SmallSoloProjectCard>
-
-                    {/* {projects.map(project => <SingleProject key={project.name} title={project.name} projectImg={project.projectDisplay} about={project.description} newTools={project.newSkills} improvements={project.howToImprove} sourceCode={project.sourceCode} webpage={project.liveVersion}></SingleProject>)} */}
-                </ProjectFlexContainer>
+                <SoloLarge></SoloLarge>
+                <SoloSmall></SoloSmall>
             </ProjectDisplaysContainer>
             
 
@@ -146,7 +137,6 @@ const ProjectTypeBar = styled.article`
 `
 const ProjectDisplaysContainer =styled.article`
     width: 100%;
-    border: solid black 3px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,7 +148,7 @@ const ProjectDisplaysContainer =styled.article`
 `;
 
 
-const ProjectFlexContainer = styled.article`
+export const ProjectFlexContainer = styled.article`
     width: 100%;
     column-gap: 0em;
     display: flex;
@@ -167,17 +157,40 @@ const ProjectFlexContainer = styled.article`
 
 
     &#Small-Solo-Apps-container {
-        justify-content: center;
+        /* justify-content: center; */
         flex-wrap: wrap;
-        border: solid blue 3px;
         row-gap: 1em;
         column-gap: 1.5em;
         padding: 5em;
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+
+        }
         .smallProject:first-of-type {
             flex: 1 1 100%;
         }
         .smallProject {
-            flex: 1 1 40%;
+            flex: 1 1 49%;
+            opacity: 0.6;
+            box-shadow: 0 5px 5px black;
+
+            h4 {
+                color: black;
+            }
+
+        }
+
+        .smallProject:hover {
+            opacity: 1;
+            box-shadow: 0 5px 5px 5px black;
+        }
+
+        .smallProject:last-of-type {
+            flex-grow: 0;
         }
     }  
     .myProject {

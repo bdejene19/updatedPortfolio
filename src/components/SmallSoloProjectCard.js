@@ -2,12 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 export const SmallSoloProjectCard = (props) => {
   return (
-    <DisplayContainer className='smallProject' bgPhoto={props.projBg}>
-      <div>
-        <h4>{props.projTitle} cjecjking</h4>
-        <p>{props.techUsed}</p>
-      </div>
-    </DisplayContainer>
+    <a href={props.liveLink} target='_blank' rel='noreferrer' className='smallProject'>
+      <DisplayContainer  bgPhoto={props.projBg}>
+        <div>
+          <h4>{props.projTitle}</h4>
+          <p>{props.techUsed}</p>
+        </div>
+      </DisplayContainer>
+    </a>
+  
   );
 }
 
@@ -20,7 +23,6 @@ const DisplayContainer = styled.div`
     z-index: 0;
     display: flex;
     align-items: center;
-    border-radius: 10px;
     div {
       width: fit-content;
       font-size: 1.5rem;
