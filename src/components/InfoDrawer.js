@@ -178,7 +178,7 @@ export default function TemporaryDrawer() {
                 attachedFunction = handleAboutMeExpansion;
             } else if (index === 1) {
               icon = <WorkIcon></WorkIcon>
-              // attachedFunction = window.location.href ='#projects';
+              // attachedFunction = function() {(window.location ='#};
             } else if (index === 2) {
               icon =  <StarIcon></StarIcon>
               attachedFunction = handleSkillsExpansion;

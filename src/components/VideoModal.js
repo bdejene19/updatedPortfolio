@@ -61,7 +61,7 @@ export default function VideoModal(props) {
     return (
         <VideoWrapper id={props.vidID}>
             <div className='videoContainer'>
-                <video src={process.env.PUBLIC_URL +'/' + props.vidName + '.mp4'} alt={props.vidName} id={props.vidName+ '.mp4'} type='video/mp4' controls muted loop></video>
+                <video src={process.env.PUBLIC_URL +'/projectGifs/' + props.vidName + '.mp4'} alt={props.vidName} id={props.vidName+ '.mp4'} type='video/mp4' controls muted loop></video>
             </div>
 
 
@@ -77,7 +77,7 @@ export default function VideoModal(props) {
                     </a>
                 </div>
 
-                <div class='icon'>
+                <div className='icon'>
                     <a href={props.web} target='_blank' rel='noreferrer'>
                         <WebIcon></WebIcon>
                     </a>
@@ -87,7 +87,7 @@ export default function VideoModal(props) {
                     </a>
                 </div>
 
-                <div class='icon'>
+                <div className='icon'>
 
                     <a href="mailto:bdejene19@gmail.com">
                         <EmailIcon></EmailIcon>

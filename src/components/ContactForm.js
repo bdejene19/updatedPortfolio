@@ -17,7 +17,7 @@ export default function ContactForm() {
 
                 <div className='comments-section'>
                     {/* remember, a label's for attribute is for it's input element id*/}
-                    <label for='comments'>Leave a comment, additional details and/or contact info:</label>
+                    <label htmlFor='comments'>Leave a comment, additional details and/or contact info:</label>
                     <textarea name='comments' id='comments' required></textarea>
                 </div>
                 

@@ -35,6 +35,32 @@ export const slide = (direction, slideValue) => {
     }
 
 }
+// used in allprojects
+export const selectProjectTitle = (titleIndex) => {
+    let paginationTargets = document.getElementById('all-project-types-display').children;
+    console.log('my pagination targets: ', paginationTargets.length);
+
+    let rightCounter = 0;
+    while (rightCounter < paginationTargets.length) {
+        if (rightCounter === titleIndex) {
+            paginationTargets[rightCounter].style.display = 'flex';
+        } else {
+            paginationTargets[rightCounter].style.display = 'none';
+        }
+
+        rightCounter++;
+    } 
+
+    // paginationTargets.forEach((container, index) => {
+    //     if (index === titleIndex) {
+    //         container.style.display = 'block';
+    //         console.log('my title index:', titleIndex);
+    //     } else {
+    //         container.style.display = 'none;'
+    //     }
+    // })
+    // console.log('projectTitle');
+}
 
 // used in ContactForm
 export const sendEmail = (e) => {

@@ -12,7 +12,7 @@ export default function SingleProject(props) {
     let improvements = props.improvements;
 
     const [openModal, setModalBool] = useState(false);
-    const [modal, setModal] = useState(<VideoModal modalName={props.title} vidID={props.title} modalState={openModal} git={props.sourceCode} web={props.webpage} vidName={props.projectImg} captionContent={props.about}></VideoModal>);
+    const [modal, setModal] = useState(<VideoModal  modalName={props.title} vidID={props.title} modalState={openModal} git={props.sourceCode} web={props.webpage} vidName={props.projectImg} captionContent={props.about}></VideoModal>);
 
     useEffect(() => {
         setModal(<VideoModal modalName={props.title} vidID={props.title} git={props.sourceCode} modalState={openModal} web={props.webpage} vidName={props.projectImg} captionContent={props.about}></VideoModal>)
@@ -20,13 +20,11 @@ export default function SingleProject(props) {
     return (
         <SingleProjectContainer className='myProject'>
             <div className='flex-content'>
-                <div className='project-display'>
-                    <img src={process.env.PUBLIC_URL + '/desktopContent/'+ props.projectImg + '.svg'} alt={props.projectImg}></img>
-                </div>
+                <img src={process.env.PUBLIC_URL + '/desktopContent/'+ props.projectImg + '.svg'} alt={props.projectImg} className='project-display'></img>
                 <ProjectContent>
                     <h3><u>{props.title}</u></h3>
-                    <div id='smallScreen-display'>
-                        <img src={process.env.PUBLIC_URL + '/iphoneContent/'+ props.projectImg + '.svg'} alt={props.projectImg}></img>
+                    <div >
+                        <img src={process.env.PUBLIC_URL + '/iphoneContent/'+ props.projectImg + '.svg'} alt={props.projectImg} id='smallScreen-display'></img>
                     </div>
 
                     <p>
@@ -75,27 +73,21 @@ export default function SingleProject(props) {
 
 
 const SingleProjectContainer = styled.article`
-    /* padding-top: 2em; */
-    width: 100%;
-    height: fit-content;
-    z-index:0;
-    /* padding-left: 5em; */
-    overflow: none;
-
-   
+    z-index: 0;
     
     .flex-content {
         display: flex;
-        height: 85%;
         width: 100%;
-        
+        padding: 3em;
+        align-items: center;
+        justify-content: center;
+        /* border: solid green 3px; */
         .project-display {
-            height: 100%;
             width: 80vw;
-
+            /* border: solid green 3px; */
             img {
                 width: 40vw;
-                margin-left: 5em;
+                /* margin-left: 5em; */
             }
         }
     }
@@ -141,6 +133,9 @@ const SingleProjectContainer = styled.article`
 
     .tech {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         padding-top: 1em;
 
         h4 {
@@ -156,6 +151,7 @@ const SingleProjectContainer = styled.article`
 
 
         .logos {
+            flex: 1 1 100%;
             display: flex;
             flex-wrap: wrap;
             row-gap: 2em;
@@ -218,6 +214,7 @@ const SingleProjectContainer = styled.article`
 
         .flex-content {
             width: 100vw;
+            padding: 1.5em;
             
         }
 
@@ -239,6 +236,10 @@ const SingleProjectContainer = styled.article`
                 width: 30vw;
             }
            
+        }
+
+        .flex-content {
+            padding: 0.75em;
         }
 
     }
@@ -263,7 +264,7 @@ const SingleProjectContainer = styled.article`
         }
 
         .flex-content {
-            padding-left: 0;
+            padding: 0.25em 0.5em;;
 
             img {
                 padding-left: 1em;
@@ -276,9 +277,14 @@ const SingleProjectContainer = styled.article`
 
 const ProjectContent = styled.div`
     width: 100%;
-    margin-left: 5em;
-    padding-right: 5em;
-    justify-content: center;
+    height: 100%;
+    margin-left: 3em;
+    padding-right: 10em;
+    /* padding-right: 5em; */
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
     height: fit-content;
     
     #smallScreen-display {
@@ -314,8 +320,8 @@ const ProjectContent = styled.div`
 
     @media screen and (max-width: 768px) {
         margin-left: 0em;
-        margin-right: 0.5em;
-
+        /* margin-right: 0.5em; */
+        padding-right:0;
         .project-display {
             display: none;
         }
