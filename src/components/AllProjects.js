@@ -22,12 +22,13 @@ export default function AllProjects() {
         while (counter < barTitles.length) {
             if (barTitles[counter].id === currProjectDisplay) {
                 barTitles[counter].style.color = 'aqua';
-                barTitles[counter].style.borderBottom = 'solid orange 3px';
+                barTitles[counter].style.boxShadow = '0 5px 5px 0 white';              
                 selectProjectTitle(counter);
 
             } else {
                 barTitles[counter].style.color = 'white';
-                barTitles[counter].style.borderBottom = 'none';
+                barTitles[counter].style.boxShadow = 'none';              
+
             }
             counter++;
         }
@@ -63,6 +64,7 @@ export default function AllProjects() {
 const ProjectsWrapper = styled.section`
     background-image: url('${process.env.PUBLIC_URL}/desktopContent/projectsBackground.svg');
     background-size: cover;
+    height: 200vh;
     padding-top: 15em;
     padding-left: 2em;
     padding-right: 2em;
@@ -108,6 +110,7 @@ const ProjectsWrapper = styled.section`
 
     @media screen and (max-width: 800px) {
         padding-left: 1em;
+        height: 225vh;
     }
     @media screen and (max-width: 450px) {
         padding-top: 8em;
@@ -118,6 +121,9 @@ const ProjectsWrapper = styled.section`
             padding-top: 0;
         }   
     }
+    @media screen and (max-width: 300px) {
+        height: 250vh;
+    }
 `;
 const ProjectTypeBar = styled.article`
     width: 100%;
@@ -127,11 +133,13 @@ const ProjectTypeBar = styled.article`
     align-items: center;
     text-align: center;
 
-
+    row-gap: 1em;
     h3 {
-        flex: 1 1 5em;
+        flex: 1 1 10em;
         font-size: 1.75rem;
         cursor: pointer;
+        color: white;
+        border-radius: 5px; 
     }
     h3 {
         /* text-decoration: underline solid orange; */
