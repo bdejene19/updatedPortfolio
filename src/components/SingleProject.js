@@ -21,7 +21,7 @@ export default function SingleProject(props) {
         <SingleProjectContainer className='myProject'>
             <div className='flex-content'>
                 <img src={process.env.PUBLIC_URL + '/desktopContent/'+ props.projectImg + '.svg'} alt={props.projectImg} className='project-display'></img>
-                <ProjectContent>
+                <ProjectContent className='proj-textContent'>
                     <h3><u>{props.title}</u></h3>
                     <div >
                         <img src={process.env.PUBLIC_URL + '/iphoneContent/'+ props.projectImg + '.svg'} alt={props.projectImg} id='smallScreen-display'></img>
@@ -63,8 +63,11 @@ export default function SingleProject(props) {
             <div className='btns-container'>
                 <PlayCircleOutlineIcon className='openModal' onClick={() => setModalBool(!openModal)}></PlayCircleOutlineIcon>
 
+                <div>
+                            
                 <Button variant='contained' color='primary' className='btn' target='_blank' href={props.sourceCode}>SOURCE</Button>
                 <Button variant='contained' className='btn webpage' target='_blank' href={props.webpage}>WEBPAGE</Button>
+                </div>
             </div>
 
         </SingleProjectContainer>
@@ -74,32 +77,31 @@ export default function SingleProject(props) {
 
 const SingleProjectContainer = styled.article`
     z-index: 0;
-    
-    .flex-content {
+    color: white;
+
+    .flex-content { 
         display: flex;
-        width: 100%;
-        padding: 3em;
-        align-items: center;
-        justify-content: center;
-        /* border: solid green 3px; */
-        .project-display {
-            width: 80vw;
-            /* border: solid green 3px; */
-            img {
-                width: 40vw;
-                /* margin-left: 5em; */
-            }
+        flex-wrap: wrap;
+        width: 100vw;
+
+        img, .proj-textContent {
+            flex: 1 1 20em;
+            
+        }
+
+        .proj-textContent {
+            width: 50%;
+            padding: 1em;
+            padding-right: 3em;
         }
     }
-    
-   
     .btns-container {
         display: grid;
         justify-items: center;
         column-gap: 3rem;
         grid-template-columns: 10vw 10vw;
         padding-left: 8em;
-        margin-top: 1.5em;
+        margin-top: -10em;
         .webpage {
             background-color: orange;
             color: white;
@@ -140,7 +142,6 @@ const SingleProjectContainer = styled.article`
 
         h4 {
             font-size: 1.5rem;
-            color: white;
             padding-top: 0.25em;
             padding-bottom: 0.25em;
             margin-bottom: 1em;
@@ -158,10 +159,8 @@ const SingleProjectContainer = styled.article`
             justify-content: center;
         
             img {
-                flex: 1 1 8vw;
-                width: 10vw;
-                height: 10vh;
-                min-height: 10vh;
+                flex: 1 1 12vw;
+                max-height: 10vh;
             }
             
         }
@@ -202,9 +201,30 @@ const SingleProjectContainer = styled.article`
         
         .btns-container {
             padding-left: 0;
-            padding-top: 4em;
+            padding-top: 10em;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
+           
+            div {
+                flex: 1 1 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                column-gap: 5em;
+                .btn {
+                    flex: 0 1 30%;
+                }
+
+            }
+           
+
+           
         }
+       
+       
         .project-display {
             display: none;
             padding-left: 0;
@@ -214,8 +234,11 @@ const SingleProjectContainer = styled.article`
 
         .flex-content {
             width: 100vw;
-            padding: 1.5em;
             
+            .proj-textContent {
+                padding-left: 0;
+                padding-right: 2em;
+            }
         }
 
 
@@ -224,19 +247,6 @@ const SingleProjectContainer = styled.article`
     @media screen and (max-width: 600px) {
         padding-left: 0;
         height: fit-content;
-        .btns-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;;
-            margin-top: 0em;
-            padding-left: 0;
-            margin-left: 0;
-            justify-content: center;
-            
-            .btn {
-                width: 30vw;
-            }
-           
-        }
 
         .flex-content {
             padding: 0.75em;
@@ -245,27 +255,9 @@ const SingleProjectContainer = styled.article`
     }
 
     @media screen and (max-width: 375px) {
-        height:  fit-content;
-        /* padding-left: 1em; */
-        
-        .btns-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;;
-            margin-top: 0em;
-            padding-left: 0;
-            margin-left: 0;
-            justify-content: center;
-            /* justify-content: center; */ 
-        }
-
-        .btn {
-            padding-left: 1em;
-            padding-right: 1em;
-        }
 
         .flex-content {
-            padding: 0.25em 0.5em;;
-
+            padding: 0.25em 0.5em;
             img {
                 padding-left: 1em;
 
@@ -276,20 +268,11 @@ const SingleProjectContainer = styled.article`
 `;
 
 const ProjectContent = styled.div`
-    width: 100%;
-    height: 100%;
-    /* margin-left: 3em; */
-    /* border: solid green 3px; */
-    /* margin-left: -1em; */
-    /* padding-right: 10em; */
-    /* padding-right: 5em; */
     display: flex;
     flex-direction: column;
     
     align-items: center;
-    height: fit-content;
-    
-    #smallScreen-display {
+        #smallScreen-display {
         display: none;
     }
     
@@ -303,15 +286,13 @@ const ProjectContent = styled.div`
     }
     
     .list {
-        font-size: 24px;
-        color: white;
+        font-size: 1.75rem;
         padding: 1em;
         font-weight: 600;
-        padding-bottom: 0;
         width: 100%;
         li {
             font-weight: 300;
-            font-size: 20px;
+            font-size: 1.35rem;
         }
     }
 

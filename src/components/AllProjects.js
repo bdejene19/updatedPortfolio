@@ -106,6 +106,9 @@ const ProjectsWrapper = styled.section`
         padding-top: 6em;
     }
 
+    @media screen and (max-width: 800px) {
+        padding-left: 1em;
+    }
     @media screen and (max-width: 450px) {
         padding-top: 8em;
         padding-left: 0.75em;
