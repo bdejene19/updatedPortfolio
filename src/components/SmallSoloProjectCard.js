@@ -16,7 +16,7 @@ export const SmallSoloProjectCard = (props) => {
 
 const DisplayContainer = styled.div`
     background-image: ${props => `url('${process.env.PUBLIC_URL}/smallProjImgs/${props.bgPhoto}')`};
-    background-position: flex-start;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 60vh;

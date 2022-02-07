@@ -64,6 +64,9 @@ const ProjectsWrapper = styled.section`
     background-image: url('${process.env.PUBLIC_URL}/desktopContent/projectsBackground.svg');
     background-size: cover;
     padding-top: 15em;
+    padding-left: 2em;
+    padding-right: 2em;
+    overflow: hidden;;
     /* padding-bottom: 2em;
     padding-left: 4.5em;
     z-index: 0;
@@ -97,19 +100,15 @@ const ProjectsWrapper = styled.section`
         padding-top: 25em
     }
 
-    @media screen and (max-width: 1200px) {
-        /* padding-top: 12em; */
-        /* padding-left: 2.5em; */
-    }
-
     @media screen and (max-width: 900px) {
         background-image: url('${process.env.PUBLIC_URL}/tabletContent/ipadmini-projectsBG.svg');
         background-position: center;
         padding-top: 6em;
     }
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 450px) {
         padding-top: 8em;
+        padding-left: 0.75em;
         /* padding-left: 0.75em; */
         min-height: 135vh;
         .btnsContainer {
@@ -174,7 +173,7 @@ export const ProjectFlexContainer = styled.article`
             flex: 1 1 100%;
         }
         .smallProject {
-            flex: 1 1 49%;
+            flex: 1 1 25em;
             opacity: 0.6;
             box-shadow: 0 5px 5px black;
 
@@ -186,15 +185,42 @@ export const ProjectFlexContainer = styled.article`
 
         .smallProject:hover {
             opacity: 1;
-            box-shadow: 0 5px 5px 5px black;
+            box-shadow: 0 5px 5px 5px white;
         }
 
         .smallProject:last-of-type {
             flex-grow: 0;
+            flex-basis: 49%;
         }
     }  
     .myProject {
         flex: 1 1 100%;
+    }
+
+    @media screen and (max-width: 830px) {
+        &#Small-Solo-Apps-container {
+
+            .smallProject:last-of-type {
+                flex-grow: 1;
+            }
+        }
+    }
+
+    @media screen and (max-width: 760px) {
+        &#Small-Solo-Apps-container {
+            padding: 1em 2em;
+            row-gap: 3em;
+
+           
+        }
+    }
+    @media screen and (max-width: 430px) {
+        &#Small-Solo-Apps-container {
+            padding: 1em 0em;
+            row-gap: 3em;
+
+           
+        }
     }
 
 `;

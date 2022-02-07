@@ -278,8 +278,10 @@ const SingleProjectContainer = styled.article`
 const ProjectContent = styled.div`
     width: 100%;
     height: 100%;
-    margin-left: 3em;
-    padding-right: 10em;
+    /* margin-left: 3em; */
+    /* border: solid green 3px; */
+    /* margin-left: -1em; */
+    /* padding-right: 10em; */
     /* padding-right: 5em; */
     display: flex;
     flex-direction: column;
@@ -306,7 +308,7 @@ const ProjectContent = styled.div`
         padding: 1em;
         font-weight: 600;
         padding-bottom: 0;
-
+        width: 100%;
         li {
             font-weight: 300;
             font-size: 20px;
@@ -367,8 +369,9 @@ const ProjectContent = styled.div`
         }
     }
 
-    @media screen and (max-width: 375px){
+    @media screen and (max-width: 450px){
         padding-left: 0;
+        margin-left: 0;
         padding-right: 1.25em;
 
         p {

@@ -38,28 +38,23 @@ export const slide = (direction, slideValue) => {
 // used in allprojects
 export const selectProjectTitle = (titleIndex) => {
     let paginationTargets = document.getElementById('all-project-types-display').children;
-    console.log('my pagination targets: ', paginationTargets.length);
+    let btns = document.querySelector('.btnsContainer');
 
     let rightCounter = 0;
     while (rightCounter < paginationTargets.length) {
         if (rightCounter === titleIndex) {
             paginationTargets[rightCounter].style.display = 'flex';
+
+            if (titleIndex === 1) {
+                // btns.style.visibility = 'visible';
+            }
         } else {
             paginationTargets[rightCounter].style.display = 'none';
+            // btns.style.visibility = 'hidden';
         }
 
         rightCounter++;
-    } 
-
-    // paginationTargets.forEach((container, index) => {
-    //     if (index === titleIndex) {
-    //         container.style.display = 'block';
-    //         console.log('my title index:', titleIndex);
-    //     } else {
-    //         container.style.display = 'none;'
-    //     }
-    // })
-    // console.log('projectTitle');
+    }
 }
 
 // used in ContactForm
