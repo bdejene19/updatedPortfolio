@@ -63,10 +63,9 @@ export default function SingleProject(props) {
             <div className='btns-container'>
                 <PlayCircleOutlineIcon className='openModal' onClick={() => setModalBool(!openModal)}></PlayCircleOutlineIcon>
 
-                <div>
-                            
-                <Button variant='contained' color='primary' className='btn' target='_blank' href={props.sourceCode}>SOURCE</Button>
-                <Button variant='contained' className='btn webpage' target='_blank' href={props.webpage}>WEBPAGE</Button>
+                <div>        
+                    <Button variant='contained' color='primary' className='btn' target='_blank' href={props.sourceCode}>SOURCE</Button>
+                    <Button variant='contained' className='btn webpage' target='_blank' href={props.webpage}>WEBPAGE</Button>
                 </div>
             </div>
 
@@ -96,12 +95,12 @@ const SingleProjectContainer = styled.article`
         }
     }
     .btns-container {
-        display: grid;
-        justify-items: center;
-        column-gap: 3rem;
-        grid-template-columns: 10vw 10vw;
-        padding-left: 8em;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        align-items: center;
         margin-top: -10em;
+        margin-left: 10em;
         .webpage {
             background-color: orange;
             color: white;
@@ -111,6 +110,14 @@ const SingleProjectContainer = styled.article`
             font-weight: 600;
             width: 8vw;
         }
+
+        div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                column-gap: 5em;
+
+            }
     }
 
     .openModal {
@@ -208,17 +215,7 @@ const SingleProjectContainer = styled.article`
             justify-content: center;
             align-items: center;
            
-            div {
-                flex: 1 1 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                column-gap: 5em;
-                .btn {
-                    flex: 0 1 30%;
-                }
-
-            }
+          
            
 
            
@@ -301,54 +298,7 @@ const ProjectContent = styled.div`
 
     }
 
-    @media screen and (max-width: 768px) {
-        margin-left: 0em;
-        /* margin-right: 0.5em; */
-        padding-right:0;
-        .project-display {
-            display: none;
-        }
-
-        .flex-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            width: 100vw;
-            /* grid-template-rows: 1fr; */
-        }
-
-        #smallScreen-display {
-            display: flex;
-            height: 35vh;
-            width: 100%;
-           
-            padding-top: 1em;   
-
-            img {
-                flex: 1 1 100%;   
-                margin-left: -1em; 
-                height: 33vh;
-
-            }
-
-             
-        }
-        #largeScreen-display {
-            display: none;
-        }
-
-      
-        .list {
-            font-size:20px;
-
-            li {
-                font-size: 20px;
-            }
-        }
-
-        p {
-            font-size: 28px;
-        }
-    }
+  
 
     @media screen and (max-width: 450px){
         padding-left: 0;

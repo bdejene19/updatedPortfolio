@@ -6,6 +6,7 @@ import { selectProjectTitle, slide } from './componentFunctions';
 import { SmallSoloProjectCard } from './SmallSoloProjectCard';
 import { SoloLarge } from './projsections/SoloLarge';
 import SoloSmall from './projsections/SoloSmall';
+import { CollabApps } from './projsections/CollabApps';
 
 
 export default function AllProjects() {
@@ -43,8 +44,7 @@ export default function AllProjects() {
                 <h3 onClick={() => setProjectDisplay('Small Solo Apps')} id='Small Solo Apps'>Small Solo Apps</h3>
             </ProjectTypeBar>
             <ProjectDisplaysContainer id='all-project-types-display'>
-                <ProjectFlexContainer id='Collaborative-Apps-container' className='single-proj-type-container'>
-                </ProjectFlexContainer>
+                <CollabApps></CollabApps>
                 <SoloLarge></SoloLarge>
                 <SoloSmall></SoloSmall>
             </ProjectDisplaysContainer>
@@ -64,7 +64,7 @@ export default function AllProjects() {
 const ProjectsWrapper = styled.section`
     background-image: url('${process.env.PUBLIC_URL}/desktopContent/projectsBackground.svg');
     background-size: cover;
-    height: 200vh;
+    /* height: 200vh; */
     padding-top: 15em;
     padding-left: 2em;
     padding-right: 2em;
@@ -162,22 +162,22 @@ export const ProjectFlexContainer = styled.article`
     width: 100%;
     column-gap: 0em;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
 
     &#Large-Solo-Apps-container, &#Collaborative-Apps-container {
         overflow: hidden;
+
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         .myProject {
-
             scroll-snap-align: start;
 
         }
        
     }
     &#Small-Solo-Apps-container {
-        /* justify-content: center; */
+        /* justify-content: center; */            
+        overflow-y: scroll;
         flex-wrap: wrap;
         row-gap: 1em;
         column-gap: 1.5em;
