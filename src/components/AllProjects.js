@@ -165,7 +165,17 @@ export const ProjectFlexContainer = styled.article`
     /* justify-content: center; */
     align-items: center;
 
+    &#Large-Solo-Apps-container, &#Collaborative-Apps-container {
+        overflow: hidden;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        .myProject {
 
+            scroll-snap-align: start;
+
+        }
+       
+    }
     &#Small-Solo-Apps-container {
         /* justify-content: center; */
         flex-wrap: wrap;
