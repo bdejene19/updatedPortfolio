@@ -36,7 +36,7 @@ This app is an application/evaluation of my progress, presenting my most recent 
 <img width="650" alt="Screen Shot 2022-03-07 at 9 21 23 PM" src="https://user-images.githubusercontent.com/67334768/157153607-1371259a-d6dc-4f0f-9515-83fb47016e41.png">
 
 
-### Contact
+### Contact Form
 <img width="650" alt="Screen Shot 2022-03-07 at 9 21 37 PM" src="https://user-images.githubusercontent.com/67334768/157153601-4627bd7a-78cc-436e-bea9-87ae441bccf0.png">
 
 ## What I Learned
@@ -69,7 +69,8 @@ This app is an application/evaluation of my progress, presenting my most recent 
 ### Project Cards with Blue vs White Background Card
 #### Note: white background may not be able to be seen without activating darkmode on Github
 <img src='public/iphoneContent/expconDisplay-iphoneX.svg' alt='blue background' width='350' height='500'> Versus <img src='public/iphoneContent/dmLandingDisplay-iphoneX.svg' alt='white background' width='350' height='500'>
-
+## Contributors 
+Independent project. DM for pull requests to become a contributor for feature add-ons.
 ## Contact
 Email: bdejene19@gmail.com
 
