@@ -47,3 +47,8 @@ This app is an application/evaluation of my progress, presenting my most recent 
 ### Project Cards with Blue vs White Background Card
 #### Note: white background may not be able to be seen without activating darkmode on Github
 <img src='public/iphoneContent/expconDisplay-iphoneX.svg' alt='blue background' width='350' height='500'> Versus <img src='public/iphoneContent/dmLandingDisplay-iphoneX.svg' alt='white background' width='350' height='500'>
+
+## Contact
+Email: bdejene19@gmail.com
+
+Github: https://github.com/bdejene19
