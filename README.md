@@ -11,7 +11,7 @@ This app is an application/evaluation of my progress, presenting my most recent 
 - [Screenshots](#live-screenshots)
 - [Wireframes](#wire-frame-photos)
 - [Technologies](#technologies-used)
-- [Skills Learned](#what-the-project-taught-me)
+- [Skills Learned](#what-i-learned)
 - [Improvements](#improvements)
 - [Contributors](#contributors)
 - [Contact Info](#contact)
@@ -24,7 +24,20 @@ This app is an application/evaluation of my progress, presenting my most recent 
 - Semantic HTML
 - CSS/Sass
 
+## Live Screenshots
 
+### Hero
+<img width="650" alt="Screen Shot 2022-03-07 at 9 20 32 PM" src="https://user-images.githubusercontent.com/67334768/157153613-b8c06bde-0a79-4331-94ca-31f24916a9cd.png">
+
+### Skills
+<img width="650" alt="Screen Shot 2022-03-07 at 9 21 02 PM" src="https://user-images.githubusercontent.com/67334768/157153609-0ca5c95a-2fe1-40a7-83bf-751291cce711.png">
+
+### Projects
+<img width="650" alt="Screen Shot 2022-03-07 at 9 21 23 PM" src="https://user-images.githubusercontent.com/67334768/157153607-1371259a-d6dc-4f0f-9515-83fb47016e41.png">
+
+
+### Contact
+<img width="650" alt="Screen Shot 2022-03-07 at 9 21 37 PM" src="https://user-images.githubusercontent.com/67334768/157153601-4627bd7a-78cc-436e-bea9-87ae441bccf0.png">
 
 ## What I Learned
 - Figma app prototyping/wireframing
