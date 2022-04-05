@@ -40,4 +40,33 @@ export const soloCollab = [
     sourceCode: "https://github.com/bdejene19/Hive-Mind",
     liveVersion: "https://hivemind-554.herokuapp.com/",
   },
+  {
+    name: "getTraded",
+    technologies: [
+      "MongoDB",
+      "Express",
+      "React",
+      "Node",
+      "graphQL",
+      "Apollo",
+      "JSON Web Token (JWT)",
+      "Material-UI",
+      "Heroku",
+    ],
+    description:
+      "As a trader, create an account for one stop shop gateway for your skills, rather than relying on word of mouth for your next job.",
+    newSkills: [
+      "Apollo routing for graphQL",
+      "JWT handling, managing login encoded token data",
+      "graphQL queries/mutations - Frontend & Backend",
+    ],
+    howToImprove: [
+      "Integrate job board",
+      "Split User model into two - Worker, JobPoster - and create dynamic views for posting Vs. viewing a job board",
+      "Introduce validation so that user's can only leave review's if work has been done.",
+    ],
+    projectDisplay: "",
+    sourceCode: "https://github.com/bdejene19/getTraded",
+    liveVersion: "https://get-traded.herokuapp.com",
+  },
 ];

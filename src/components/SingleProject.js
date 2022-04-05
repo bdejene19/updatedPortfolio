@@ -72,7 +72,15 @@ export default function SingleProject(props) {
             <h4>Technology Used</h4>
 
             <div className="logos">
-              {props.title === "EXP|CON Concert"
+              {logos.map((logo) => {
+                return <img src={logos[logo]} alt=""></img>;
+              })}
+              {/* { logos.map(logo => {
+                
+                return <img src="" alt=""></img>
+              })
+              
+              props.title === "EXP|CON Concert"
                 ? logos.map((logo) => <img src={logo} alt="logo"></img>)
                 : logos.map((logo, index) => {
                     if (index < 4) {
@@ -80,7 +88,7 @@ export default function SingleProject(props) {
                     } else {
                       return null;
                     }
-                  })}
+                  })} */}
             </div>
           </div>
 

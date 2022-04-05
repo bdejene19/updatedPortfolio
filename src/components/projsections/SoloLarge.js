@@ -15,6 +15,7 @@ export const SoloLarge = (props) => {
           title={project.name}
           projectImg={project.projectDisplay}
           about={project.description}
+          techUsed={project.technologies}
           newTools={project.newSkills}
           improvements={project.howToImprove}
           sourceCode={project.sourceCode}
