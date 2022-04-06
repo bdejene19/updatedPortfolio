@@ -14,7 +14,7 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import InfoIcon from "@material-ui/icons/Info";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import { ModalContext } from "../App";
-import { downloadResume } from "./componentFunctions";
+import { downloadResume } from "../utils/componentFunctions";
 
 const useStyles = makeStyles({
   list: {

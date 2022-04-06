@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
-import { selectProjectTitle, slide } from "./componentFunctions";
+import { selectProjectTitle, slide } from "../utils/componentFunctions";
 import { SoloLarge } from "./projsections/SoloLarge";
 import SoloSmall from "./projsections/SoloSmall";
 import { CollabApps } from "./projsections/CollabApps";

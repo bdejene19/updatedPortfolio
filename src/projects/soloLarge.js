@@ -1,7 +1,7 @@
 export const soloLarge = [
   {
     name: "EXP|CON Concert",
-    technologies: ["React", "Material-UI", "JS", "CSS"],
+    technologies: ["React", "MUI", "JS", "CSS"],
     description:
       "Implemented UX wireframes and developed fully responsive multipage React desktop app, acting as the frontline for ticket sales and digitally presents the concert experience.",
     newSkills: [
@@ -20,7 +20,7 @@ export const soloLarge = [
 
   {
     name: "Digital Marketing Landing Page",
-    technologies: ["React", "Material-UI", "Responsive Design"],
+    technologies: ["React", "MUI", "Responsive Design"],
     description:
       "Created landing-page clone of a digital marketing agency, making it fully responsive to be viewable on all devices.",
     newSkills: [
@@ -38,7 +38,7 @@ export const soloLarge = [
 
   {
     name: "Student Test Scores",
-    technologies: ["React", "CSS", "JS"],
+    technologies: ["React", "JS", "HTML", "CSS"],
     description:
       "Implement RESTful API call, presenting the data in an expandable view. Also provides ability to search by student name.",
     newSkills: ["Search-Bar Filter", "React Hooks", "Hook Life-cycles"],

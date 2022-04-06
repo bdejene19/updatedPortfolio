@@ -1,5 +1,5 @@
 import emailjs from "emailjs-com";
-
+import { logos } from "./codeLogos";
 // used in AllProjects
 export const slide = (direction, slideValue) => {
   let leftScrollLimit = 0;
@@ -184,4 +184,39 @@ export const handleTabSelection = (newTab) => {
     `${newTab}`
   ).style.borderBottom = `solid 3px ${underlineColor}`;
   document.getElementById(`${newTab}-content`).style.visibility = "visible";
+};
+
+export const handleLanguageLogo = (language) => {
+  let imgPath = "";
+  console.log(logos.HTML);
+  if (language === "HTML") {
+    imgPath = logos.HTML;
+  } else if (language === "CSS") {
+    imgPath = logos.CSS;
+  } else if (language === "JS") {
+    imgPath = logos.JS;
+  } else if (language === "MUI") {
+    imgPath = logos.MUI;
+  } else if (language === "Figma") {
+    imgPath = logos.Figma;
+  } else if (language === "MySQL2") {
+    imgPath = logos.MySQL2;
+  } else if (language === "MongoDB") {
+    imgPath = logos.MongoDB;
+  } else if (language === "Handlebars") {
+    imgPath = logos.Handlebars;
+  } else if (language === "Express") {
+    imgPath = logos.Express;
+  } else if (language === "Sequelize") {
+    imgPath = logos.Sequelize;
+  } else if (language === "Node") {
+    imgPath = logos.Node;
+  } else if (language === "React") {
+    imgPath = logos.React;
+  } else if (language === "Heroku") {
+    imgPath = logos.Heroku;
+  } else if (language === "graphQL") {
+    imgPath = logos.graphQL;
+  }
+  return <img src={imgPath} alt={language + "logo"}></img>;
 };

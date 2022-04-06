@@ -12,7 +12,7 @@ import {
   handleContactExpansion,
   handleSkillsExpansion,
   handleAboutMeExpansion,
-} from "./components/componentFunctions";
+} from "./utils/componentFunctions";
 
 export const ModalContext = createContext(null);
 

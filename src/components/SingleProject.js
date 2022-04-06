@@ -3,12 +3,11 @@ import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import VideoModal from "./VideoModal";
-import { logos } from "../codeLogos";
-
+import { handleLanguageLogo } from "../utils/componentFunctions";
 export default function SingleProject(props) {
   let newTools = props.newTools;
   let improvements = props.improvements;
-
+  console.log(props.techUsed);
   const [openModal, setModalBool] = useState(false);
   const [modal, setModal] = useState(
     <VideoModal
@@ -72,8 +71,10 @@ export default function SingleProject(props) {
             <h4>Technology Used</h4>
 
             <div className="logos">
-              {logos.map((logo) => {
-                return <img src={logos[logo]} alt=""></img>;
+              {props.techUsed?.map((tech) => {
+                console.log(tech);
+                let languageLogo = handleLanguageLogo(tech);
+                return languageLogo;
               })}
               {/* { logos.map(logo => {
                 
