@@ -22,7 +22,7 @@ export const soloCollab = [
       "Split User model into two - Worker, JobPoster - and create dynamic views for posting Vs. viewing a job board",
       "Introduce validation so that user's can only leave review's if work has been done.",
     ],
-    projectDisplay: "",
+    projectDisplay: "getTraded",
     sourceCode: "https://github.com/bdejene19/getTraded",
     liveVersion: "https://get-traded.herokuapp.com",
   },
@@ -32,7 +32,7 @@ export const soloCollab = [
     description:
       "Join the Hive Mind and add a personal note on how to fight or persist through mental illness. Create, delete and upvote posts in the community, while sensitive information in the database is stored securely using bcrypt. Also offers session expiration, reducing number of sign in's to increase user satisfaction",
     newSkills: [
-      "New third party libraries: Moment.js/Anime.js/Darkmode.js",
+      "Model View Controller (MVC) coding paradigm",
       "Express Session to minimize number of user logins and improve the user expereience",
       "Heroku deployment using JawsDB for MySQL2 integration",
       "Sequlize life cycle hooks for pre-database storage hashing",

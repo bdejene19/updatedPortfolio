@@ -86,6 +86,17 @@ export const Skills = () => {
           <li>Reuse, customize and alter pre-built React components</li>
           <li>Components used range from form-steppers, buttons, and icons</li>
         </ul>
+        <ul>
+          jQuery
+          <li>Bidirectional DOM traveral</li>
+          <li>Associated widget jQuery-UI library</li>
+        </ul>
+
+        <ul>
+          Bootstrap
+          <li>Integrate bootstrap into plain HTML or framework applications</li>
+          <li>Reuse bootstrap classes for responsive styling</li>
+        </ul>
 
         <ul>
           HTML
@@ -100,9 +111,11 @@ export const Skills = () => {
       </SkillArticle>
 
       <SkillArticle id="backend-content">
+        <ul>Node</ul>
         <ul>
           Express
           <li>Restful API</li>
+          <li>Express-Session</li>
           <li>HTTP protocol requests</li>
         </ul>
 
@@ -112,7 +125,16 @@ export const Skills = () => {
           <li>Database queries and manipulation through HTTP requests</li>
           <li>Object Module Schemas</li>
         </ul>
-
+        <ul>
+          MySQL2
+          <li>Sequelize Object Relational Mapping</li>
+          <li>Foreign key relationships</li>
+        </ul>
+        <ul>
+          graphQL/Apollo
+          <li>Backend and Frontend queries and mutations.</li>
+          <li>Hooks</li>
+        </ul>
         <ul>
           Python
           <li>

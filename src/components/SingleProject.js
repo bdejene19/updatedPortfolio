@@ -4,10 +4,10 @@ import Button from "@material-ui/core/Button";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import VideoModal from "./VideoModal";
 import { handleLanguageLogo } from "../utils/componentFunctions";
+
 export default function SingleProject(props) {
   let newTools = props.newTools;
   let improvements = props.improvements;
-  console.log(props.techUsed);
   const [openModal, setModalBool] = useState(false);
   const [modal, setModal] = useState(
     <VideoModal
@@ -72,24 +72,9 @@ export default function SingleProject(props) {
 
             <div className="logos">
               {props.techUsed?.map((tech) => {
-                console.log(tech);
                 let languageLogo = handleLanguageLogo(tech);
                 return languageLogo;
               })}
-              {/* { logos.map(logo => {
-                
-                return <img src="" alt=""></img>
-              })
-              
-              props.title === "EXP|CON Concert"
-                ? logos.map((logo) => <img src={logo} alt="logo"></img>)
-                : logos.map((logo, index) => {
-                    if (index < 4) {
-                      return <img src={logo} alt="logo"></img>;
-                    } else {
-                      return null;
-                    }
-                  })} */}
             </div>
           </div>
 
@@ -168,8 +153,12 @@ const SingleProjectContainer = styled.article`
     flex-direction: column;
     width: fit-content;
     align-items: center;
+    justify-content: center;
+    width: fit-content;
     margin-top: -10em;
-    margin-left: 10em;
+    margin-left: 3em;
+    width: 30vw;
+    /* margin-left: 10em; */
     .webpage {
       background-color: orange;
       color: white;

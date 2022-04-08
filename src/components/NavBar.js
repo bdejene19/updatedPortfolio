@@ -13,9 +13,6 @@ export default function NavBar() {
     setContactExpanded,
   } = useContext(ModalContext);
 
-  useEffect(() => {
-    console.log(aboutMeExpanded);
-  }, []);
   return (
     <NavWrapper>
       <NavButton
