@@ -143,13 +143,11 @@ export const ProjectFlexContainer = styled.article`
     }
   }
   &#Small-Solo-Apps-container {
-    /* justify-content: center; */
     overflow-y: scroll;
     flex-wrap: wrap;
     row-gap: 1em;
     column-gap: 1.5em;
-    padding: 5em;
-
+    margin: 1em 0;
     a {
       text-decoration: none;
       cursor: pointer;
@@ -185,7 +183,7 @@ export const ProjectFlexContainer = styled.article`
 
   @media screen and (max-width: 830px) {
     &#Small-Solo-Apps-container {
-      height: 150vh;
+      height: 200vh;
       .smallProject:last-of-type {
         flex-grow: 1;
       }
