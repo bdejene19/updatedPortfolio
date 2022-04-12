@@ -12,7 +12,9 @@ export const SoloLarge = (props) => {
     >
       {soloLarge.map((project) => (
         <SingleProject
+          key={project.name}
           title={project.name}
+          heroku={project.heroku}
           projectImg={project.projectDisplay}
           about={project.description}
           techUsed={project.technologies}

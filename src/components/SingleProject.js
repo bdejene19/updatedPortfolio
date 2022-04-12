@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import VideoModal from "./VideoModal";
 import { handleLanguageLogo } from "../utils/componentFunctions";
-
+import WarningIcon from "@mui/icons-material/Warning";
 export default function SingleProject(props) {
   let newTools = props.newTools;
   let improvements = props.improvements;
@@ -21,6 +21,14 @@ export default function SingleProject(props) {
     ></VideoModal>
   );
 
+  const HerokuWarning = () => {
+    return (
+      <WarningWrapper>
+        <WarningIcon />
+        <p>Deployed with Heroku - give a moment to load.</p>
+      </WarningWrapper>
+    );
+  };
   useEffect(() => {
     setModal(
       <VideoModal
@@ -49,6 +57,7 @@ export default function SingleProject(props) {
         ></img>
 
         <ProjectContent className="proj-textContent">
+          {props.heroku ? <HerokuWarning /> : null}
           <h3>
             <u>{props.title}</u>
           </h3>
@@ -64,9 +73,7 @@ export default function SingleProject(props) {
               id="smallScreen-display"
             ></img>
           </div>
-
           <p>{props.about}</p>
-
           <div className="tech">
             <h4>Technology Used</h4>
 
@@ -77,14 +84,12 @@ export default function SingleProject(props) {
               })}
             </div>
           </div>
-
           <ul className="list">
             <i>What I learned:</i>
             {newTools.map((tool, index) => (
               <li key={index}>{tool}</li>
             ))}
           </ul>
-
           <ul className="list">
             <i>What/How I would improve:</i>
             {improvements.map((change, index) => (
@@ -128,6 +133,7 @@ export default function SingleProject(props) {
 const SingleProjectContainer = styled.article`
   z-index: 0;
   color: white;
+  padding: 2em 0;
 
   .flex-content {
     display: flex;
@@ -227,6 +233,7 @@ const SingleProjectContainer = styled.article`
 
   @media screen and (min-width: 1024px) {
     height: fit-content;
+    height: 100%;
   }
 
   @media screen and (max-width: 900px) {
@@ -238,10 +245,6 @@ const SingleProjectContainer = styled.article`
     padding-left: 0;
     #smallScreen-display {
       /* display: block; */
-    }
-
-    h4 {
-      padding-top: 10em;
     }
     .logos {
       height: 8vh;
@@ -353,5 +356,19 @@ const ProjectContent = styled.div`
     .list {
       font-size: 20px;
     }
+  }
+`;
+
+const WarningWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1em;
+  color: orange;
+  > p {
+    color: orange;
+    font-size: 1.25rem;
   }
 `;
