@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import { selectProjectTitle, slide } from "../utils/componentFunctions";
 import { SoloLarge } from "./projsections/SoloLarge";
 import SoloSmall from "./projsections/SoloSmall";
 import { CollabApps } from "./projsections/CollabApps";
 
 export default function AllProjects() {
-  const [slideValue, setSlideValue] = useState(0);
-  const [direction, setDirection] = useState("");
   const [currProjectDisplay, setProjectDisplay] =
     useState("Collaborative Apps");
-  useEffect(() => {
-    slide(direction, slideValue);
-  }, [slideValue, direction]);
 
   useEffect(() => {
     let barTitles = document.getElementById("project-types").children;
@@ -22,16 +15,8 @@ export default function AllProjects() {
     while (counter < barTitles.length) {
       if (barTitles[counter].id === currProjectDisplay) {
         barTitles[counter].style.color = "aqua";
-        barTitles[counter].style.boxShadow = "0 5px 5px 0 white";
+        barTitles[counter].style.boxShadow = "0 3px 3px black";
         selectProjectTitle(counter);
-        let sliderBtns = document.querySelector(".btnsContainer");
-        if (currProjectDisplay === "Large Solo Apps") {
-          if (sliderBtns) {
-            sliderBtns.style.display = "grid";
-          }
-        } else {
-          sliderBtns.style.display = "none";
-        }
       } else {
         barTitles[counter].style.color = "white";
         barTitles[counter].style.boxShadow = "none";
@@ -41,17 +26,6 @@ export default function AllProjects() {
     // selectProjectTitle(0)
   }, [currProjectDisplay]);
 
-  const handleScroll = (event) => {
-    const scrollingLeft = event.target.scrollLeft;
-    console.log("ran scroll");
-    console.log(scrollingLeft);
-    console.log(slideValue);
-    if (scrollingLeft) {
-      setSlideValue(slideValue - 100);
-    } else {
-      setSlideValue(slideValue + 100);
-    }
-  };
   return (
     <ProjectsWrapper id="mainProjects">
       <h2 id="currentProjects">Projects</h2>
@@ -80,26 +54,6 @@ export default function AllProjects() {
         <SoloLarge></SoloLarge>
         <SoloSmall></SoloSmall>
       </ProjectDisplaysContainer>
-
-      <br></br>
-      <div className="btnsContainer">
-        <ArrowLeftIcon
-          id="left-btn"
-          className="slideChanger"
-          onClick={() => {
-            setSlideValue(slideValue + 100);
-            setDirection("left");
-          }}
-        />
-        <ArrowRightIcon
-          id="right-btn"
-          className="slideChanger"
-          onClick={() => {
-            setSlideValue(slideValue - 100);
-            setDirection("right");
-          }}
-        />
-      </div>
     </ProjectsWrapper>
   );
 }
@@ -109,31 +63,13 @@ const ProjectsWrapper = styled.section`
     .PUBLIC_URL}/desktopContent/projectsBackground.svg);
   background-size: cover;
   /* height: 200vh; */
-  padding-top: 15em;
+  padding-top: 12.5em;
   padding-left: 2em;
   padding-right: 2em;
   overflow: hidden;
 
   h2 {
     height: fit-content;
-  }
-  .btnsContainer {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: auto auto;
-    align-items: flex-start;
-    margin-top: 2em;
-    z-index: 4;
-    .slideChanger {
-      font-size: 100px;
-      cursor: pointer;
-      color: #00fff1;
-      z-index: 4;
-    }
-
-    #left-btn {
-      visibility: hidden;
-    }
   }
 
   @media screen and (min-width: 2100px) {
@@ -149,17 +85,12 @@ const ProjectsWrapper = styled.section`
 
   @media screen and (max-width: 800px) {
     padding-left: 1em;
-    padding-top: 12.5em;
-    height: 225vh;
+    padding-top: 10em;
+    height: 270vh;
   }
   @media screen and (max-width: 450px) {
-    padding-top: 8em;
     padding-left: 0.75em;
-    /* padding-left: 0.75em; */
-    min-height: 135vh;
-    .btnsContainer {
-      padding-top: 0;
-    }
+    height: 235vh;
   }
   @media screen and (max-width: 300px) {
     height: 250vh;
@@ -185,14 +116,14 @@ const ProjectTypeBar = styled.article`
 const ProjectDisplaysContainer = styled.article`
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-
+  padding: 0;
+  height: fit-content;
   .single-proj-type-container {
-    padding: 2em 0;
+    padding: 0;
   }
 
   @media screen and (max-width: 650px) {
+    align-items: none;
   }
 `;
 
@@ -200,7 +131,6 @@ export const ProjectFlexContainer = styled.article`
   width: 100%;
   column-gap: 0em;
   display: flex;
-  align-items: center;
 
   &#Large-Solo-Apps-container,
   &#Collaborative-Apps-container {
