@@ -177,38 +177,32 @@ export default function TemporaryDrawer() {
           {/* <ContactToolTip></ContactToolTip> */}
         </div>
         <div style={{ paddingTop: "2em" }}>
-          {[
-            "About Bemnet Dejene",
-            "Projects",
-            "Skills",
-            "Download Resume",
-            "Contact Info",
-          ].map((text, index) => {
-            let icon = "";
-            let attachedFunction = "";
-            if (index === 0) {
-              icon = <InfoIcon></InfoIcon>;
-              attachedFunction = handleAboutMeExpansion;
-            } else if (index === 1) {
-              icon = <WorkIcon></WorkIcon>;
-              // attachedFunction = function() {(window.location ='#};
-            } else if (index === 2) {
-              icon = <StarIcon></StarIcon>;
-              attachedFunction = handleSkillsExpansion;
-            } else if (index === 3) {
-              icon = <GetAppIcon></GetAppIcon>;
-              attachedFunction = downloadResume;
-            } else {
-              icon = <ContactSupportIcon></ContactSupportIcon>;
-              attachedFunction = handleContactExpansion;
+          {["About Me", "Skills", "Download Resume", "Contact Info"].map(
+            (text, index) => {
+              let icon = "";
+              let attachedFunction = "";
+              if (index === 0) {
+                icon = <InfoIcon></InfoIcon>;
+                attachedFunction = handleAboutMeExpansion;
+              } else if (index === 1) {
+                icon = <StarIcon></StarIcon>;
+                attachedFunction = handleSkillsExpansion;
+                // attachedFunction = function() {(window.location ='#};
+              } else if (index === 2) {
+                icon = <GetAppIcon></GetAppIcon>;
+                attachedFunction = downloadResume;
+              } else if (index === 3) {
+                icon = <ContactSupportIcon></ContactSupportIcon>;
+                attachedFunction = handleContactExpansion;
+              }
+              return (
+                <ListItem button key={text} onClick={attachedFunction}>
+                  <ListItemIcon>{icon}</ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItem>
+              );
             }
-            return (
-              <ListItem button key={text} onClick={attachedFunction}>
-                <ListItemIcon>{icon}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            );
-          })}
+          )}
         </div>
       </List>
     </div>
@@ -222,7 +216,7 @@ export default function TemporaryDrawer() {
             <Menu
               onClick={toggleDrawer(anchor, true)}
               id="menu-icon"
-              style={{ color: "white" }}
+              style={{ color: "white", cursor: "pointer" }}
             ></Menu>
           </div>
           <Drawer
