@@ -188,7 +188,6 @@ export const handleTabSelection = (newTab) => {
 
 export const handleLanguageLogo = (language) => {
   let imgPath = "";
-  console.log(logos.HTML);
   if (language === "HTML") {
     imgPath = logos.HTML;
   } else if (language === "CSS") {
@@ -218,5 +217,5 @@ export const handleLanguageLogo = (language) => {
   } else if (language === "graphQL") {
     imgPath = logos.graphQL;
   }
-  return <img src={imgPath} alt={language + "logo"}></img>;
+  return <img src={imgPath} alt={language + "logo"} key={language}></img>;
 };
