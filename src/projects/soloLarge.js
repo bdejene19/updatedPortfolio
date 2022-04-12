@@ -4,6 +4,8 @@ export const soloLarge = [
     technologies: ["React", "MUI", "JS", "HTML", "CSS"],
     description:
       "Implemented UX wireframes and developed fully responsive multipage React desktop app, acting as the frontline for ticket sales and digitally presents the concert experience.",
+    heroku: false,
+
     newSkills: [
       "Wireframe Implementation",
       "React Router",
@@ -30,6 +32,8 @@ export const soloLarge = [
     ],
     description:
       "Designed and implemented full stack blog application, offering full CRUD functionality to signed in users. Validation is integrated so user's can only edit or delete their posts while signed in, using bcrypt password hashing to ensure user security.",
+    heroku: true,
+
     newSkills: [
       "Sequelize Object Relational Mapping",
       "MySQL2 seeding during deployment, via Heroku CLI",
@@ -38,7 +42,7 @@ export const soloLarge = [
       "Integrate frontend framework for increased modularity and build speed",
       "Polish UI entice more time spent on blog page.",
     ],
-    projectDisplay: "",
+    projectDisplay: "bemmysBlog",
     sourceCode: "https://github.com/bdejene19/MVC_FullStack_Blog",
     liveVersion: "https://bemnets-tech-blog.herokuapp.com/",
   },
@@ -46,6 +50,8 @@ export const soloLarge = [
   {
     name: "Digital Marketing Landing Page",
     technologies: ["React", "MUI", "HTML", "CSS", "JS"],
+    heroku: false,
+
     description:
       "Created landing-page clone of a digital marketing agency, making it fully responsive to be viewable on all devices.",
     newSkills: [
@@ -66,6 +72,8 @@ export const soloLarge = [
     technologies: ["React", "JS", "HTML", "CSS"],
     description:
       "Implement RESTful API call, presenting the data in an expandable view. Also provides ability to search by student name.",
+    heroku: false,
+
     newSkills: ["Search-Bar Filter", "React Hooks", "Hook Life-cycles"],
     howToImprove: ["Tag-filter", "Views based on authentication"],
     projectDisplay: "studentScores",
@@ -78,6 +86,8 @@ export const soloLarge = [
     technologies: ["React", "JS", "CSS", "HTML"],
     description:
       "First front-end project: a single-page app meant to showcase the past, present and future of the soccer club, Arsenal. Is a static HTML site, however, has dynanism through use of state.",
+    heroku: false,
+
     newSkills: ["React States", "React Life-Cycles", "DOM manipulation"],
     howToImprove: [
       "Fetch data from API",

@@ -12,6 +12,7 @@ export const soloCollab = [
     ],
     description:
       "As a trader, create an account for one stop shop gateway for your skills, rather than relying on word of mouth for your next job.",
+    heroku: true,
     newSkills: [
       "Apollo routing for graphQL",
       "JWT handling, managing login encoded token data",
@@ -31,6 +32,7 @@ export const soloCollab = [
     technologies: ["Express", "MySQL2", "JS", "Handlebars", "Heroku"],
     description:
       "Join the Hive Mind and add a personal note on how to fight or persist through mental illness. Create, delete and upvote posts in the community, while sensitive information in the database is stored securely using bcrypt. Also offers session expiration, reducing number of sign in's to increase user satisfaction",
+    heroku: true,
     newSkills: [
       "Model View Controller (MVC) coding paradigm",
       "Express Session to minimize number of user logins and improve the user expereience",
@@ -50,12 +52,13 @@ export const soloCollab = [
     technologies: ["React", "MUI", "JS", "CSS"],
     description:
       "See the latest and top rated movies, providing user's the ability to search for movies and watch movie trailer.",
+    heroku: false,
     newSkills: ["Tailwind", "jQuery", "IMDb/TMDb APIs"],
     howToImprove: [
       "Create genres page for increased user filtration",
       "Improved performance for speed of trailer modal open",
     ],
-    projectDisplay: "marvelousMovies",
+    projectDisplay: "universalMovies",
     sourceCode: "https://github.com/bdejene19/MarvelousMoviesIndex",
     liveVersion: "https://bdejene19.github.io/MarvelousMoviesIndex/",
   },
