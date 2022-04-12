@@ -31,11 +31,10 @@ export const soloCollab = [
     name: "Hive Mind",
     technologies: ["Express", "MySQL2", "JS", "Handlebars", "Heroku"],
     description:
-      "Join the Hive Mind and add a personal note on how to fight or persist through mental illness. Create, delete and upvote posts in the community, while sensitive information in the database is stored securely using bcrypt. Also offers session expiration, reducing number of sign in's to increase user satisfaction",
+      "Join the Hive Mind and add a personal note on how to fight or persist through mental illness. Create, delete and upvote posts in the community, while bcrypt hashes for user data for security and Session Storage, reducing number of sign in's to increase user satisfaction.",
     heroku: true,
     newSkills: [
       "Model View Controller (MVC) coding paradigm",
-      "Express Session to minimize number of user logins and improve the user expereience",
       "Heroku deployment using JawsDB for MySQL2 integration",
       "Sequlize life cycle hooks for pre-database storage hashing",
     ],
@@ -45,7 +44,7 @@ export const soloCollab = [
     ],
     projectDisplay: "",
     sourceCode: "https://github.com/bdejene19/Hive-Mind",
-    liveVersion: "https://hivemind-554.herokuapp.com/",
+    liveVersion: "https://hive-minds.herokuapp.com/",
   },
   {
     name: "Universal Movies",
