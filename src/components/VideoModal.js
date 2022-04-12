@@ -206,4 +206,9 @@ const VideoWrapper = styled.div`
       transition: 0.2s ease-in-out;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    width: 90vw;
+    margin-left: 0%;
+  }
 `;
