@@ -42,7 +42,7 @@ export const soloCollab = [
       "Add update functionality to previous thoughts",
       "Include moderator to main integrity of application - bolster mental health.",
     ],
-    projectDisplay: "",
+    projectDisplay: "hivemind",
     sourceCode: "https://github.com/bdejene19/Hive-Mind",
     liveVersion: "https://hive-minds.herokuapp.com/",
   },
