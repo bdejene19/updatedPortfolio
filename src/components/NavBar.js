@@ -16,6 +16,7 @@ export default function NavBar() {
   useEffect(() => {
     console.log(aboutMeExpanded);
   }, []);
+
   return (
     <NavWrapper>
       <NavButton

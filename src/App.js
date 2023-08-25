@@ -1,14 +1,18 @@
-import './App.css';
-import React, {createContext, useEffect, useState} from 'react';
-import AllProjects from './components/AllProjects';
-import ContactForm from './components/ContactForm';
-import Hero from './components/Hero';
-import ImmediateContact from './components/navdropdowns/ImmediateContact';
-import NavBar from './components/NavBar';
-import {Skills} from './components/navdropdowns/Skills';
-import AboutMe from './components/navdropdowns/AboutMe';
-import PhoneNavBar from './components/PhoneNavBar';
-import { handleContactExpansion, handleSkillsExpansion, handleAboutMeExpansion } from './components/componentFunctions';
+import "./App.css";
+import React, { createContext, useEffect, useState } from "react";
+import AllProjects from "./components/AllProjects";
+import ContactForm from "./components/ContactForm";
+import Hero from "./components/Hero";
+import ImmediateContact from "./components/navdropdowns/ImmediateContact";
+import NavBar from "./components/NavBar";
+import { Skills } from "./components/navdropdowns/Skills";
+import AboutMe from "./components/navdropdowns/AboutMe";
+import PhoneNavBar from "./components/PhoneNavBar";
+import {
+  handleContactExpansion,
+  handleSkillsExpansion,
+  handleAboutMeExpansion,
+} from "./utils/componentFunctions";
 
 export const ModalContext = createContext(null);
 
@@ -18,20 +22,29 @@ function App() {
   const [aboutMeExpanded, setAboutExpanded] = useState(false);
 
   useEffect(() => {
-      handleContactExpansion(contactExpanded);
-  }, [contactExpanded])
+    handleContactExpansion(contactExpanded);
+  }, [contactExpanded]);
 
   useEffect(() => {
-      handleSkillsExpansion(skillsExpanded);
-  }, [skillsExpanded])
+    handleSkillsExpansion(skillsExpanded);
+  }, [skillsExpanded]);
 
   useEffect(() => {
-      handleAboutMeExpansion(aboutMeExpanded)
-  }, [aboutMeExpanded])
+    handleAboutMeExpansion(aboutMeExpanded);
+  }, [aboutMeExpanded]);
   return (
     <div>
       <header>
-        <ModalContext.Provider value={{skillsExpanded, setSkillsExpanded, contactExpanded, setContactExpanded, aboutMeExpanded, setAboutExpanded}}>
+        <ModalContext.Provider
+          value={{
+            skillsExpanded,
+            setSkillsExpanded,
+            contactExpanded,
+            setContactExpanded,
+            aboutMeExpanded,
+            setAboutExpanded,
+          }}
+        >
           <NavBar></NavBar>
           <Skills></Skills>
           <AboutMe></AboutMe>
@@ -40,11 +53,10 @@ function App() {
         </ModalContext.Provider>
       </header>
 
-
       <main>
         {/* hero section causing overflow for some reason */}
         <Hero></Hero>
-        <AllProjects key='1'></AllProjects>
+        <AllProjects key="1"></AllProjects>
       </main>
 
       <footer>
